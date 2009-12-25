@@ -28,14 +28,14 @@
 
 typedef struct _CeString {
         uCeChar *data;
-        CeInt len;             /**< string length excluding trailing '\0' */
+        CeInt len;              /**< string length excluding trailing '\0' */
 };
 
 /** 
  * just initail the CeString Object
  *
  */
-CeString *ce_string_new(void)
+CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc(sizeof(CeString));
         self->data = NULL;
