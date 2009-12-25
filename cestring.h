@@ -24,6 +24,7 @@
 //struct CeString;
 //typedef CeString CeString;
 
+struct CeString_Class_get;
 typedef struct CeString_Class_get CeString_Class_get;
 
 typedef struct CeString {
@@ -32,9 +33,6 @@ typedef struct CeString {
         CeString_Class_get *get;
 } CeString;
 
-struct CeString_Class_get {
-        uCeChar *(*data) (CeString *self);
-};
 
 CeString *ce_string_new(void);
 void ce_string_delete(CeString *str);
