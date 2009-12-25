@@ -85,7 +85,7 @@ CeInt * ce_string_set_data(CeString *self, const CeUsChar *str)
         self->data[i] = '\0';   /* end of line character */
 }
 
-CeUnChar * ce_string_get_data(CeString *self)
+CeUsChar * ce_string_get_data(CeString *self)
 {
         return (self->data);
 }
