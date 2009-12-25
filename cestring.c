@@ -44,8 +44,8 @@ struct _CeString_Class_set {
 //static CeInt * ce_string_set_data(CeString *self, const uCeChar *src);
 //static uCeChar * ce_string_get_data(CeString *self);
 
-static CeString_Class_get get = {ce_string_get_data};
-static CeString_Class_set set = {ce_string_set_data};
+static CeString_Class_get get = {&ce_string_get_data};
+static CeString_Class_set set = {&ce_string_set_data};
 
 /** 
  * just initail the CeString Object
