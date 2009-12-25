@@ -25,10 +25,10 @@
 #include "cetypes.h"
 #include "cestring.h"
 
-
+/* Definite CeString Object */
 typedef struct _CeString {
         uCeChar *data;
-        CeInt len;              /**< string length excluding trailing '\0' */
+        CeInt    len;           /**< string length excluding trailing '\0' */
 };
 
 /** 
@@ -52,6 +52,13 @@ void ce_string_delete(CeString *self)
 {
         free(self->data);
         free(self);
+}
+
+void ce_string_free(CeString *self)
+{
+        free(self->data);
+        self->data = NULL;
+        self->len = 0;
 }
 
 CeInt * ce_string_set_data(CeString *self, const uCeChar *src)
