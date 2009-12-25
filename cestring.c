@@ -26,7 +26,7 @@
 #include "cestring.h"
 
 /* Definite CeString Object */
-typedef struct _CeString {
+struct _CeString {
         uCeChar *data;
         CeInt    len;           /**< string length excluding trailing '\0' */
 };
