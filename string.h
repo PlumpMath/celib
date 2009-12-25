@@ -17,6 +17,7 @@ struct CeString_Class_get {
 
 CeString *ce_string_new(void);
 void ce_string_delete(CeString *str);
+int ce_string_set_data(CeString *self, const uchar *str);
 
 
 
