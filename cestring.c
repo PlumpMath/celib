@@ -26,6 +26,14 @@
 #include "cestring.h"
 
 
+typedef struct _CeString {
+        uCeChar *data;
+        CeInt len;             /**< string length excluding trailing '\0' */
+        CeString_Class_get *get;
+        CeString_Class_set *set;
+};
+
+
 struct _CeString_Class_get {
         uCeChar *(*data) (CeString *self);
 };
