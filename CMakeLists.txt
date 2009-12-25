@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.5)
 PROJECT(celib)
-INCLUDE_DIRECTORIES(${celib_SOURCE_DIR}/)
-SET(celib_SRCS cestring.c)
+INCLUDE_DIRECTORIES(${celib_SOURCE_DIR})
+SET(celib_SRCS cestring.c cetypes.h)
 ADD_LIBRARY(celib SHARED ${celib_SRCS})
 INSTALL_FILES(/include/celib/ .h)
 INSTALL(TARGETS celib 
