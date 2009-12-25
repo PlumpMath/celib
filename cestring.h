@@ -31,6 +31,7 @@ void       ce_string_delete(CeString *self);
 CeInt    * ce_string_set_data(CeString *self, const uCeChar *src);
 uCeChar  * ce_string_get_data(CeString *self);
 CeInt      ce_string_get_length(CeString *self);
-void       ce_string_free(CeString *self)
+void       ce_string_free(CeString *self);
+
 
 #endif  /* _CE_STRING_H_ */
