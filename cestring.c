@@ -51,6 +51,7 @@ CeString * ce_string_new(void)
 void ce_string_delete(CeString *self)
 {
         free(self->data);
+        self->len = 0;
         free(self);
 }
 
