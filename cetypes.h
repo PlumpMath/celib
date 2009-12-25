@@ -18,11 +18,37 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  */
-#ifndef _CELIB_H_
-#define _CELIB_H_
 
-#include <celib/cetypes.h>
-#include <celib/cestring.h>
+#ifndef _CC_TYPES_H
+#define _CC_TYPES_H 
+
+CC_DECLARES_BEGIN
+
+/*
+ *  Provide type definitions for commonly used types.
+ */
+
+typedef int    Int;
+typedef char   Char;
+typedef short  Bool;
+typedef long   Long;
+typedef short  Short;
+
+typedef unsigned int    uInt;
+typedef unsigned char   uChar;
+typedef unsigned long   uLong;
+typedef unsigned short  uShort;
+
+typedef float   Float;
+typedef double  Double;
+
+typedef void * Ptr;
+typedef const void* cPtr;
 
 
-#endif  /* _CELIB_H_ */
+
+
+CC_DECLARES_END
+
+#endif /* _CC_TYPES_H */
+
