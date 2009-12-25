@@ -1,22 +1,24 @@
 /* CELIB - cldnew's C libraries designed for CEMACS
- * Copyright (C) 2009  Yen-Chin, Lee <coldnew.tw@gmail.com>
+ *
+ * Copyright (C) 2009  Yen-Chin, Lee <coldnew.tw@gmail.com>. 
  *
  * This file is part of CELIB.
- * 
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2 of the License, or (at your option) any later version.
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
+ * The contents of this file are subject to the terms of one of the
+ * following licenses: 
  *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ *    1) GNU Lesser General Public License (LGPL)
+ *    2) Common Development and Distribution License (CDDL)
+ *    3) Yen-Chin, Lee, as the author of this code, expressly permits you to
+ *       statically or dynamically link your code (or bind by name)
+ *       to this file, while you keep this file unmodified.
+ *
+ * You can select the license that you prefer but you may not use this file
+ * except in compliance with one of these Licenses.
+ *
+ * See the Licenses for the specific language governing permissions and
+ * limitations under the Licenses.
+ *
  */
 
 #ifndef _CE_TYPES_H
