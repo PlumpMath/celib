@@ -76,7 +76,7 @@ int ce_string_set_data(CeString *str, const uCeChar *src)
         
 }
 
-uchar *ce_string_get_data(CeString *self)
+uCeChar *ce_string_get_data(CeString *self)
 {
         return (self->data);
 }
