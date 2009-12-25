@@ -24,5 +24,4 @@
 #include <celib/cetypes.h>
 #include <celib/cestring.h>
 
-
 #endif  /* _CELIB_H_ */
