@@ -30,7 +30,7 @@
 
 /* Definite CeString Object */
 struct _CeString {
-        uCeChar *data;
+        CeUsChar *data;
         CeInt    len;           /**< string length excluding trailing '\0' */
 };
 
@@ -65,7 +65,7 @@ void ce_string_free(CeString *self)
         self->len = 0;
 }
 
-CeInt * ce_string_set_data(CeString *self, const uCeChar *str)
+CeInt * ce_string_set_data(CeString *self, const CeUsChar *str)
 {
         CeInt i;
         CeInt new_len = strlen(str);
@@ -76,7 +76,7 @@ CeInt * ce_string_set_data(CeString *self, const uCeChar *str)
         }
 
         self->len = new_len;
-        self->data = (uCeChar *) malloc( sizeof(uCeChar) * (new_len + 1) );
+        self->data = (CeUsChar *) malloc( sizeof(CeUsChar) * (new_len + 1) );
         
         /* Now let's copy new string to our CeString */
         for(i = 0; i < new_len; i++) {
