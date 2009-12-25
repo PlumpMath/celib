@@ -1,6 +1,6 @@
 /* CELIB - cldnew's C libraries designed for CEMACS
  *
- * Copyright (C) 2009  Yen-Chin, Lee. All Rights Reserved. 
+ * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved. 
  *
  * This file is part of CELIB.
  *
