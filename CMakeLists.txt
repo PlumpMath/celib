@@ -8,7 +8,7 @@ ADD_LIBRARY(celib SHARED ${celib_SRCS})
 # Generate pkgconfig file
     configure_file(
         templates/celib.pc.cmake
-        templates/celib.pc
+        celib.pc
         @ONLY)
 
     install(
