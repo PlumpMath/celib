@@ -1,1 +1,0 @@
-/usr/lib64/colorgcc/bin/gcc  -fPIC   -shared -Wl,-soname,libcelib.so -o libcelib.so CMakeFiles/celib.dir/string.o 
