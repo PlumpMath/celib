@@ -61,10 +61,10 @@ void ce_string_free(CeString *self)
         self->len = 0;
 }
 
-CeInt * ce_string_set_data(CeString *self, const uCeChar *src)
+CeInt * ce_string_set_data(CeString *self, const uCeChar *str)
 {
         CeInt i;
-        CeInt new_len = strlen(src);
+        CeInt new_len = strlen(str);
         
         /* Free the CeString Object first */
         if(0 != self->len) {
@@ -76,7 +76,7 @@ CeInt * ce_string_set_data(CeString *self, const uCeChar *src)
         
         /* Now let's copy new string to our CeString */
         for(i = 0; i < new_len; i++) {
-                self->data[i] = src[i];
+                self->data[i] = str[i];
         }
         
 }
