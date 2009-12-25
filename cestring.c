@@ -53,8 +53,8 @@ void ce_string_delete(CeString *self)
 
 int ce_string_set_data(CeString *str, const uCeChar *src)
 {
-        int i;
-        int new_len = strlen(src);
+        CeInt i;
+        CeInt new_len = strlen(src);
         
         /* Free the CeString Object first */
         if(0 != str->len) {

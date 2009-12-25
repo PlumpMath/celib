@@ -21,7 +21,6 @@
 #ifndef _CE_STRING_H_
 #define _CE_STRING_H_
 
-typedef unsigned char uchar;
 typedef struct CeString_Class_get CeString_Class_get;
 
 typedef struct CeString {
