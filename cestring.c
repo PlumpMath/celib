@@ -29,23 +29,7 @@
 typedef struct _CeString {
         uCeChar *data;
         CeInt len;             /**< string length excluding trailing '\0' */
-        CeString_Class_get *get;
-        CeString_Class_set *set;
 };
-
-struct _CeString_Class_get {
-        uCeChar *(*data) (CeString *self);
-};
-struct _CeString_Class_set {
-        CeInt   *(*data) (CeString *self, const uCeChar *src);
-};
-
-
-//static CeInt * ce_string_set_data(CeString *self, const uCeChar *src);
-//static uCeChar * ce_string_get_data(CeString *self);
-
-static CeString_Class_get *get = {ce_string_get_data};
-static CeString_Class_set set = {ce_string_set_data};
 
 /** 
  * just initail the CeString Object
