@@ -37,7 +37,7 @@ typedef struct _CeString {
  */
 CeString * ce_string_new(void)
 {
-        CeString *self  = (CeString *) malloc(sizeof(CeString));
+        CeString *self  = (CeString *) malloc( sizeof(CeString) );
         self->data = NULL;
         self->len = 0;
         return self;
@@ -72,7 +72,7 @@ CeInt * ce_string_set_data(CeString *self, const uCeChar *str)
         }
 
         self->len = new_len;
-        self->data = (uCeChar *)malloc(sizeof(uCeChar) * (new_len + 1));
+        self->data = (uCeChar *) malloc( sizeof(uCeChar) * (new_len + 1) );
         
         /* Now let's copy new string to our CeString */
         for(i = 0; i < new_len; i++) {
