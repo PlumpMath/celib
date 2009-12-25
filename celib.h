@@ -24,6 +24,7 @@
 #ifndef _CELIB_H_
 #define _CELIB_H_
 
+#include <celib/cemacros.h>
 #include <celib/cetypes.h>
 #include <celib/cestring.h>
 
