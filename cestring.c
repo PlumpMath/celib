@@ -18,16 +18,17 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  */
-#include "celib.h"
+//#include "celib.h"
+#include "cetypes.h"
+#include "cestring.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+
 struct _CeString_Class_get {
         uCeChar *(*data) (CeString *self);
 };
-
-
 //static int ce_string_set_data(CeString *str, const uchar *src);
 static uCeChar * ce_string_get_data(CeString *self);
 
@@ -56,7 +57,7 @@ void ce_string_delete(CeString *self)
         free(self);
 }
 
-int ce_string_set_data(CeString *str, const uCeChar *src)
+int ce_string_set_data(CeString *str, const char *src)
 {
         CeInt i;
         CeInt new_len = strlen(src);

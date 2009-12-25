@@ -41,11 +41,6 @@ typedef unsigned short  uCeShort;
 typedef float   CeFloat;
 typedef double  CeDouble;
 
-typedef void * CePointer;
-
-
-
-
+typedef void *  CePointer;
 
 #endif /* _CE_TYPES_H */
-
