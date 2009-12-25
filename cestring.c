@@ -18,17 +18,18 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  */
-//#include "celib.h"
-#include "cetypes.h"
-#include "cestring.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "cetypes.h"
+#include "cestring.h"
 
 
 struct _CeString_Class_get {
         uCeChar *(*data) (CeString *self);
 };
+
 //static int ce_string_set_data(CeString *str, const uchar *src);
 static uCeChar * ce_string_get_data(CeString *self);
 
@@ -57,22 +58,22 @@ void ce_string_delete(CeString *self)
         free(self);
 }
 
-int ce_string_set_data(CeString *str, const char *src)
+CeInt ce_string_set_data(CeString *self, const uCeChar *src)
 {
         CeInt i;
         CeInt new_len = strlen(src);
         
         /* Free the CeString Object first */
-        if(0 != str->len) {
+        if(0 != self->len) {
                 free(str->data);
         }
 
-        str->len = new_len;
-        str->data = (uCeChar *)malloc(sizeof(uCeChar) * new_len);
+        self->len = new_len;
+        self->data = (uCeChar *)malloc(sizeof(uCeChar) * new_len);
         
         /* Now let's copy new string to our CeString */
         for(i = 0; i < new_len; i++) {
-                str->data[i] = src[i];
+                self->data[i] = src[i];
         }
         
 }

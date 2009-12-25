@@ -33,6 +33,6 @@ typedef struct _CeString {
 
 CeString *ce_string_new(void);
 void ce_string_delete(CeString *str);
-int ce_string_set_data(CeString *self, const char *str);
+CeInt ce_string_set_data(CeString *self, const uCeChar *str);
 
 #endif  /* _CE_STRING_H_ */
