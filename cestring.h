@@ -21,7 +21,7 @@
 #ifndef _CE_STRING_H_
 #define _CE_STRING_H_
 
-struct CeString_Class_get;
+struct _CeString_Class_get;
 typedef struct _CeString_Class_get CeString_Class_get;
 
 typedef struct CeString {
