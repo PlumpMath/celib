@@ -6,7 +6,7 @@ SET(celib_SRCS cestring.c ceswap.c)
 ADD_LIBRARY(celib SHARED ${celib_SRCS})
 
 # Generate pkgconfig file
-configure_file (templates/celib.pc.cmake @ONLY)
+configure_file (templates/celib.pc.cmake celib.pc)
 
 INSTALL_FILES(/include/celib/ .h)
 INSTALL_FILES(/usr/lib/pkgconfig/ .pc)
