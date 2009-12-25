@@ -74,7 +74,12 @@ CeInt * ce_string_set_data(CeString *self, const uCeChar *src)
         
 }
 
-uCeChar *ce_string_get_data(CeString *self)
+uCeChar * ce_string_get_data(CeString *self)
 {
         return (self->data);
+}
+
+CeInt * ce_string_get_length(CeString *self)
+{
+        return (self->len);
 }
