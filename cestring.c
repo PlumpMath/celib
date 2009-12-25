@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct CeString_Class_get {
+struct _CeString_Class_get {
         uCeChar *(*data) (CeString *self);
 };
 
