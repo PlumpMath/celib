@@ -19,13 +19,12 @@
  * Boston, MA 02111-1307, USA.
  */
 #include "celib.h"
-//#include "cestring.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 //static int ce_string_set_data(CeString *str, const uchar *src);
-static uchar * ce_string_get_data(CeString *self);
+static uCeChar * ce_string_get_data(CeString *self);
 
 static CeString_Class_get get = {ce_string_get_data};
 
@@ -52,7 +51,7 @@ void ce_string_delete(CeString *self)
         free(self);
 }
 
-int ce_string_set_data(CeString *str, const uchar *src)
+int ce_string_set_data(CeString *str, const uCeChar *src)
 {
         int i;
         int new_len = strlen(src);
