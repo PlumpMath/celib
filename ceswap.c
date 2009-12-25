@@ -25,35 +25,35 @@
 
 #define SWAP_CORE  tmp = *p1; *p1 = *p2; *p2 = tmp    
 
-/* Int() */
-inline void  cc_swap_int(CeInt *p1, CeInt *p2)
+/* CeInt */
+inline void  ce_swap_int(CeInt *p1, CeInt *p2)
 {
         CeInt SWAP_CORE;
 }
 
-/* Char() */
-inline void  cc_swap_char(CeChar *p1, CeChar *p2)
+/* CeChar */
+inline void  ce_swap_char(CeChar *p1, CeChar *p2)
 {
         CeChar SWAP_CORE;
 }
 
-/* Short() */
-inline void  cc_swap_short(CeShort *p1, CeShort *p2)
+/* CeShort */
+inline void  ce_swap_short(CeShort *p1, CeShort *p2)
 {
         CeShort SWAP_CORE;
 }
 
-/* Float() */
-inline void  cc_swap_float(CeFloat *p1, CeFloat *p2)
+/* CeFloat */
+inline void  ce_swap_float(CeFloat *p1, CeFloat *p2)
 {
         CeFloat SWAP_CORE;
 }
 
-/* Double() */
-inline void  cc_swap_double(CeDouble *p1, CeDouble *p2)
+/* CeDouble */
+inline void ce_swap_double(CeDouble *p1, CeDouble *p2)
 {
         CeDouble SWAP_CORE;
 }
 
 
-/* end of swap.c */
+/* end of ceswap.c */

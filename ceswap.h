@@ -22,11 +22,11 @@
 #define _CE_SWAP_H
 
 
-inline void * cc_swap_int    (CeInt    *p1, CeInt    *p2);
-inline void * cc_swap_char   (CeChar   *p1, CeChar   *p2);
-inline void * cc_swap_short  (CeShort  *p1, CeShort  *p2);
-inline void * cc_swap_float  (CeFloat  *p1, CeFloat  *p2);
-inline void * cc_swap_double (CeDouble *p1, CeDouble *p2);
+inline void  ce_swap_int    (CeInt    *p1, CeInt    *p2);
+inline void  ce_swap_char   (CeChar   *p1, CeChar   *p2);
+inline void  ce_swap_short  (CeShort  *p1, CeShort  *p2);
+inline void  ce_swap_float  (CeFloat  *p1, CeFloat  *p2);
+inline void  ce_swap_double (CeDouble *p1, CeDouble *p2);
 
 
 #endif /* _CE_SWAP_H */
