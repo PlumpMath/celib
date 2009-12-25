@@ -34,7 +34,7 @@ struct _CeString_Class_set {
 };
 
 
-static int ce_string_set_data(CeString *self, const uCeChar *src);
+static CeInt * ce_string_set_data(CeString *self, const uCeChar *src);
 static uCeChar * ce_string_get_data(CeString *self);
 
 static CeString_Class_get get = {ce_string_get_data};
@@ -63,7 +63,7 @@ void ce_string_delete(CeString *self)
         free(self);
 }
 
-CeInt ce_string_set_data(CeString *self, const uCeChar *src)
+CeInt * ce_string_set_data(CeString *self, const uCeChar *src)
 {
         CeInt i;
         CeInt new_len = strlen(src);
