@@ -26,14 +26,14 @@ typedef struct _CeString_Class_get CeString_Class_get;
 
 typedef struct _CeString {
         uCeChar *data;
-        int len;               /**< string length excluding trailing '\0' */
+        CeInt len;             /**< string length excluding trailing '\0' */
         CeString_Class_get *get;
 } CeString;
 
 
 CeString *ce_string_new(void);
 void ce_string_delete(CeString *str);
-int ce_string_set_data(CeString *self, const uCeChar *str);
+CeInt ce_string_set_data(CeString *self, const uCeChar *str);
 
 
 #endif  /* _CE_STRING_H_ */
