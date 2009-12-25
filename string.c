@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int ce_string_set_data(CeString *str, const uchar *src);
+//static int ce_string_set_data(CeString *str, const uchar *src);
 static uchar * ce_string_get_data(CeString *self);
 
 static CeString_Class_get get = {ce_string_get_data};
