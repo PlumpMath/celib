@@ -67,7 +67,7 @@ int ce_string_set_data(CeString *str, const uCeChar *src)
         }
 
         str->len = new_len;
-        str->data = (uchar *)malloc(sizeof(uchar) * new_len);
+        str->data = (uCeChar *)malloc(sizeof(uCeChar) * new_len);
         
         /* Now let's copy new string to our CeString */
         for(i = 0; i < new_len; i++) {
