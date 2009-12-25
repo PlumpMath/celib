@@ -19,36 +19,33 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#ifndef _CC_TYPES_H
-#define _CC_TYPES_H 
+#ifndef _CE_TYPES_H
+#define _CE_TYPES_H 
 
-CC_DECLARES_BEGIN
 
 /*
  *  Provide type definitions for commonly used types.
  */
 
-typedef int    Int;
-typedef char   Char;
-typedef short  Bool;
-typedef long   Long;
-typedef short  Short;
+typedef int    CeInt;
+typedef char   CeChar;
+typedef short  CeBool;
+typedef long   CeLong;
+typedef short  CeShort;
 
-typedef unsigned int    uInt;
-typedef unsigned char   uChar;
-typedef unsigned long   uLong;
-typedef unsigned short  uShort;
+typedef unsigned int    uCeInt;
+typedef unsigned char   uCeChar;
+typedef unsigned long   uCeLong;
+typedef unsigned short  uCeShort;
 
-typedef float   Float;
-typedef double  Double;
+typedef float   CeFloat;
+typedef double  CeDouble;
 
-typedef void * Ptr;
-typedef const void* cPtr;
-
+typedef void * CePointer;
 
 
 
-CC_DECLARES_END
 
-#endif /* _CC_TYPES_H */
+
+#endif /* _CE_TYPES_H */
 
