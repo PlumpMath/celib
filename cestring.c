@@ -91,3 +91,5 @@ CeInt ce_string_get_length(CeString *self)
 {
         return (self->len);
 }
+
+/* end of cestring.c */

@@ -23,36 +23,36 @@
 
 #include <stdio.h>
 
-#define SWAP_CORE  tmp = *p1; *p1 = *p2; *p2 = tmp    
+#define CE_SWAP_CORE  tmp = *p1; *p1 = *p2; *p2 = tmp    
 
 /* CeInt */
-inline void  ce_swap_int(CeInt *p1, CeInt *p2)
+inline void  ce_swap_ceint(CeInt *p1, CeInt *p2)
 {
-        CeInt SWAP_CORE;
+        CeInt CE_SWAP_CORE;
 }
 
 /* CeChar */
-inline void  ce_swap_char(CeChar *p1, CeChar *p2)
+inline void  ce_swap_cechar(CeChar *p1, CeChar *p2)
 {
-        CeChar SWAP_CORE;
+        CeChar CE_SWAP_CORE;
 }
 
 /* CeShort */
-inline void  ce_swap_short(CeShort *p1, CeShort *p2)
+inline void  ce_swap_ceshort(CeShort *p1, CeShort *p2)
 {
-        CeShort SWAP_CORE;
+        CeShort CE_SWAP_CORE;
 }
 
 /* CeFloat */
-inline void  ce_swap_float(CeFloat *p1, CeFloat *p2)
+inline void  ce_swap_cefloat(CeFloat *p1, CeFloat *p2)
 {
-        CeFloat SWAP_CORE;
+        CeFloat CE_SWAP_CORE;
 }
 
 /* CeDouble */
-inline void ce_swap_double(CeDouble *p1, CeDouble *p2)
+inline void ce_swap_cedouble(CeDouble *p1, CeDouble *p2)
 {
-        CeDouble SWAP_CORE;
+        CeDouble CE_SWAP_CORE;
 }
 
 
