@@ -70,7 +70,7 @@ CeInt * ce_string_set_data(CeString *self, const uCeChar *src)
         
         /* Free the CeString Object first */
         if(0 != self->len) {
-                free(str->data);
+                free(self->data);
         }
 
         self->len = new_len;
