@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 PROJECT(celib)
 INCLUDE_DIRECTORIES(${celib_BINARY_DIR})
-SET(celib_SRCS cestring.c)
+SET(celib_SRCS cestring.c ceswap.c)
 ADD_LIBRARY(celib SHARED ${celib_SRCS})
 INSTALL_FILES(/include/celib/ .h)
 INSTALL(TARGETS celib 
