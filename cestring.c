@@ -72,13 +72,13 @@ CeInt * ce_string_set_data(CeString *self, const uCeChar *str)
         }
 
         self->len = new_len;
-        self->data = (uCeChar *)malloc(sizeof(uCeChar) * new_len);
+        self->data = (uCeChar *)malloc(sizeof(uCeChar) * (new_len + 1));
         
         /* Now let's copy new string to our CeString */
         for(i = 0; i < new_len; i++) {
                 self->data[i] = str[i];
         }
-        
+        self->data[i] = '\0';   /* end of line character */
 }
 
 uCeChar * ce_string_get_data(CeString *self)
