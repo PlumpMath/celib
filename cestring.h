@@ -32,6 +32,7 @@ typedef struct _CeString {
         uCeChar *data;
         CeInt len;             /**< string length excluding trailing '\0' */
         CeString_Class_get *get;
+        CeString_Class_set *set;
 } CeString;
 
 
