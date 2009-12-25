@@ -23,6 +23,10 @@
 
 struct _CeString_Class_get;
 typedef struct _CeString_Class_get CeString_Class_get;
+struct _CeString_Class_set;
+typedef struct _CeString_Class_set CeString_Class_set;
+
+
 
 typedef struct _CeString {
         uCeChar *data;
@@ -33,6 +37,6 @@ typedef struct _CeString {
 
 CeString *ce_string_new(void);
 void ce_string_delete(CeString *str);
-CeInt ce_string_set_data(CeString *self, const uCeChar *str);
+
 
 #endif  /* _CE_STRING_H_ */
