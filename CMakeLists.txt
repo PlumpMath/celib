@@ -6,10 +6,16 @@ SET(celib_SRCS cestring.c ceswap.c)
 ADD_LIBRARY(celib SHARED ${celib_SRCS})
 
 # Generate pkgconfig file
-configure_file (templates/celib.pc.cmake celib.pc)
+    configure_file(
+        templates/celib.pc.cmake
+        templates/celib.pc
+        @ONLY)
+
+    install(
+        FILES ${celib_BINARY_DIR}/celib.pc
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
 
 INSTALL_FILES(/include/celib/ .h)
-INSTALL_FILES(/usr/lib/pkgconfig/ .pc)
 INSTALL(TARGETS celib 
 		RUNTIME DESTINATION bin 
 		LIBRARY DESTINATION lib 
