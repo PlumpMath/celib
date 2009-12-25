@@ -28,7 +28,7 @@ typedef struct _CeString CeString;
 CeString * ce_string_new(void);
 void       ce_string_delete(CeString *str);
 CeInt    * ce_string_set_data(CeString *self, const uCeChar *src);
-uCeChar    ce_string_get_data(CeString *self);
+uCeChar  * ce_string_get_data(CeString *self);
 CeInt      ce_string_get_length(CeString *self);
 
 
