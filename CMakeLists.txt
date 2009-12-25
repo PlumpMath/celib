@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.5)
 PROJECT(celib)
 ADD_LIBRARY(celib SHARED string.c)
-INSTALL_FILES(/include/celib/ *.h)
+INSTALL_FILES(/include/celib/ celib.h string.h)
 INSTALL(TARGETS celib
 RUNTIME DESTINATION bin
 LIBRARY DESTINATION lib
