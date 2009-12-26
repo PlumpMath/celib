@@ -95,7 +95,7 @@ CeInt ce_string_get_length(CeString *self)
         return (self->len);
 }
 
-CeString * ce_string_reverse(Cestring *self)
+CeString * ce_string_reverse(CeString *self)
 {
         if ( 1 == self->len) {
                 return self;
