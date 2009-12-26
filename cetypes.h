@@ -36,7 +36,7 @@ typedef long   CeLong;
 typedef short  CeShort;
 
 typedef unsigned int    CeUsInt;
-typedef unsigned char   CeUsChar;
+typedef unsigned char   CeUChar;
 typedef unsigned long   CeUsLong;
 typedef unsigned short  CeUsShort;
 

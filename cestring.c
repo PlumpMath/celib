@@ -31,7 +31,7 @@
 
 /* Definite CeString Object */
 struct _CeString {
-        CeUsChar *data;
+        CeUChar *data;
         CeInt    len;           /**< string length excluding trailing '\0' */
 };
 
@@ -66,7 +66,7 @@ void ce_string_free(CeString *self)
         self->len = 0;
 }
 
-CeInt * ce_string_set_data(CeString *self, const CeUsChar *str)
+CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
 {
         CeInt i = 0;
         CeInt new_len = strlen(str);
@@ -77,16 +77,16 @@ CeInt * ce_string_set_data(CeString *self, const CeUsChar *str)
         }
 
         self->len = new_len;
-        self->data = (CeUsChar *) malloc( sizeof(CeUsChar) * (new_len + 1) );
+        self->data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
         
         /* Now let's copy new string to our CeString */
         for(; i < new_len; i++) {
                 self->data[i] = str[i];
         }
-        self->data[i] = '\0';   /* end of line character */
+        self->data[i] = '\0';   /* end of line */
 }
 
-CeUsChar * ce_string_get_data(CeString *self)
+CeUChar * ce_string_get_data(CeString *self)
 {
         return (self->data);
 }
@@ -96,7 +96,6 @@ CeInt ce_string_get_length(CeString *self)
         return (self->len);
 }
 
-//FIXME: need to test if the CeString is NULL
 CeString * ce_string_reverse(CeString *self)
 {
         if ( 1 == self->len) {
@@ -105,7 +104,7 @@ CeString * ce_string_reverse(CeString *self)
 
         CeInt i = 0;
         CeInt tmp_len = self->len / 2;
-        CeUsChar tmp_data;
+        CeUChar tmp_data;
 
         for(; i < tmp_len; i++) {
                 tmp_data = self->data[i];
@@ -116,7 +115,6 @@ CeString * ce_string_reverse(CeString *self)
         return self;
 }
 
-//FIXME: need to test if the CeString is NULL
 CeString * ce_string_toupper(CeString *self)
 {
         CeInt i = 0;
@@ -128,7 +126,6 @@ CeString * ce_string_toupper(CeString *self)
         return self;
 }
 
-//FIXME: need to test if the CeString is NULL
 CeString * ce_string_tolower(CeString *self)
 {
         CeInt i = 0;
