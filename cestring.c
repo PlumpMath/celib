@@ -96,6 +96,7 @@ CeInt ce_string_get_length(CeString *self)
 }
 
 //FIXME: need to test if the CeString is NULL
+//FIXME: not the best way to reverse data
 CeString * ce_string_reverse_data(CeString *self)
 {
         if ( 1 == self->len) {
