@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "cetypes.h"
 #include "cestring.h"
@@ -96,39 +97,27 @@ CeInt ce_string_get_length(CeString *self)
 }
 
 //FIXME: need to test if the CeString is NULL
-//FIXME: not the best way to reverse data
 CeString * ce_string_reverse_data(CeString *self)
 {
         if ( 1 == self->len) {
                 return self;
         }
-#if 0
-        CeInt i = 0;        
-        CeInt tmp_len = self->len / 2;
-        CeUsChar *tmp_data = (CeUsChar *) malloc( sizeof(CeUsChar) * (tmp_len));
-
-        for (; i < tmp_len ; i++) {
-                tmp_data[i] = self->data[i];
-                self->data[i] = self->data[self->len - i - 1];
-        }
-
-        for (; i < self->len; i++) {
-                self->data[i] = tmp_data[--tmp_len];
-        }
-        free(tmp_data);
-#endif
 
         CeInt i = 0;
-        CeUsChar tmp;
         CeInt tmp_len = self->len / 2;
+        CeUsChar tmp_data;
+
         for(; i < tmp_len;i++) {
-                tmp = self->data[i];
+                tmp_data = self->data[i];
                 self->data[i] = self->data[self->len - i - 1];
-                self->data[self->len - i - 1] = tmp;
+                self->data[self->len - i - 1] = tmp_data;
         }
 
         return self;
 }
+
+
+
 
 
 /* end of cestring.c */
