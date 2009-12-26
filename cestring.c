@@ -95,17 +95,17 @@ CeUChar * ce_string_get_data(CeString *self)
 
 CeInt ce_string_get_length(CeString *self)
 {
-        return (self->len);
+        return (self->p->len);
 }
 
 CeString * ce_string_reverse(CeString *self)
 {
-        if ( 1 == self->len) {
+        if ( 1 == self->p->len) {
                 return self;
         }
 
         CeInt i = 0;
-        CeInt tmp_len = self->len / 2;
+        CeInt tmp_len = self->p->len / 2;
         CeUChar tmp_data;
 
         for(; i < tmp_len; i++) {
@@ -121,7 +121,7 @@ CeString * ce_string_toupper(CeString *self)
 {
         CeInt i = 0;
 
-        for (; i < self->len; i++) {
+        for (; i < self->p->len; i++) {
                 self->p->data[i] = toupper(self->data[i]);
         }
 
@@ -132,7 +132,7 @@ CeString * ce_string_tolower(CeString *self)
 {
         CeInt i = 0;
 
-        for (; i < self->len; i++) {
+        for (; i < self->p->len; i++) {
                 self->p->data[i] = tolower(self->data[i]);
         }
 
