@@ -128,6 +128,18 @@ CeString * ce_string_toupper(CeString *self)
         return self;
 }
 
+//FIXME: need to test if the CeString is NULL
+CeString * ce_string_tolower(CeString *self)
+{
+        CeInt i = 0;
+
+        for (; i < self->len; i++) {
+                self->data[i] = tolower(self->data[i]);
+        }
+
+        return self;
+}
+
 
 
 /* end of cestring.c */
