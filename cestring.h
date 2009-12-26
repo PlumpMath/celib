@@ -35,7 +35,9 @@ void       ce_string_free(CeString *self);
 CeInt    * ce_string_set_data(CeString *self, const CeUsChar *str);
 CeUsChar * ce_string_get_data(CeString *self);
 CeInt      ce_string_get_length(CeString *self);
-CeString * ce_string_reverse_data(CeString *self);
+CeString * ce_string_reverse(CeString *self);
+CeString * ce_string_toupper(CeString *self);
+
 
 
 #endif  /* _CE_STRING_H_ */

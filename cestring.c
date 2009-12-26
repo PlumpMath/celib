@@ -97,7 +97,7 @@ CeInt ce_string_get_length(CeString *self)
 }
 
 //FIXME: need to test if the CeString is NULL
-CeString * ce_string_reverse_data(CeString *self)
+CeString * ce_string_reverse(CeString *self)
 {
         if ( 1 == self->len) {
                 return self;
@@ -116,7 +116,16 @@ CeString * ce_string_reverse_data(CeString *self)
         return self;
 }
 
+//FIXME: need to test if the CeString is NULL
+CeString * ce_string_toupper(CeString *self)
+{
+        CeInt i = 0;
 
+        while (i < self->len) {
+                self->data[i] = toupper(self->data[i]);
+        }
+        return self;
+}
 
 
 
