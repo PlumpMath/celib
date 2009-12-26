@@ -111,7 +111,7 @@ CeString * ce_string_reverse(CeString *self)
         }
 
         for (; i > 0; i--) {
-                self->data[tmp_len + i] = tmp_data[tmp_len - i];
+                self->data[tmp_len + i - 1] = tmp_data[tmp_len - i];
         }
 
         return self;
