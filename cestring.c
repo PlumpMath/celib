@@ -45,7 +45,7 @@ CeString * ce_string_new(void)
         self->p->data = NULL;
         self->p->len = 0;
         self->data = self->p->data;
-        self->len = self->p->len;
+        self->len = &self->p->len;
         return self;
 }
 
