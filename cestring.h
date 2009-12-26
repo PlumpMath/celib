@@ -30,7 +30,7 @@ typedef struct _CeString_Core CeString_Core;
 
 typedef struct _CeString {
         const CeUChar *data;
-        const CeInt    len;
+        const CeInt    *len;
         CeString_Core *p;
 } CeString;
 
