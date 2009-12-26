@@ -102,7 +102,7 @@ CeString * ce_string_reverse_data(CeString *self)
         if ( 1 == self->len) {
                 return self;
         }
-
+#if 0
         CeInt i = 0;        
         CeInt tmp_len = self->len / 2;
         CeUsChar *tmp_data = (CeUsChar *) malloc( sizeof(CeUsChar) * (tmp_len));
@@ -116,10 +116,19 @@ CeString * ce_string_reverse_data(CeString *self)
                 self->data[i] = tmp_data[--tmp_len];
         }
         free(tmp_data);
-        
+#endif
+
+        CeInt i = 0;
+        CeUsChar tmp;
+        CeInt tmp_len = self->len / 2;
+        for(; i < tmp_len;i++) {
+                tmp = self->data[i];
+                self->data[i] = self->data[self->len - i - 1];
+                self->data[self->len - i - 1] = tmp;
+        }
+
         return self;
 }
-
 
 
 /* end of cestring.c */
