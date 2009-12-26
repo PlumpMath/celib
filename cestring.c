@@ -67,7 +67,7 @@ void ce_string_free(CeString *self)
 
 CeInt * ce_string_set_data(CeString *self, const CeUsChar *str)
 {
-        CeInt i;
+        CeInt i = 0;
         CeInt new_len = strlen(str);
         
         /* Free the CeString Object first */
@@ -79,7 +79,7 @@ CeInt * ce_string_set_data(CeString *self, const CeUsChar *str)
         self->data = (CeUsChar *) malloc( sizeof(CeUsChar) * (new_len + 1) );
         
         /* Now let's copy new string to our CeString */
-        for(i = 0; i < new_len; i++) {
+        for(; i < new_len; i++) {
                 self->data[i] = str[i];
         }
         self->data[i] = '\0';   /* end of line character */
@@ -94,6 +94,29 @@ CeInt ce_string_get_length(CeString *self)
 {
         return (self->len);
 }
+
+CeString * ce_string_reverse(Cestring *self)
+{
+        if ( 1 == self->len) {
+                return self;
+        }
+
+        CeInt i = 0;        
+        CeInt tmp_len = self->len / 2;
+        CeUsChar *tmp_data = (CeUsChar *) malloc( sizeof(CeUsChar) * (tmplen));
+
+        for (; i < tmp_len ; i++) {
+                tmp_data[i] = self->data[i];
+                self->data[i] = self->data[self->len - i - 1];
+        }
+
+        for (; i > 0; i--) {
+                self->data[tmp_len + i] = tmp_data[i];
+        }
+
+        return self;
+}
+
 
 
 /* end of cestring.c */
