@@ -25,8 +25,15 @@
 #define _CE_STRING_H_
 
 /* Declare CeString Object */
-struct _CeString;
-typedef struct _CeString CeString;
+struct _CeString_Core;
+typedef struct _CeString_Core CeString_Core;
+
+typedef struct _CeString {
+        const CeUChar *data;
+        const CeInt    len;
+        CeString_Core *p;
+} CeString;
+
 
 /* Declare Public Method */
 CeString * ce_string_new(void);

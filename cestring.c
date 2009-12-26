@@ -30,7 +30,7 @@
 #include "cestring.h"
 
 /* Definite CeString Object */
-struct _CeString {
+struct _CeString_Core {
         CeUChar *data;
         CeInt    len;           /**< string length excluding trailing '\0' */
 };
@@ -42,8 +42,10 @@ struct _CeString {
 CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
-        self->data = NULL;
-        self->len = 0;
+        self->p->data = NULL;
+        self->p->len = 0;
+        self->data = self->p->data;
+        self->len = &self->p->len;
         return self;
 }
 
@@ -54,16 +56,16 @@ CeString * ce_string_new(void)
  */
 void ce_string_delete(CeString *self)
 {
-        free(self->data);
-        self->len = 0;
+        free(self->p->data);
+        self->p->len = 0;
         free(self);
 }
 
 void ce_string_free(CeString *self)
 {
-        free(self->data);
-        self->data = NULL;
-        self->len = 0;
+        free(self->p->data);
+        self->p->data = NULL;
+        self->p->len = 0;
 }
 
 CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
@@ -73,17 +75,17 @@ CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
         
         /* Free the CeString Object first */
         if(0 != self->len) {
-                free(self->data);
+                free(self->p->data);
         }
 
-        self->len = new_len;
-        self->data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
+        self->p->len = new_len;
+        self->p->data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
         
         /* Now let's copy new string to our CeString */
         for(; i < new_len; i++) {
-                self->data[i] = str[i];
+                self->p->data[i] = str[i];
         }
-        self->data[i] = '\0';   /* end of line */
+        self->p->data[i] = '\0';   /* end of line */
 }
 
 CeUChar * ce_string_get_data(CeString *self)
@@ -108,8 +110,8 @@ CeString * ce_string_reverse(CeString *self)
 
         for(; i < tmp_len; i++) {
                 tmp_data = self->data[i];
-                self->data[i] = self->data[self->len - i - 1];
-                self->data[self->len - i - 1] = tmp_data;
+                self->p->data[i] = self->data[self->len - i - 1];
+                self->p->data[self->len - i - 1] = tmp_data;
         }
 
         return self;
@@ -120,7 +122,7 @@ CeString * ce_string_toupper(CeString *self)
         CeInt i = 0;
 
         for (; i < self->len; i++) {
-                self->data[i] = toupper(self->data[i]);
+                self->p->data[i] = toupper(self->data[i]);
         }
 
         return self;
@@ -131,7 +133,7 @@ CeString * ce_string_tolower(CeString *self)
         CeInt i = 0;
 
         for (; i < self->len; i++) {
-                self->data[i] = tolower(self->data[i]);
+                self->p->data[i] = tolower(self->data[i]);
         }
 
         return self;
