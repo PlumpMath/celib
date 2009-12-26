@@ -103,7 +103,7 @@ CeString * ce_string_reverse(CeString *self)
 
         CeInt i = 0;        
         CeInt tmp_len = self->len / 2;
-        CeUsChar *tmp_data = (CeUsChar *) malloc( sizeof(CeUsChar) * (tmplen));
+        CeUsChar *tmp_data = (CeUsChar *) malloc( sizeof(CeUsChar) * (tmp_len));
 
         for (; i < tmp_len ; i++) {
                 tmp_data[i] = self->data[i];
