@@ -107,7 +107,7 @@ CeString * ce_string_reverse(CeString *self)
         CeInt tmp_len = self->len / 2;
         CeUsChar tmp_data;
 
-        for(; i < tmp_len;i++) {
+        for(; i < tmp_len; i++) {
                 tmp_data = self->data[i];
                 self->data[i] = self->data[self->len - i - 1];
                 self->data[self->len - i - 1] = tmp_data;
@@ -121,9 +121,10 @@ CeString * ce_string_toupper(CeString *self)
 {
         CeInt i = 0;
 
-        while (i < self->len) {
+        for (; i < self->len; i++) {
                 self->data[i] = toupper(self->data[i]);
         }
+
         return self;
 }
 
