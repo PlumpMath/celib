@@ -38,7 +38,7 @@ typedef struct _CeString CeString;
 /* Declare Public Method */
 CeString * ce_string_new(void);
 CeInt    * ce_string_set_data(CeString *self, const CeUChar *str);
-//CeUChar  * ce_string_get_data(CeString *self);
+CeUChar  * ce_string_get_data(CeString *self);
 
 
 
