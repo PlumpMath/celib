@@ -29,7 +29,7 @@
 #include "cetypes.h"
 #include "cestring.h"
 
-#define CE_STRING_INITIAL() selfp = self;
+#define CE_STRING_INITIAL() selfp = (CeStringP *) self;
 
 /* a pointer for cestring */
 struct _CeStringP {
