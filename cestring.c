@@ -118,7 +118,6 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
                 ce_swap_ceint(&start, &end);
         }
 
-        CeInt i = 0;
         length = end - start + 1;
         
         /* Free the CeString Object first */
@@ -159,7 +158,7 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
         CeUChar *data = (CeUChar *) malloc( sizeof(CeUChar) * length + 1 );
         
         memcpy(data, self->data + start, length);
-        data[length] = '\0';
+        data[length] = '\0';    /* end of line */
         
         return data;
 }
@@ -257,8 +256,6 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 
         return self;
 }
-
-
 
 
 /* end of cestring.c */
