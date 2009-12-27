@@ -39,6 +39,7 @@ void       ce_string_delete(CeString *self);
 void       ce_string_free(CeString *self);
 CeInt    * ce_string_set_data(CeString *self, const CeUChar *str);
 CeUChar  * ce_string_get_data(CeString *self);
+CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end);
 CeInt      ce_string_get_length(CeString *self);
 CeString * ce_string_reverse(CeString *self);
 CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end);
