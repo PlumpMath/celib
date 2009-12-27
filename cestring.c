@@ -45,7 +45,9 @@ CeStringP *selfp;
 CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
-        selfp  = (CeStringP *) malloc( sizeof(CeStringP) );
+        if (selfp == NULL ){
+                selfp  = (CeStringP *) malloc( sizeof(CeStringP) );
+        }
         selfp = self;
         selfp->data = NULL;
         selfp->len = 0;
