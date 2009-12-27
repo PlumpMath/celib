@@ -25,7 +25,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "celib.h"
+//#include "celib.h"
+#include "cetypes.h"
+#include "cestring.h"
 
 
 /* a pointer for cestring */
@@ -47,7 +49,7 @@ CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
 
-        if(selfp == NULL) {
+        if(!selfp) {
                 selfp  = (CeStringP *) malloc( sizeof(CeStringP) );        
         }
 
@@ -55,6 +57,7 @@ CeString * ce_string_new(void)
 
         selfp->data = NULL;
         selfp->len = 0;
+
         return self;
 }
 
