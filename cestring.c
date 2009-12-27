@@ -43,10 +43,10 @@ static CeStringP *selfp;
 
 /* --------------------------------------------------------------------------- */
 /** 
- * Initial the CeString type variable without setting any data
+ * Initial the CeString Object without setting any data
  * 
  * 
- * @return 			The CeString
+ * @return 			The CeString Object
  */
 CeString * ce_string_new(void)
 {
@@ -66,7 +66,7 @@ CeString * ce_string_new(void)
 
 /* --------------------------------------------------------------------------- */
 /** 
- * Initial the CeString type variable and set the data and length
+ * Initial the CeString Object and set the data and length
  * 
  * @param data 		A String Object
  * 
@@ -81,7 +81,7 @@ CeString * ce_string_new_with_data(const CeUChar *data)
 
 /* --------------------------------------------------------------------------- */
 /** 
- * Initial the CeString type variable and set the data in range
+ * Initial the CeString Object and set the data in range
  * 
  * @param data		A String Object
  * @param start 	The first char is 1, the second is 2, blah blah blah.
@@ -348,6 +348,5 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 
         return self;
 }
-
 
 /* end of cestring.c */
