@@ -29,6 +29,8 @@
 #include "cetypes.h"
 #include "cestring.h"
 
+#define CE_STRING_INITIAL(x) selfp = x;
+
 /* a pointer for cestring */
 struct _CeStringP {
        CeUChar *data;
@@ -45,11 +47,14 @@ static CeStringP *selfp;
 CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
+
         if(selfp == NULL){
                 selfp  = (CeStringP *) malloc( sizeof(CeStringP) );        
         }
-        
-        selfp = self;
+
+        CE_STRING_INITIAL(selfp);
+        //selfp = self;
+
         selfp->data = NULL;
         selfp->len = 0;
         return self;
