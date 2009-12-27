@@ -59,6 +59,31 @@ CeString * ce_string_new(void)
         return self;
 }
 
+/** 
+ * Totally free the CeString Object
+ * 
+ * @param self
+ */
+void ce_string_delete(CeString *self)
+{
+        CE_STRING_INITIAL();
+
+        free(self->data);
+        selfp->len = 0;
+        free(self);
+}
+
+void ce_string_free(CeString *self)
+{
+        CE_STRING_INITIAL();
+
+        free(self->data);
+        selfp->data = NULL;
+        selfp->len = 0;
+}
+
+
+
 CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
 {
         CeInt i = 0;
