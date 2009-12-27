@@ -137,7 +137,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
         /* for(; i < new_len; i++) { */
         /*         selfp->data[i] = str[ i + start ]; */
         /* } */
-        memcpy(selfp->data, str + start, new_len);
+        memcpy(selfp->data, str + start, length);
         //      selfp->data[i] = '\0';   /* end of line */
         selfp->data[length] = '\0';   /* end of line */
 }
