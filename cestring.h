@@ -25,9 +25,6 @@
 #define _CE_STRING_H_
 
 /* Declare CeString Object */
-//struct _CeString;
-//typedef struct _CeString CeString;
-
 struct _CeString {
         CeUChar* const data;
         CeInt    const len;     /**< string length excluding trailing '\0' */

@@ -30,13 +30,13 @@
 #include "cestring.h"
 
 /* a pointer for cestring */
-struct _CeString_Pointer {
+struct _CeStringP {
        CeUChar *data;
        CeInt    *len;     /**< string length excluding trailing '\0' */
 };
-typedef struct _CeString_Pointer CeString_Pointer;
+typedef struct _CeStringP CeStringP;
 
-static CeString_Pointer *selfp;
+static CeStringP *selfp;
 
 /** 
  * just initail the CeString Object
@@ -46,7 +46,7 @@ CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
         if(selfp == NULL){
-                selfp  = (CeString_Pointer *) malloc( sizeof(CeString_Pointer) );        
+                selfp  = (CeStringP *) malloc( sizeof(CeStringP) );        
         }
         
         selfp = self;
