@@ -216,12 +216,15 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
 
-        if ( start < 0 ) {
-                start += self->len ;
-        }
-        if ( end < 0 ) {
-                end += self->len;
-        }
+//        if ( start < 0 ) {
+//                start += self->len ;
+//        }
+        start += ( start > 0 ) ? (-1) : (self->len);
+        end   += ( end > 0   ) ? (-1) : (self->len);
+        
+//        if ( end < 0 ) {
+//                end += self->len;
+//        }
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
