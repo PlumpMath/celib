@@ -32,7 +32,7 @@
 /* a pointer for cestring */
 struct _CeStringP {
        CeUChar *data;
-       CeInt    *len;     /**< string length excluding trailing '\0' */
+       CeInt    len;     /**< string length excluding trailing '\0' */
 };
 typedef struct _CeStringP CeStringP;
 
