@@ -65,18 +65,14 @@ CeString * ce_string_new_with_data(const CeUChar *data)
 {
         CeString *self  = ce_string_new();
 
-        ce_string_set_data(self, data);
-        
-        return self;
+        return ce_string_set_data(self, data);
 }
 
 CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeInt end)
 {
         CeString *self  = ce_string_new();
 
-        ce_string_set_data_inrange(self, data, start, end);
-
-        return self;
+        return ce_string_set_data_inrange(self, data, start, end);
 }
 
 /** 
@@ -134,12 +130,10 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
         selfp->data = (CeUChar *) malloc( sizeof(CeUChar) * (length + 1) );
         
         /* Now let's copy new string to our CeString */
-        /* for(; i < new_len; i++) { */
-        /*         selfp->data[i] = str[ i + start ]; */
-        /* } */
         memcpy(selfp->data, str + start, length);
-        //      selfp->data[i] = '\0';   /* end of line */
         selfp->data[length] = '\0';   /* end of line */
+
+        return self;
 }
 
 
