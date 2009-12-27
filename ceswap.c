@@ -21,9 +21,6 @@
  *
  */
 
-//#include "cetypes.h"
-//#include "ceswap.h"
-
 #include <stdio.h>
 #include "celib.h"
 

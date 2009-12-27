@@ -25,9 +25,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-
-//#include "cetypes.h"
-//#include "cestring.h"
 #include "celib.h"
 
 
