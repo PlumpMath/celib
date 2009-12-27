@@ -181,7 +181,7 @@ CeString * ce_string_toupper_byrange(CeString *self, CeInt from, CeInt to)
 
         CeInt i = from;
 
-        for (; i < to; i++) {
+        for (; i <= to; i++) {
                 selfp->data[i] = toupper(selfp->data[i]);
         }
 
@@ -208,7 +208,7 @@ CeString * ce_string_tolower_byrange(CeString *self, CeInt from, CeInt to)
 
         CeInt i = from;
 
-        for (; i < to; i++) {
+        for (; i <= to; i++) {
                 selfp->data[i] = tolower(selfp->data[i]);
         }
 
