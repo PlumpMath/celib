@@ -45,7 +45,7 @@ CeString * ce_string_reverse_inrange(CeString *self, const CeInt start, const Ce
 CeString * ce_string_toupper_all(CeString *self);
 CeString * ce_string_toupper_inrange(CeString *self, const CeInt start, const CeInt end);
 CeString * ce_string_tolower_all(CeString *self);
-CeString * ce_string_tolower_inrange(CeString *self, const CeInt start, const CeInt end);
+CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
 
 
 #endif  /* _CE_STRING_H_ */

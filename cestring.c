@@ -28,7 +28,7 @@
 //#include "celib.h"
 #include "cetypes.h"
 #include "cestring.h"
-
+#include "ceswap.h"
 
 /* a pointer for cestring */
 struct _CeStringP {
@@ -212,11 +212,21 @@ CeString * ce_string_tolower_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_tolower_inrange(CeString *self, const CeInt start, const CeInt end)
+CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
 
-        CeInt i = (start > 0) ? (start - 1) : (start + 1);
+        if ( start < 0 ) {
+                start += self->len ;
+        }
+        if ( end < 0 ) {
+                end += self->len;
+        }
+        if ( start > end ) {
+                ce_swap_ceint(&start, &end);
+        }
+        
+        CeInt i = start;
 
         for (; i <= end; i++) {
                 selfp->data[i] = tolower(selfp->data[i]);
