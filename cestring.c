@@ -149,12 +149,21 @@ CeString * ce_string_reverse_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_reverse_inrange(CeString *self, const CeInt start, const CeInt end)
+CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
 
         if ( 1 == selfp->len) {
                 return self;
+        }
+
+        /* Reset start and end variables */
+        start += ( start > 0 ) ? (-1) : (self->len);
+        end   += ( end   > 0 ) ? (-1) : (self->len);
+
+        /* If start gratter than end, we need to change them */
+        if ( start > end ) {
+                ce_swap_ceint(&start, &end);
         }
 
         CeInt i = 0;
@@ -185,9 +194,18 @@ CeString * ce_string_toupper_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_toupper_inrange(CeString *self, const CeInt start, const CeInt end)
+CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
+
+        /* Reset start and end variables */
+        start += ( start > 0 ) ? (-1) : (self->len);
+        end   += ( end   > 0 ) ? (-1) : (self->len);
+
+        /* If start gratter than end, we need to change them */
+        if ( start > end ) {
+                ce_swap_ceint(&start, &end);
+        }
 
         CeInt i = start;
 
@@ -216,15 +234,11 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
 
-//        if ( start < 0 ) {
-//                start += self->len ;
-//        }
+        /* Reset start and end variables */
         start += ( start > 0 ) ? (-1) : (self->len);
-        end   += ( end > 0   ) ? (-1) : (self->len);
-        
-//        if ( end < 0 ) {
-//                end += self->len;
-//        }
+        end   += ( end   > 0 ) ? (-1) : (self->len);
+
+        /* If start gratter than end, we need to change them */
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
