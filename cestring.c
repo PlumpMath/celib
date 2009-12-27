@@ -86,10 +86,10 @@ void ce_string_free(CeString *self)
 
 CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
 {
+        CE_STRING_INITIAL();
+
         CeInt i = 0;
         CeInt new_len = strlen(str);
-
-        CE_STRING_INITIAL();
         
         /* Free the CeString Object first */
         if(0 != selfp->len) {
@@ -139,9 +139,9 @@ CeString * ce_string_reverse(CeString *self)
 
 CeString * ce_string_toupper(CeString *self)
 {
-        CeInt i = 0;
-
         CE_STRING_INITIAL();
+
+        CeInt i = 0;
 
         for (; i < selfp->len; i++) {
                 selfp->data[i] = toupper(selfp->data[i]);
@@ -152,9 +152,9 @@ CeString * ce_string_toupper(CeString *self)
 
 CeString * ce_string_tolower(CeString *self)
 {
-        CeInt i = 0;
-
         CE_STRING_INITIAL();
+
+        CeInt i = 0;
 
         for (; i < selfp->len; i++) {
                 selfp->data[i] = tolower(selfp->data[i]);
