@@ -111,9 +111,11 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
 {
         CE_STRING_INITIAL();
 
+        CeInt length = strlen(str);
+
         /* Reset start and end variables */
-        start += ( start > 0 ) ? (-1) : (self->len);
-        end   += ( end   > 0 ) ? (-1) : (self->len);
+        start += ( start > 0 ) ? (-1) : (length);
+        end   += ( end   > 0 ) ? (-1) : (length);
 
         /* If start gratter than end, we need to change them */
         if ( start > end ) {
@@ -121,15 +123,15 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
         }
 
         CeInt i = 0;
-        CeInt new_len = end - start + 1;
+        length = end - start + 1;
         
         /* Free the CeString Object first */
         if(0 != selfp->len) {
                 free(self->data);
         }
 
-        selfp->len = new_len;
-        selfp->data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
+        selfp->len = length;
+        selfp->data = (CeUChar *) malloc( sizeof(CeUChar) * (length + 1) );
         
         /* Now let's copy new string to our CeString */
         /* for(; i < new_len; i++) { */
@@ -137,8 +139,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
         /* } */
         memcpy(selfp->data, str + start, new_len);
         //      selfp->data[i] = '\0';   /* end of line */
-        selfp->data[new_len] = '\0';   /* end of line */
-
+        selfp->data[length] = '\0';   /* end of line */
 }
 
 
