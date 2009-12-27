@@ -40,11 +40,11 @@ void       ce_string_free(CeString *self);
 CeInt    * ce_string_set_data(CeString *self, const CeUChar *str);
 CeUChar  * ce_string_get_data(CeString *self);
 CeInt      ce_string_get_length(CeString *self);
-CeString * ce_string_reverse_all(CeString *self);
+CeString * ce_string_reverse(CeString *self);
 CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end);
-CeString * ce_string_toupper_all(CeString *self);
+CeString * ce_string_toupper(CeString *self);
 CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end);
-CeString * ce_string_tolower_all(CeString *self);
+CeString * ce_string_tolower(CeString *self);
 CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
 
 
