@@ -149,7 +149,7 @@ CeString * ce_string_reverse_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_reverse_byrange(CeString *self, const CeInt from, const CeInt to)
+CeString * ce_string_reverse_inrange(CeString *self, const CeInt start, const CeInt end)
 {
         CE_STRING_INITIAL();
 
@@ -158,13 +158,13 @@ CeString * ce_string_reverse_byrange(CeString *self, const CeInt from, const CeI
         }
 
         CeInt i = 0;
-        CeInt tmp_len = (to - from) / 2;
+        CeInt tmp_len = (end - start) / 2;
         CeUChar tmp_data;
 
         for(; i <= tmp_len; i++) {
-                tmp_data = selfp->data[i + from];
-                selfp->data[i + from] = selfp->data[to - i];
-                selfp->data[to - i] = tmp_data;
+                tmp_data = selfp->data[i + start];
+                selfp->data[i + start] = selfp->data[end - i];
+                selfp->data[end - i] = tmp_data;
         }
 
         return self;
@@ -185,13 +185,13 @@ CeString * ce_string_toupper_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_toupper_byrange(CeString *self, const CeInt from, const CeInt to)
+CeString * ce_string_toupper_inrange(CeString *self, const CeInt start, const CeInt end)
 {
         CE_STRING_INITIAL();
 
-        CeInt i = from;
+        CeInt i = start;
 
-        for (; i <= to; i++) {
+        for (; i <= end; i++) {
                 selfp->data[i] = toupper(selfp->data[i]);
         }
 
@@ -212,13 +212,13 @@ CeString * ce_string_tolower_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_tolower_byrange(CeString *self, const CeInt from, const CeInt to)
+CeString * ce_string_tolower_inrange(CeString *self, const CeInt start, const CeInt end)
 {
         CE_STRING_INITIAL();
 
-        CeInt i = from;
+        CeInt i = start;
 
-        for (; i <= to; i++) {
+        for (; i <= end; i++) {
                 selfp->data[i] = tolower(selfp->data[i]);
         }
 
