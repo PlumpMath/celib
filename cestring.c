@@ -133,7 +133,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
         
         /* Now let's copy new string to our CeString */
         for(; i < new_len; i++) {
-                selfp->data[i] = str[i];
+                selfp->data[i] = str[i + start];
         }
         selfp->data[i] = '\0';   /* end of line */
 }
