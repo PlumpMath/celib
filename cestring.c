@@ -29,7 +29,6 @@
 #include "cetypes.h"
 #include "cestring.h"
 
-#define CE_STRING_INITIAL() selfp = (CeStringP *) self;
 
 /* a pointer for cestring */
 struct _CeStringP {
@@ -39,6 +38,8 @@ struct _CeStringP {
 typedef struct _CeStringP CeStringP;
 
 static CeStringP *selfp;
+
+#define CE_STRING_INITIAL() selfp = (CeStringP *) self;
 
 /** 
  * just initail the CeString Object
@@ -116,7 +117,7 @@ CeInt ce_string_get_length(CeString *self)
         return (self->len);
 }
 
-CeString * ce_string_reverse(CeString *self)
+CeString * ce_string_reverse_all(CeString *self)
 {
         CE_STRING_INITIAL();
 
@@ -137,7 +138,7 @@ CeString * ce_string_reverse(CeString *self)
         return self;
 }
 
-CeString * ce_string_toupper(CeString *self)
+CeString * ce_string_toupper_all(CeString *self)
 {
         CE_STRING_INITIAL();
 
@@ -150,7 +151,7 @@ CeString * ce_string_toupper(CeString *self)
         return self;
 }
 
-CeString * ce_string_tolower(CeString *self)
+CeString * ce_string_tolower_all(CeString *self)
 {
         CE_STRING_INITIAL();
 
