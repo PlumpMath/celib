@@ -29,7 +29,7 @@
 //typedef struct _CeString CeString;
 
 struct _CeString {
-       const  CeUChar *data;
+        CeUChar const *data;
        const  CeInt    len;     /**< string length excluding trailing '\0' */
 };
 typedef struct _CeString CeString;
