@@ -149,7 +149,7 @@ CeString * ce_string_reverse_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_reverse_byrange(CeString *self, CeInt from, CeInt to)
+CeString * ce_string_reverse_byrange(CeString *self, const CeInt from, const CeInt to)
 {
         CE_STRING_INITIAL();
 
@@ -185,7 +185,7 @@ CeString * ce_string_toupper_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_toupper_byrange(CeString *self, CeInt from, CeInt to)
+CeString * ce_string_toupper_byrange(CeString *self, const CeInt from, const CeInt to)
 {
         CE_STRING_INITIAL();
 
@@ -212,7 +212,7 @@ CeString * ce_string_tolower_all(CeString *self)
         return self;
 }
 
-CeString * ce_string_tolower_byrange(CeString *self, CeInt from, CeInt to)
+CeString * ce_string_tolower_byrange(CeString *self, const CeInt from, const CeInt to)
 {
         CE_STRING_INITIAL();
 
