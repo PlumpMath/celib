@@ -36,7 +36,7 @@ struct _CeString_Pointer {
 };
 typedef struct _CeString_Pointer CeString_Pointer;
 
-CeString_Pointer *selfp;
+static CeString_Pointer *selfp;
 
 /** 
  * just initail the CeString Object
@@ -49,7 +49,6 @@ CeString * ce_string_new(void)
                 selfp  = (CeString_Pointer *) malloc( sizeof(CeString_Pointer) );        
         }
         
-    
         selfp = self;
         selfp->data = NULL;
         selfp->len = 0;
