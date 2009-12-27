@@ -35,9 +35,11 @@ typedef struct _CeString CeString;
 /* Declare Public Method */
 CeString * ce_string_new(void);
 CeString * ce_string_new_with_data(const CeUChar *data);
+CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeInt end);
 void       ce_string_delete(CeString *self);
-void       ce_string_free(CeString *self);
-CeInt    * ce_string_set_data(CeString *self, const CeUChar *str);
+void       ce_string_clear(CeString *self);
+CeString * ce_string_set_data(CeString *self, const CeUChar *str);
+CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt start, CeInt end);
 CeUChar  * ce_string_get_data(CeString *self);
 CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end);
 CeInt      ce_string_get_length(CeString *self);

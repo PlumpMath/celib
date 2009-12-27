@@ -70,6 +70,14 @@ CeString * ce_string_new_with_data(const CeUChar *data)
         return self;
 }
 
+CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeInt end)
+{
+        CeString *self  = ce_string_new();
+
+        ce_string_set_data_inrange(self, start, end);
+
+        return self;
+}
 
 /** 
  * Totally free the CeString Object
@@ -85,7 +93,7 @@ void ce_string_delete(CeString *self)
         free(self);
 }
 
-void ce_string_free(CeString *self)
+void ce_string_clear(CeString *self)
 {
         CE_STRING_INITIAL();
 
@@ -94,14 +102,26 @@ void ce_string_free(CeString *self)
         selfp->len = 0;
 }
 
+CeString * ce_string_set_data(CeString *self, const CeUChar *str)
+{
+        return ce_string_set_data_inrange(self, 1, -1);
+}
 
-
-CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
+CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
 
+        /* Reset start and end variables */
+        start += ( start > 0 ) ? (-1) : (self->len);
+        end   += ( end   > 0 ) ? (-1) : (self->len);
+
+        /* If start gratter than end, we need to change them */
+        if ( start > end ) {
+                ce_swap_ceint(&start, &end);
+        }
+
         CeInt i = 0;
-        CeInt new_len = strlen(str);
+        CeInt new_len = end - start + 1;
         
         /* Free the CeString Object first */
         if(0 != selfp->len) {
@@ -117,6 +137,7 @@ CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
         }
         selfp->data[i] = '\0';   /* end of line */
 }
+
 
 CeUChar * ce_string_get_data(CeString *self)
 {
@@ -144,7 +165,6 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
         
         return data;
 }
-
 
 CeInt ce_string_get_length(CeString *self)
 {
@@ -186,8 +206,6 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
         return self;
 }
 
-
-
 CeString * ce_string_toupper(CeString *self)
 {
         return ce_string_toupper_inrange(self, 1, -1);
@@ -214,7 +232,6 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
 
         return self;
 }
-
 
 CeString * ce_string_tolower(CeString *self)
 {
