@@ -29,11 +29,14 @@
 #include "cetypes.h"
 #include "cestring.h"
 
-/* Definite CeString Object */
-struct _CeString {
-        CeUChar *data;
-        CeInt    len;           /**< string length excluding trailing '\0' */
+/* a pointer for cestring */
+struct _CeStringP {
+       CeUChar *data;
+       CeInt    *len;     /**< string length excluding trailing '\0' */
 };
+typedef struct _CeStringP CeStringP;
+
+CeStringP *selfp  = (CeStringP *) malloc( sizeof(CeStringP) );
 
 /** 
  * just initail the CeString Object
@@ -42,28 +45,10 @@ struct _CeString {
 CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
-        self->data = NULL;
-        self->len = 0;
+        selfp = self;
+        selfp->data = NULL;
+        selfp->len = 0;
         return self;
-}
-
-/** 
- * Totally free the CeString Object
- * 
- * @param self
- */
-void ce_string_delete(CeString *self)
-{
-        free(self->data);
-        self->len = 0;
-        free(self);
-}
-
-void ce_string_free(CeString *self)
-{
-        free(self->data);
-        self->data = NULL;
-        self->len = 0;
 }
 
 CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
@@ -72,70 +57,24 @@ CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
         CeInt new_len = strlen(str);
         
         /* Free the CeString Object first */
-        if(0 != self->len) {
+        if(0 != selfp->len) {
                 free(self->data);
         }
 
-        self->len = new_len;
-        self->data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
+        selfp->len = new_len;
+        selfp->data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
         
         /* Now let's copy new string to our CeString */
         for(; i < new_len; i++) {
-                self->data[i] = str[i];
+                selfp->data[i] = str[i];
         }
-        self->data[i] = '\0';   /* end of line */
+        selfp->data[i] = '\0';   /* end of line */
 }
 
-CeUChar * ce_string_get_data(CeString *self)
-{
-        return (self->data);
-}
-
-CeInt ce_string_get_length(CeString *self)
-{
-        return (self->len);
-}
-
-CeString * ce_string_reverse(CeString *self)
-{
-        if ( 1 == self->len) {
-                return self;
-        }
-
-        CeInt i = 0;
-        CeInt tmp_len = self->len / 2;
-        CeUChar tmp_data;
-
-        for(; i < tmp_len; i++) {
-                tmp_data = self->data[i];
-                self->data[i] = self->data[self->len - i - 1];
-                self->data[self->len - i - 1] = tmp_data;
-        }
-
-        return self;
-}
-
-CeString * ce_string_toupper(CeString *self)
-{
-        CeInt i = 0;
-
-        for (; i < self->len; i++) {
-                self->data[i] = toupper(self->data[i]);
-        }
-
-        return self;
-}
-
-CeString * ce_string_tolower(CeString *self)
-{
-        CeInt i = 0;
-
-        for (; i < self->len; i++) {
-                self->data[i] = tolower(self->data[i]);
-        }
-
-        return self;
-}
+/* CeUChar * ce_string_get_data(CeString *self) */
+/* { */
+/*         return (self->data); */
+/* } */
 
 
 

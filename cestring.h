@@ -25,19 +25,20 @@
 #define _CE_STRING_H_
 
 /* Declare CeString Object */
-struct _CeString;
+//struct _CeString;
+//typedef struct _CeString CeString;
+
+struct _CeString {
+       const  CeUChar *data;
+       const  CeInt    len;     /**< string length excluding trailing '\0' */
+};
 typedef struct _CeString CeString;
+
 
 /* Declare Public Method */
 CeString * ce_string_new(void);
-void       ce_string_delete(CeString *self);
-void       ce_string_free(CeString *self);
 CeInt    * ce_string_set_data(CeString *self, const CeUChar *str);
-CeUChar * ce_string_get_data(CeString *self);
-CeInt      ce_string_get_length(CeString *self);
-CeString * ce_string_reverse(CeString *self);
-CeString * ce_string_toupper(CeString *self);
-CeString * ce_string_tolower(CeString *self);
+//CeUChar  * ce_string_get_data(CeString *self);
 
 
 
