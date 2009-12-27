@@ -104,7 +104,7 @@ void ce_string_clear(CeString *self)
 
 CeString * ce_string_set_data(CeString *self, const CeUChar *str)
 {
-        return ce_string_set_data_inrange(self, 1, -1);
+        return ce_string_set_data_inrange(self, str, 1, -1);
 }
 
 CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt start, CeInt end)
