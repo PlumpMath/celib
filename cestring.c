@@ -153,7 +153,7 @@ CeString * ce_string_reverse_byrange(CeString *self, CeInt from, CeInt to)
 
         for(; i < tmp_len; i++) {
                 tmp_data = selfp->data[i + from];
-                selfp->data[i] = selfp->data[to - i - 1];
+                selfp->data[i + from] = selfp->data[to - i - 1];
                 selfp->data[to - i - 1] = tmp_data;
         }
 
