@@ -29,7 +29,7 @@
 #include "cetypes.h"
 #include "cestring.h"
 
-#define CE_STRING_INITIAL(x) selfp = x;
+#define CE_STRING_INITIAL() selfp = self;
 
 /* a pointer for cestring */
 struct _CeStringP {
@@ -48,11 +48,11 @@ CeString * ce_string_new(void)
 {
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
 
-        if(selfp == NULL){
+        if(selfp == NULL) {
                 selfp  = (CeStringP *) malloc( sizeof(CeStringP) );        
         }
 
-        CE_STRING_INITIAL(self);
+        CE_STRING_INITIAL();
         //selfp = self;
 
         selfp->data = NULL;
@@ -65,7 +65,7 @@ CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
         CeInt i = 0;
         CeInt new_len = strlen(str);
 
-        CE_STRING_INITIAL(self);
+        CE_STRING_INITIAL();
 //        selfp = self;
         
         /* Free the CeString Object first */
