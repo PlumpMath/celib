@@ -148,7 +148,7 @@ CeString * ce_string_reverse_byrange(CeString *self, CeInt from, CeInt to)
         }
 
         CeInt i = 0;
-        CeInt tmp_len = (to - from) / 2;
+        CeInt tmp_len = (to - from + 1) / 2;
         CeUChar tmp_data;
 
         for(; i < tmp_len; i++) {
