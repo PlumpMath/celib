@@ -216,7 +216,7 @@ CeString * ce_string_tolower_inrange(CeString *self, const CeInt start, const Ce
 {
         CE_STRING_INITIAL();
 
-        CeInt i = start;
+        CeInt i = (start > 0) ? (start - 1) : (start + 1);
 
         for (; i <= end; i++) {
                 selfp->data[i] = tolower(selfp->data[i]);
