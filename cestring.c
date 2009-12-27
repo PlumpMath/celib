@@ -53,7 +53,6 @@ CeString * ce_string_new(void)
         }
 
         CE_STRING_INITIAL();
-        //selfp = self;
 
         selfp->data = NULL;
         selfp->len = 0;
@@ -66,7 +65,6 @@ CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
         CeInt new_len = strlen(str);
 
         CE_STRING_INITIAL();
-//        selfp = self;
         
         /* Free the CeString Object first */
         if(0 != selfp->len) {
@@ -85,19 +83,17 @@ CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
 
 CeUChar * ce_string_get_data(CeString *self)
 {
-        selfp = self;
-        return (selfp->data);
+        return (self->data);
 }
 
 CeInt ce_string_get_length(CeString *self)
 {
-        selfp = self;
-        return (selfp->len);
+        return (self->len);
 }
 
 CeString * ce_string_reverse(CeString *self)
 {
-        selfp = self;
+        CE_STRING_INITIAL();
 
         if ( 1 == selfp->len) {
                 return self;
@@ -118,8 +114,9 @@ CeString * ce_string_reverse(CeString *self)
 
 CeString * ce_string_toupper(CeString *self)
 {
-        selfp = self;
         CeInt i = 0;
+
+        CE_STRING_INITIAL();
 
         for (; i < selfp->len; i++) {
                 selfp->data[i] = toupper(selfp->data[i]);
@@ -131,6 +128,8 @@ CeString * ce_string_toupper(CeString *self)
 CeString * ce_string_tolower(CeString *self)
 {
         CeInt i = 0;
+
+        CE_STRING_INITIAL();
 
         for (; i < selfp->len; i++) {
                 selfp->data[i] = tolower(selfp->data[i]);
