@@ -161,7 +161,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
         start += ( start > 0 ) ? (-1) : (length);
         end   += ( end   > 0 ) ? (-1) : (length);
 
-        /* If start gratter than end, we need to change them */
+        /* If start gratter than end, we need to swap them */
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
@@ -206,7 +206,7 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
         start += ( start > 0 ) ? (-1) : (self->len);
         end   += ( end   > 0 ) ? (-1) : (self->len);
 
-        /* If start gratter than end, we need to change them */
+        /* If start gratter than end, we need to swap them */
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
@@ -249,7 +249,7 @@ CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
         start += ( start > 0 ) ? (-1) : (self->len);
         end   += ( end   > 0 ) ? (-1) : (self->len);
 
-        /* If start gratter than end, we need to change them */
+        /* If start gratter than end, we need to swap them */
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
@@ -283,7 +283,7 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
         start += ( start > 0 ) ? (-1) : (self->len);
         end   += ( end   > 0 ) ? (-1) : (self->len);
 
-        /* If start gratter than end, we need to change them */
+        /* If start gratter than end, we need to swap them */
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
@@ -323,7 +323,7 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
         start += ( start > 0 ) ? (-1) : (self->len);
         end   += ( end   > 0 ) ? (-1) : (self->len);
 
-        /* If start gratter than end, we need to change them */
+        /* If start gratter than end, we need to swap them */
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
@@ -359,7 +359,7 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
         start += ( start > 0 ) ? (-1) : (self->len);
         end   += ( end   > 0 ) ? (-1) : (self->len);
 
-        /* If start gratter than end, we need to change them */
+        /* If start gratter than end, we need to swap them */
         if ( start > end ) {
                 ce_swap_ceint(&start, &end);
         }
