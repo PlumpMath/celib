@@ -226,11 +226,35 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
  * 
  * @param self 		The CeString Object
  * 
- * @return 			The CeString Object
+ * @return 			The length of CeString Object
  */
 CeInt ce_string_get_length(CeString *self)
 {
         return (self->len);
+}
+
+/* --------------------------------------------------------------------------- */
+/** 
+ * Get the length of CeString Object in range
+ * 
+ * @param self 		The CeString Object
+ * @param start 	The first char is 1, the second is 2, blah blah blah.
+ * @param end 		The last char is -1 or the length of String Object
+ * 
+ * @return 			The length of CeString Object in range
+ */
+CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
+{
+        /* Reset start and end variables */
+        start += ( start > 0 ) ? (-1) : (self->len);
+        end   += ( end   > 0 ) ? (-1) : (self->len);
+
+        /* If start gratter than end, we need to change them */
+        if ( start > end ) {
+                ce_swap_ceint(&start, &end);
+        }
+
+        return (end - start + 1);
 }
 
 /* --------------------------------------------------------------------------- */

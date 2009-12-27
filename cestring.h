@@ -43,6 +43,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
 CeUChar  * ce_string_get_data(CeString *self);
 CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end);
 CeInt      ce_string_get_length(CeString *self);
+CeInt      ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end);
 CeString * ce_string_reverse(CeString *self);
 CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end);
 CeString * ce_string_toupper(CeString *self);
