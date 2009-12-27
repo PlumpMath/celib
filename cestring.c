@@ -97,7 +97,7 @@ CeString * ce_string_reverse(CeString *self)
         }
 
         CeInt i = 0;
-        CeInt tmp_len = self->len / 2;
+        CeInt tmp_len = selfp->len / 2;
         CeUChar tmp_data;
 
         for(; i < tmp_len; i++) {
