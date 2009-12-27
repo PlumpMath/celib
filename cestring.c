@@ -74,7 +74,7 @@ CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeI
 {
         CeString *self  = ce_string_new();
 
-        ce_string_set_data_inrange(self, start, end);
+        ce_string_set_data_inrange(self, data, start, end);
 
         return self;
 }
