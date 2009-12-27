@@ -82,6 +82,57 @@ CeUChar * ce_string_get_data(CeString *self)
         return (selfp->data);
 }
 
+CeInt ce_string_get_length(CeString *self)
+{
+        selfp = self;
+        return (selfp->len);
+}
+
+CeString * ce_string_reverse(CeString *self)
+{
+        selfp = self;
+
+        if ( 1 == selfp->len) {
+                return self;
+        }
+
+        CeInt i = 0;
+        CeInt tmp_len = self->len / 2;
+        CeUChar tmp_data;
+
+        for(; i < tmp_len; i++) {
+                tmp_data = selfp->data[i];
+                selfp->data[i] = selfp->data[selfp->len - i - 1];
+                selfp->data[selfp->len - i - 1] = tmp_data;
+        }
+
+        return self;
+}
+
+CeString * ce_string_toupper(CeString *self)
+{
+        selfp = self;
+        CeInt i = 0;
+
+        for (; i < selfp->len; i++) {
+                selfp->data[i] = toupper(selfp->data[i]);
+        }
+
+        return self;
+}
+
+CeString * ce_string_tolower(CeString *self)
+{
+        CeInt i = 0;
+
+        for (; i < selfp->len; i++) {
+                selfp->data[i] = tolower(selfp->data[i]);
+        }
+
+        return self;
+}
+
+
 
 
 /* end of cestring.c */

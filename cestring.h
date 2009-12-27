@@ -36,6 +36,10 @@ typedef struct _CeString CeString;
 CeString * ce_string_new(void);
 CeInt    * ce_string_set_data(CeString *self, const CeUChar *str);
 CeUChar  * ce_string_get_data(CeString *self);
+CeInt      ce_string_get_length(CeString *self);
+CeString * ce_string_reverse(CeString *self);
+CeString * ce_string_toupper(CeString *self);
+CeString * ce_string_tolower(CeString *self);
 
 
 
