@@ -26,8 +26,9 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "cetypes.h"
-#include "cestring.h"
+//#include "cetypes.h"
+//#include "cestring.h"
+#include "celib.h"
 
 
 /* a pointer for cestring */
