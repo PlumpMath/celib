@@ -36,7 +36,7 @@ struct _CeString_Pointer {
 };
 typedef struct _CeString_Pointer CeString_Pointer;
 
-static CeString_Pointer *selfp;
+CeString_Pointer *selfp;
 
 /** 
  * just initail the CeString Object
