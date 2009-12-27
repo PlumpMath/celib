@@ -52,7 +52,7 @@ CeString * ce_string_new(void)
                 selfp  = (CeStringP *) malloc( sizeof(CeStringP) );        
         }
 
-        CE_STRING_INITIAL(selfp);
+        CE_STRING_INITIAL(self);
         //selfp = self;
 
         selfp->data = NULL;
@@ -64,7 +64,9 @@ CeInt * ce_string_set_data(CeString *self, const CeUChar *str)
 {
         CeInt i = 0;
         CeInt new_len = strlen(str);
-        selfp = self;
+
+        CE_STRING_INITIAL(self);
+//        selfp = self;
         
         /* Free the CeString Object first */
         if(0 != selfp->len) {
