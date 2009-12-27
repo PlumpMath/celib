@@ -46,7 +46,7 @@ static CeStringP *selfp;
  * Initial the CeString Object without setting any data
  * 
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_new(void)
 {
@@ -68,9 +68,9 @@ CeString * ce_string_new(void)
 /** 
  * Initial the CeString Object and set the data and length
  * 
- * @param data 		A String Object
+ * @param data      A String Object
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_new_with_data(const CeUChar *data)
 {
@@ -83,11 +83,11 @@ CeString * ce_string_new_with_data(const CeUChar *data)
 /** 
  * Initial the CeString Object and set the data in range
  * 
- * @param data		A String Object
- * @param start 	The first char is 1, the second is 2, blah blah blah.
- * @param end 		The last char is -1 or the length of String Object
+ * @param data      A String Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeInt end)
 {
@@ -100,7 +100,7 @@ CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeI
 /** 
  * Totally free the CeString Object
  * 
- * @param 			The CeString object
+ * @param self      The CeString Object
  */
 void ce_string_delete(CeString *self)
 {
@@ -115,7 +115,7 @@ void ce_string_delete(CeString *self)
 /** 
  * Clear data and length in CeString Object
  * 
- * @param self 		The CeString Object
+ * @param self      The CeString Object
  */
 void ce_string_clear(CeString *self)
 {
@@ -130,10 +130,10 @@ void ce_string_clear(CeString *self)
 /** 
  * Setting the data in CeString Object
  * 
- * @param self 		The CeString Object
- * @param data 		A string that you want to put in CeString Object 
+ * @param self      The CeString Object
+ * @param data      A string that you want to put in CeString Object 
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_set_data(CeString *self, const CeUChar *data)
 {
@@ -144,12 +144,12 @@ CeString * ce_string_set_data(CeString *self, const CeUChar *data)
 /** 
  * Setting the data in range in CeString Object
  * 
- * @param self 		The CeString Object
- * @param data 		A String Object
- * @param start 	The first char is 1, the second is 2, blah blah blah.
- * @param end 		The last char is -1 or the length of String Object
+ * @param self      The CeString Object
+ * @param data      A String Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt start, CeInt end)
 {
@@ -188,9 +188,9 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
 /** 
  * Get the data of CeString Object
  * 
- * @param self 		The CeString Object
+ * @param self      The CeString Object
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeUChar * ce_string_get_data(CeString *self)
 {
@@ -224,9 +224,9 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
 /** 
  * Get the length of CeString Object
  * 
- * @param self 		The CeString Object
+ * @param self      The CeString Object
  * 
- * @return 			The length of CeString Object
+ * @return          The length of CeString Object
  */
 CeInt ce_string_get_length(CeString *self)
 {
@@ -237,11 +237,11 @@ CeInt ce_string_get_length(CeString *self)
 /** 
  * Get the length of CeString Object in range
  * 
- * @param self 		The CeString Object
- * @param start 	The first char is 1, the second is 2, blah blah blah.
- * @param end 		The last char is -1 or the length of String Object
+ * @param self　　　　The CeString Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
  * 
- * @return 			The length of CeString Object in range
+ * @return          The length of CeString Object in range
  */
 CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
 {
@@ -261,9 +261,9 @@ CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
 /** 
  * Reverse the data in CeString Object
  * 
- * @param self 		The CeString Object
+ * @param self      The CeString Object
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_reverse(CeString *self)
 {
@@ -305,9 +305,9 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
 /** 
  * Make all the cahracters in CeString object in uppercase
  * 
- * @param self 		The CeString Object
+ * @param self      The CeString Object
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_toupper(CeString *self)
 {
@@ -341,9 +341,9 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
 /** 
  * Make all the cahracters in CeString object in lowercase
  * 
- * @param self 		The CeString Object
+ * @param self      The CeString Object
  * 
- * @return 			The CeString Object
+ * @return          The CeString Object
  */
 CeString * ce_string_tolower(CeString *self)
 {
