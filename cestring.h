@@ -34,6 +34,7 @@ typedef struct _CeString CeString;
 
 /* Declare Public Method */
 CeString * ce_string_new(void);
+CeString * ce_string_new_with_data(const CeUChar *data);
 void       ce_string_delete(CeString *self);
 void       ce_string_free(CeString *self);
 CeInt    * ce_string_set_data(CeString *self, const CeUChar *str);

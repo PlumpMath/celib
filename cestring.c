@@ -61,6 +61,16 @@ CeString * ce_string_new(void)
         return self;
 }
 
+CeString * ce_string_new_with_data(const CeUChar *data)
+{
+        CeString *self  = ce_string_new();
+
+        ce_string_set_data(self, data);
+        
+        return self;
+}
+
+
 /** 
  * Totally free the CeString Object
  * 
