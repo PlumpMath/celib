@@ -438,7 +438,7 @@ CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, C
  *                  0 : self->data == data
  *                 -1 : self->data >  data
  */
-CeInt ce_string_compare_with_data(CeString *self, CeUChar *data)
+CeInt ce_string_compare_data(CeString *self, CeUChar *data)
 {
         return strcmp(self->data, data);
 }
@@ -455,7 +455,7 @@ CeInt ce_string_compare_with_data(CeString *self, CeUChar *data)
  *                  0 : self->data == data
  *                 -1 : self->data >  data
  */
-CeInt ce_string_compare_with_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
 {
         CeString *test_data = ce_string_new_with_data_inrange(data, start, end);
         CeInt resault = strcmp(ce_string_get_data_inrange(self, start, end), test_data->data);
