@@ -151,7 +151,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt
 {
         CE_STRING_INITIAL();
 
-        CeInt length = strlen(str);
+        CeInt length = strlen(data);
 
         /* Reset start and end variables */
         start += ( start > 0 ) ? (-1) : (length);
