@@ -129,7 +129,7 @@ void ce_string_clear(CeString *self)
  * 
  * @return          The CeString Object
  */
-inline CeString * ce_string_set_data(CeString *self, const CeUChar *data)
+CeString * ce_string_set_data(CeString *self, const CeUChar *data)
 {
         return ce_string_set_data_inrange(self, data, 1, -1);
 }
@@ -371,6 +371,22 @@ CeInt ce_string_compare(const CeString *selfA, const CeString *selfB)
 {
         return strcmp(selfA->data, selfB->data);
 }
+
+/** 
+ * Compare the data in CeString Object with another String Object
+ * 
+ * @param selfA     A CeString Object
+ * @param data      A String   Object
+ * 
+ * @return          1 : self->data <  data
+ *                  0 : self->data == data
+ *                 -1 : self->data >  data
+ */
+CeInt ce_string_compare_with_data(const CeString *self, const CeUChar *data)
+{
+        return strcmp(selfA->data, data);
+}
+
 
 
 /* end of cestring.c */
