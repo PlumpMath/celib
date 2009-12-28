@@ -147,7 +147,7 @@ CeString * ce_string_set_data(CeString *self, const CeUChar *data)
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt start, CeInt end)
+CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
 
@@ -173,7 +173,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
         selfp->data = (CeUChar *) malloc( sizeof(CeUChar) * (length + 1) );
         
         /* Now let's copy new string to our CeString */
-        memcpy(selfp->data, str + start, length);
+        memcpy(selfp->data, data + start, length);
         selfp->data[length] = '\0';   /* end of line */
 
         return self;
@@ -507,7 +507,5 @@ CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, 
                 return CE_FALSE;
         }
 }
-
-
 
 /* end of cestring.c */

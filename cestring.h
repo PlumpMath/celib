@@ -39,7 +39,7 @@ CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeI
 void       ce_string_delete(CeString *self);
 void       ce_string_clear(CeString *self);
 CeString * ce_string_set_data(CeString *self, const CeUChar *data);
-CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt start, CeInt end);
+CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt start, CeInt end);
 CeUChar  * ce_string_get_data(CeString *self);
 CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end);
 CeInt      ce_string_get_length(CeString *self);
