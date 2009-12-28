@@ -104,8 +104,9 @@ CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeI
 void ce_string_delete(CeString *self)
 {
         CE_STRING_INITIAL();
-
-        free(self->data);
+        if ( !self->data ) {
+                free(self->data);
+        }
         selfp->len = 0;
         free(self);
 }
