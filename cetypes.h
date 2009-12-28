@@ -35,10 +35,10 @@ typedef short  CeBool;
 typedef long   CeLong;
 typedef short  CeShort;
 
-typedef unsigned int    CeUsInt;
+typedef unsigned int    CeUInt;
 typedef unsigned char   CeUChar;
-typedef unsigned long   CeUsLong;
-typedef unsigned short  CeUsShort;
+typedef unsigned long   CeULong;
+typedef unsigned short  CeUShort;
 
 typedef float   CeFloat;
 typedef double  CeDouble;
