@@ -129,7 +129,7 @@ void ce_string_clear(CeString *self)
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_set_data(CeString *self, const CeUChar *data)
+inline CeString * ce_string_set_data(CeString *self, const CeUChar *data)
 {
         return ce_string_set_data_inrange(self, data, 1, -1);
 }
