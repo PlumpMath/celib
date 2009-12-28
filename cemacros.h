@@ -24,6 +24,11 @@
 #ifndef _CE_MACROS_H
 #define _CE_MACROS_H
 
+
+/* The true or false value for CeBool */
+#define CE_FALSE 0
+#define CE_TRUE  1
+
 /* Convert str to string */
 #define _CE_STR(str) #str
 #define CE_STR(str) _CC_STR(str)

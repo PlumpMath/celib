@@ -54,8 +54,8 @@ CeInt      ce_string_compare(CeString *selfA, CeString *selfB);
 CeInt      ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end);
 CeInt      ce_string_compare_with_data(CeString *self, CeUChar *data);
 CeInt      ce_string_compare_with_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
-
-                        
+CeBool     ce_string_isequal(CeString *selfA, CeString *selfB);
+CeBool     ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end);
 
 
 #endif  /* _CE_STRING_H_ */

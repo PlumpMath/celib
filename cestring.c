@@ -30,15 +30,17 @@
 #include "cestring.h"
 #include "ceswap.h"
 
-/* a pointer for cestring */
+/* Make another CeString Object but it's child is not constant. */
 struct _CeStringP {
        CeUChar *data;
        CeInt    len;     /**< string length excluding trailing '\0' */
 };
 typedef struct _CeStringP CeStringP;
 
+/* Because the child in CeString is constant, we need to
+ * use pointer to change the CeString
+ */
 static CeStringP *selfp;
-
 #define CE_STRING_INITIAL() selfp = (CeStringP *) self;
 
 /** 
@@ -460,6 +462,51 @@ CeInt ce_string_compare_with_data_inrange(CeString *self, CeUChar *data, CeInt s
 
         return resault;
 }
+
+/** 
+ * Test if two CeString Object is equal or not
+ * 
+ * @param selfA     A CeString Object
+ * @param selfB     A CeString Object
+ * 
+ * @return          if equal : CE_TRUE
+ *                  else     : CE_FALSE
+ */
+CeBool ce_string_isequal(CeString *selfA, CeString *selfB)
+{
+        int resault = ce_string_compare(selfA, selfB);
+
+        if ( !resault ) {
+                return CE_TRUE;
+        }
+        else {
+                return CE_FALSE;
+        }
+}
+
+/** 
+ * Test if two CeString Object is equal or not in range
+ * 
+ * @param selfA     A CeString Object
+ * @param selfB     A CeString Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          if equal : CE_TRUE
+ *                  else     : CE_FALSE
+ */
+CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
+{
+        int resault = ce_string_compare_inrange(selfA, selfB, start, end);
+
+        if ( !resault ) {
+                return CE_TRUE;
+        }
+        else {
+                return CE_FALSE;
+        }
+}
+
 
 
 /* end of cestring.c */
