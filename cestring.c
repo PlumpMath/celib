@@ -29,6 +29,7 @@
 #include "cetypes.h"
 #include "cestring.h"
 #include "ceswap.h"
+#include "cemacros.h"
 
 /* Make another CeString Object but it's child is not constant. */
 struct _CeStringP {
