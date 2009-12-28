@@ -50,15 +50,17 @@ CeString * ce_string_toupper(CeString *self);
 CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end);
 CeString * ce_string_tolower(CeString *self);
 CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
+CeInt      ce_string_compare(const CeString *selfA, const CeString *selfB);
+                        
 
 
 /* Use macro instead of function by deafault. */
-#define ce_string_set_data(self, data) ce_string_set_data_inrange(self, data, 1, -1)
-#define ce_string_get_data(self)       self->data
-#define ce_string_get_length(self)     self->len
-#define ce_string_reverse(self)        ce_string_reverse_inrange(self, 1, -1)
-#define ce_string_toupper(self)        ce_string_toupper_inrange(self, 1, -1)
-#define ce_string_tolower(self)        ce_string_tolower_inrange(self, 1, -1)
+/* #define ce_string_set_data(self, data) ce_string_set_data_inrange(self, data, 1, -1) */
+/* #define ce_string_get_data(self)       self->data */
+/* #define ce_string_get_length(self)     self->len */
+/* #define ce_string_reverse(self)        ce_string_reverse_inrange(self, 1, -1) */
+/* #define ce_string_toupper(self)        ce_string_toupper_inrange(self, 1, -1) */
+/* #define ce_string_tolower(self)        ce_string_tolower_inrange(self, 1, -1) */
 
 
 

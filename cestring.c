@@ -107,7 +107,6 @@ void ce_string_delete(CeString *self)
         free(self);
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Clear data and length in CeString Object
  * 
@@ -357,5 +356,21 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 
         return self;
 }
+
+/** 
+ * Compare two CeString Object 
+ * 
+ * @param selfA     A CeString Object
+ * @param selfB     A CeString Object
+ * 
+ * @return          1 : selfA <  selfB
+ *                  0 : selfA == selfB
+ *                 -1 : selfA >  selfB
+ */
+CeInt ce_string_compare(const CeString *selfA, const CeString *selfB)
+{
+        return strcmp(selfA->data, selfB->data);
+}
+
 
 /* end of cestring.c */
