@@ -508,4 +508,21 @@ CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, 
         }
 }
 
+/** 
+ * Copy the second CeString Object to the first one
+ * 
+ * @param selfA     A CeString Object
+ * @param selfB     A CeString Object
+ * 
+ * @return          The CeString Object
+ */
+CeString * ce_string_copy(CeString *dst, CeString *src)
+{
+        ce_string_delete(dst);
+        dst = ce_string_set_data(src->data);
+
+        return dst;
+}
+
+
 /* end of cestring.c */
