@@ -384,7 +384,7 @@ CeInt ce_string_compare(const CeString *selfA, const CeString *selfB)
  */
 CeInt ce_string_compare_with_data(const CeString *self, const CeUChar *data)
 {
-        return strcmp(selfA->data, data);
+        return strcmp(self->data, data);
 }
 
 
