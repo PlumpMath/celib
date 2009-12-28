@@ -54,11 +54,11 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
 
 /* use macro instead of function by deafault */
 #define ce_string_set_data(self, data) ce_string_set_data_inrange(self, data, 1, -1)
-#define ce_string_get_data(self)   self->data
-#define ce_string_get_length(self) self->length
-#define ce_string_reverse(self)    ce_string_reverse_inrange(self, 1, -1)
-#define ce_string_toupper(self)    ce_string_toupper_inrange(self, 1, -1)
-#define ce_string_tolower(self)    ce_string_tolower_inrange(self, 1, -1)
+#define ce_string_get_data(self)       self->data
+#define ce_string_get_length(self)     self->length
+#define ce_string_reverse(self)        ce_string_reverse_inrange(self, 1, -1)
+#define ce_string_toupper(self)        ce_string_toupper_inrange(self, 1, -1)
+#define ce_string_tolower(self)        ce_string_tolower_inrange(self, 1, -1)
 
 
 
