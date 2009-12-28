@@ -52,4 +52,7 @@ CeString * ce_string_tolower(CeString *self);
 CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
 
 
+/* use macro instead of function by deafault */
+
+
 #endif  /* _CE_STRING_H_ */
