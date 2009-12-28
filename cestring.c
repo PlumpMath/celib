@@ -518,7 +518,7 @@ CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, 
  */
 CeString * ce_string_copy(CeString *dst, CeString *src)
 {
-        ce_string_delete(dst);
+        ce_string_clear(dst);
         ce_string_set_data(dst, src->data);
 
         return dst;
