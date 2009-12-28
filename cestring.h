@@ -52,7 +52,7 @@ CeString * ce_string_tolower(CeString *self);
 CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
 
 
-/* use macro instead of function by deafault */
+/* Use macro instead of function by deafault. */
 #define ce_string_set_data(self, data) ce_string_set_data_inrange(self, data, 1, -1)
 #define ce_string_get_data(self)       self->data
 #define ce_string_get_length(self)     self->len

@@ -41,7 +41,6 @@ static CeStringP *selfp;
 
 #define CE_STRING_INITIAL() selfp = (CeStringP *) self;
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Initial the CeString Object without setting any data
  * 
@@ -64,7 +63,6 @@ CeString * ce_string_new(void)
         return self;
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Initial the CeString Object and set the data and length
  * 
@@ -79,7 +77,6 @@ CeString * ce_string_new_with_data(const CeUChar *data)
         return ce_string_set_data(self, data);
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Initial the CeString Object and set the data in range
  * 
@@ -96,7 +93,6 @@ CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeI
         return ce_string_set_data_inrange(self, data, start, end);
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Totally free the CeString Object
  * 
@@ -126,7 +122,6 @@ void ce_string_clear(CeString *self)
         selfp->len = 0;
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Setting the data in CeString Object
  * 
@@ -140,7 +135,6 @@ CeString * ce_string_set_data(CeString *self, const CeUChar *data)
         return ce_string_set_data_inrange(self, data, 1, -1);
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Setting the data in range in CeString Object
  * 
@@ -184,7 +178,6 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *str, CeInt 
 }
 
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Get the data of CeString Object
  * 
@@ -220,7 +213,6 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
         return data;
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Get the length of CeString Object
  * 
@@ -233,7 +225,6 @@ CeInt ce_string_get_length(CeString *self)
         return (self->len);
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Get the length of CeString Object in range
  * 
@@ -257,7 +248,6 @@ CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
         return (end - start + 1);
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Reverse the data in CeString Object
  * 
@@ -270,7 +260,6 @@ CeString * ce_string_reverse(CeString *self)
         return ce_string_reverse_inrange(self, 1, -1);
 }
 
-/* --------------------------------------------------------------------------- */
 CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
@@ -301,7 +290,6 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
         return self;
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Make all the cahracters in CeString object in uppercase
  * 
@@ -314,7 +302,6 @@ CeString * ce_string_toupper(CeString *self)
         return ce_string_toupper_inrange(self, 1, -1);
 }
 
-/* --------------------------------------------------------------------------- */
 CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
@@ -337,7 +324,6 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
         return self;
 }
 
-/* --------------------------------------------------------------------------- */
 /** 
  * Make all the cahracters in CeString object in lowercase
  * 
@@ -350,7 +336,6 @@ CeString * ce_string_tolower(CeString *self)
         return ce_string_tolower_inrange(self, 1, -1);
 }
 
-/* --------------------------------------------------------------------------- */
 CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 {
         CE_STRING_INITIAL();
