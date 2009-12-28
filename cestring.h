@@ -50,8 +50,11 @@ CeString * ce_string_toupper(CeString *self);
 CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end);
 CeString * ce_string_tolower(CeString *self);
 CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
-CeInt      ce_string_compare(const CeString *selfA, const CeString *selfB);
-CeInt      ce_string_compare_with_data(const CeString *self, const CeUChar *data);
+CeInt      ce_string_compare(CeString *selfA, CeString *selfB);
+CeInt      ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end);
+CeInt      ce_string_compare_with_data(CeString *self, CeUChar *data);
+CeInt      ce_string_compare_with_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
+
                         
 
 

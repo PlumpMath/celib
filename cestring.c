@@ -367,26 +367,64 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
  *                  0 : selfA == selfB
  *                 -1 : selfA >  selfB
  */
-CeInt ce_string_compare(const CeString *selfA, const CeString *selfB)
+CeInt ce_string_compare(CeString *selfA, CeString *selfB)
 {
         return strcmp(selfA->data, selfB->data);
 }
 
 /** 
- * Compare the data in CeString Object with another String Object
+ * Compare two CeString Object in range
  * 
  * @param selfA     A CeString Object
+ * @param selfB     A CeString Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          1 : selfA <  selfB
+ *                  0 : selfA == selfB
+ *                 -1 : selfA >  selfB
+ */
+CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
+{
+        return strcmp(ce_string_get_data_inrange(selfA, start, end),
+                      ce_string_get_data_inrange(selfB, start, end));
+}
+
+/** 
+ * Compare the data in CeString Object with another String Object
+ * 
+ * @param self      A CeString Object
  * @param data      A String   Object
  * 
  * @return          1 : self->data <  data
  *                  0 : self->data == data
  *                 -1 : self->data >  data
  */
-CeInt ce_string_compare_with_data(const CeString *self, const CeUChar *data)
+CeInt ce_string_compare_with_data(CeString *self, CeUChar *data)
 {
         return strcmp(self->data, data);
 }
 
+/** 
+ * Compare the data in CeString Object with another String Object in range
+ * 
+ * @param self      A CeString Object
+ * @param data      A String   Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          1 : self->data <  data
+ *                  0 : self->data == data
+ *                 -1 : self->data >  data
+ */
+CeInt ce_string_compare_with_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+{
+        CeString *test_data = ce_string_new_with_data(data);
+        CeInt resault = strcmp(ce_string_get_data_inrange(self, start, end), test_data->data);
+        ce_string_delete(test_data);
+
+        return resault;
+}
 
 
 /* end of cestring.c */
