@@ -57,6 +57,7 @@ CeInt      ce_string_compare_with_data_inrange(CeString *self, CeUChar *data, Ce
 CeBool     ce_string_isequal(CeString *selfA, CeString *selfB);
 CeBool     ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end);
 CeString * ce_string_copy(CeString *dst, CeString *src);
+CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
 
 
 #endif  /* _CE_STRING_H_ */

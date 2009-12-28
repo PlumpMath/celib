@@ -511,15 +511,30 @@ CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, 
 /** 
  * Copy the second CeString Object to the first one
  * 
- * @param selfA     A CeString Object
- * @param selfB     A CeString Object
+ * @param dst       A CeString Object
+ * @param src       A CeString Object
  * 
  * @return          The CeString Object
  */
 CeString * ce_string_copy(CeString *dst, CeString *src)
 {
+        return ce_string_copy_inrange(dst, src, 1, -1);
+}
+
+/** 
+ * Copy the second CeString Object to the first one in range
+ * 
+ * @param dst       A CeString Object
+ * @param src       A CeString Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          The CeString Object
+ */
+CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+{
         ce_string_clear(dst);
-        ce_string_set_data(dst, src->data);
+        ce_string_set_data_inrange(dst, src->data, start, end);
 
         return dst;
 }
