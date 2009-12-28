@@ -4,8 +4,6 @@ INCLUDE(FindPkgConfig)
 INCLUDE_DIRECTORIES(${celib_BINARY_DIR})
 SET(celib_SRCS cestring.c ceswap.c)
 ADD_LIBRARY(celib SHARED ${celib_SRCS})
-FIND_PATH(${celib_SRCS} /usr/include ../)
-
 ## Configured files##########################################################
 # Generate pkgconfig file
 if(NOT WIN32)
