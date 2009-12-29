@@ -59,6 +59,8 @@ CeBool     ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt sta
 CeString * ce_string_copy(CeString *dst, CeString *src);
 CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
 void       ce_string_swap(CeString *selfA, CeString *selfB);
+CeString * ce_string_concat(CeString *dst, CeString *src);
+CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
 CeString * ce_string_concat_data(CeString *self, CeUChar *data);
 CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
 

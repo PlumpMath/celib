@@ -513,6 +513,35 @@ void ce_string_swap(CeString *selfA, CeString *selfB)
 }
 
 /** 
+ * Concat two CeString Object
+ * 
+ * @param dst       A CeString Object
+ * @param src       A CeString Object
+ * 
+ * @return 
+ */
+CeString * ce_string_concat(CeString *dst, CeString *src)
+{
+        return ce_string_concat_data_inrange(dst, src->data, 1, -1);
+}
+
+/** 
+ * Concat two CeString Object in range.
+ * 
+ * @param dst       A CeString Object
+ * @param src       A CeString Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          The CeString Object
+ */
+CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+{
+        return ce_string_concat_data_inrange(dst, src->data, start, end);
+}
+
+
+/** 
  * Concat a data to CeString Object
  * 
  * @param self      A CeString Object
@@ -522,21 +551,19 @@ void ce_string_swap(CeString *selfA, CeString *selfB)
  */
 CeString * ce_string_concat_data(CeString *self, CeUChar *data)
 {
-        /* CeInt new_len = self->len + strlen(data); */
-        /* CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) ); */
-
-        /* /\* Copy old data to new one *\/ */
-        /* memcpy( new_data, self->data, self->len ); */
-        /* memcpy( new_data + self->len, data, strlen(data) ); */
-        /* new_data[new_len] = '\0';   /\* end of line *\/ */
-
-        /* ce_string_set_data(self, new_data); */
-
-        /* return self; */
         return ce_string_concat_data_inrange(self, data, 1, -1);
-
 }
 
+/** 
+ * Concat a data to CeString Object in range.
+ * 
+ * @param self      A CeString Object
+ * @param data      A String Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          The CeString Object
+ */
 CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
 {
         CeInt data_len = strlen(data);
