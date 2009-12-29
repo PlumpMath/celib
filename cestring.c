@@ -522,19 +522,40 @@ void ce_string_swap(CeString *selfA, CeString *selfB)
  */
 CeString * ce_string_concat_data(CeString *self, CeUChar *data)
 {
-        CE_STRING_INITIAL();
+        /* CeInt new_len = self->len + strlen(data); */
+        /* CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) ); */
 
-        CeInt new_len = self->len + strlen(data);
+        /* /\* Copy old data to new one *\/ */
+        /* memcpy( new_data, self->data, self->len ); */
+        /* memcpy( new_data + self->len, data, strlen(data) ); */
+        /* new_data[new_len] = '\0';   /\* end of line *\/ */
+
+        /* ce_string_set_data(self, new_data); */
+
+        /* return self; */
+        return ce_string_concat_data_inrange(self, data, 1, -1);
+
+}
+
+CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+{
+        CeInt data_len = strlen(data);
+        
+        CE_RANGE_INITIAL(start, end, data_len);
+
+        CeInt new_len = self->len + data_len;
         CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
-
+        CeInt data_cpy_len = end - start + 1;
+                
         /* Copy old data to new one */
-        memcpy( new_data, self->data, self->len );
-        memcpy( new_data + self->len, data, strlen(data) );
+        memcpy(new_data, self->data, self->len);
+        memcpy(new_data + self->len, data + start , data_cpy_len);
         new_data[new_len] = '\0';   /* end of line */
 
         ce_string_set_data(self, new_data);
 
         return self;
+
 }
 
 
