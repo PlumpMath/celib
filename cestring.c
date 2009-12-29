@@ -160,7 +160,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt
 
         /* If start gratter than end, we need to swap them */
         if ( start > end ) {
-                ce_swap_ceint(&start, &end);
+                ce_int_swap(&start, &end);
         }
 
         length = end - start + 1;
@@ -212,7 +212,7 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
 
         /* If start gratter than end, we need to swap them */
         if ( start > end ) {
-                ce_swap_ceint(&start, &end);
+                ce_int_swap(&start, &end);
         }
         
         CeInt length = end - start + 1;
@@ -253,7 +253,7 @@ CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
 
         /* If start gratter than end, we need to swap them */
         if ( start > end ) {
-                ce_swap_ceint(&start, &end);
+                ce_int_swap(&start, &end);
         }
 
         return (end - start + 1);
@@ -294,7 +294,7 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
 
         /* If start gratter than end, we need to swap them */
         if ( start > end ) {
-                ce_swap_ceint(&start, &end);
+                ce_int_swap(&start, &end);
         }
 
         CeInt i = 0;
@@ -341,7 +341,7 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
 
         /* If start gratter than end, we need to swap them */
         if ( start > end ) {
-                ce_swap_ceint(&start, &end);
+                ce_int_swap(&start, &end);
         }
 
         CeInt i = start;
@@ -384,7 +384,7 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
 
         /* If start gratter than end, we need to swap them */
         if ( start > end ) {
-                ce_swap_ceint(&start, &end);
+                ce_int_swap(&start, &end);
         }
         
         CeInt i = start;
@@ -539,6 +539,7 @@ CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeI
 
         return dst;
 }
+
 
 /** 
  * Swap two CeString Object
