@@ -512,4 +512,30 @@ void ce_string_swap(CeString *selfA, CeString *selfB)
 	selfB = (CeString * ) selfp;
 }
 
+/** 
+ * Concat a data to CeString Object
+ * 
+ * @param self      A CeString Object
+ * @param data      A String Object
+ * 
+ * @return          The CeString Object
+ */
+CeString * ce_string_concat_data(CeString *self, CeUChar *data)
+{
+        CE_STRING_INITIAL();
+
+        CeInt new_len = self->len + strlen(data);
+        CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
+
+        /* Copy old data to new one */
+        memcpy( new_data, self->data, self->len );
+        memcpy( new_data + self->len, data, strlen(data) );
+        new_data[length] = '\0';   /* end of line */
+
+        ce_string_set_data(self, new_data);
+
+        return self;
+}
+
+
 /* end of cestring.c */
