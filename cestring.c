@@ -134,6 +134,7 @@ void ce_string_clear(CeString *self)
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_set_data(CeString *self, const CeUChar *data)
 {
         return ce_string_set_data_inrange(self, data, 1, -1);
@@ -181,6 +182,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt
  * 
  * @return          The CeString Object
  */
+inline
 CeUChar * ce_string_get_data(CeString *self)
 {
         return (self->data);
@@ -217,6 +219,7 @@ CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
  * 
  * @return          The length of CeString Object
  */
+inline
 CeInt ce_string_get_length(CeString *self)
 {
         return (self->len);
@@ -245,6 +248,7 @@ CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_reverse(CeString *self)
 {
         return ce_string_reverse_inrange(self, 1, -1);
@@ -289,6 +293,7 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_toupper(CeString *self)
 {
         return ce_string_toupper_inrange(self, 1, -1);
@@ -325,6 +330,7 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_tolower(CeString *self)
 {
         return ce_string_tolower_inrange(self, 1, -1);
@@ -364,6 +370,7 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
  *                  0 : selfA == selfB
  *                 -1 : selfA >  selfB
  */
+inline
 CeInt ce_string_compare(CeString *selfA, CeString *selfB)
 {
         return strcmp(selfA->data, selfB->data);
@@ -381,6 +388,7 @@ CeInt ce_string_compare(CeString *selfA, CeString *selfB)
  *                  0 : selfA == selfB
  *                 -1 : selfA >  selfB
  */
+inline
 CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
 {
         return strcmp(ce_string_get_data_inrange(selfA, start, end),
@@ -397,6 +405,7 @@ CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, C
  *                  0 : self->data == data
  *                 -1 : self->data >  data
  */
+inline
 CeInt ce_string_compare_data(CeString *self, CeUChar *data)
 {
         return strcmp(self->data, data);
@@ -433,6 +442,7 @@ CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start,
  * @return          if equal : CE_TRUE
  *                  else     : CE_FALSE
  */
+inline
 CeBool ce_string_isequal(CeString *selfA, CeString *selfB)
 {
         int resault = ce_string_compare(selfA, selfB);
@@ -456,6 +466,7 @@ CeBool ce_string_isequal(CeString *selfA, CeString *selfB)
  * @return          if equal : CE_TRUE
  *                  else     : CE_FALSE
  */
+inline
 CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
 {
         int resault = ce_string_compare_inrange(selfA, selfB, start, end);
@@ -476,6 +487,7 @@ CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, 
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_copy(CeString *dst, CeString *src)
 {
         return ce_string_copy_inrange(dst, src, 1, -1);
@@ -506,6 +518,7 @@ CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeI
  * @param selfA     A CeString Object
  * @param selfB     A CeString Object
  */
+inline
 void ce_string_swap(CeString *selfA, CeString *selfB)
 {
 	selfp = (CeStringP *) selfA;
@@ -521,6 +534,7 @@ void ce_string_swap(CeString *selfA, CeString *selfB)
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_concat(CeString *dst, CeString *src)
 {
         return ce_string_concat_data_inrange(dst, src->data, 1, -1);
@@ -536,6 +550,7 @@ CeString * ce_string_concat(CeString *dst, CeString *src)
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
 {
         return ce_string_concat_data_inrange(dst, src->data, start, end);
@@ -550,6 +565,7 @@ CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, C
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_concat_data(CeString *self, CeUChar *data)
 {
         return ce_string_concat_data_inrange(self, data, 1, -1);
