@@ -540,6 +540,13 @@ CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeI
         return dst;
 }
 
+/** 
+ * Swap two CeString Object
+ * 
+ * @param selfA     A CeString Object
+ * @param selfB     A CeString Object
+ * 
+ */
 void ce_string_swap(CeString *selfA, CeString *selfB)
 {
 	selfp = (CeStringP *) selfA;
