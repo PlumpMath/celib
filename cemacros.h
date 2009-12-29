@@ -56,8 +56,6 @@
 #define CE_NOR(a, b)  ( ~( (a) | (b) ) )
 #define CE_NAND(a, b) ( ~( (a) & (b) ) )
 
-
-
 /* Initial the range */
 #define CE_RANGE_INITIAL(start, end, length)                          \
 		do {                                                          \

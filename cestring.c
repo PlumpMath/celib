@@ -44,7 +44,6 @@ typedef struct _CeStringP CeStringP;
 static CeStringP *selfp;
 #define CE_STRING_INITIAL() selfp = (CeStringP *) self;
         
-
 /** 
  * Initial the CeString Object without setting any data.
  * 
