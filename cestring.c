@@ -39,13 +39,13 @@ struct _CeStringP {
 typedef struct _CeStringP CeStringP;
 
 /* Because the child in CeString is constant, we need to
- * use pointer to change the CeString
+ * use pointer to change the CeString.
  */
 static CeStringP *selfp;
 #define CE_STRING_INITIAL() selfp = (CeStringP *) self;
 
 /** 
- * Initial the CeString Object without setting any data
+ * Initial the CeString Object without setting any data.
  * 
  * 
  * @return          The CeString Object
@@ -67,7 +67,7 @@ CeString * ce_string_new(void)
 }
 
 /** 
- * Initial the CeString Object and set the data and length
+ * Initial the CeString Object and set the data and length.
  * 
  * @param data      A String Object
  * 
@@ -81,11 +81,11 @@ CeString * ce_string_new_with_data(const CeUChar *data)
 }
 
 /** 
- * Initial the CeString Object and set the data in range
+ * Initial the CeString Object and set the data in range.
  * 
  * @param data      A String Object
  * @param start     The first char is 1, the second is 2, blah blah blah.
- * @param end       The last char is -1 or the length of String Object
+ * @param end       The last char is -1 or the length of String Object.
  * 
  * @return          The CeString Object
  */
@@ -97,7 +97,7 @@ CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeI
 }
 
 /** 
- * Totally free the CeString Object
+ * Totally free the CeString Object.
  * 
  * @param self      The CeString Object
  */
@@ -545,7 +545,6 @@ CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeI
  * 
  * @param selfA     A CeString Object
  * @param selfB     A CeString Object
- * 
  */
 void ce_string_swap(CeString *selfA, CeString *selfB)
 {
