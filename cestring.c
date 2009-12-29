@@ -571,18 +571,17 @@ CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt st
         CE_RANGE_INITIAL(start, end, data_len);
 
         CeInt new_len = self->len + data_len;
-        CeInt data_cpy_len = end - start + 1;
+        CeInt cpy_len = end - start + 1;
         CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
                 
         /* Copy old data to new one */
         memcpy(new_data, self->data, self->len);
-        memcpy(new_data + self->len, data + start , data_cpy_len);
+        memcpy(new_data + self->len, data + start , cpy_len);
         new_data[new_len] = '\0';   /* end of line */
 
         ce_string_set_data(self, new_data);
 
         return self;
-
 }
 
 /* end of cestring.c */
