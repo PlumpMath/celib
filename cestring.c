@@ -530,7 +530,7 @@ CeString * ce_string_concat_data(CeString *self, CeUChar *data)
         /* Copy old data to new one */
         memcpy( new_data, self->data, self->len );
         memcpy( new_data + self->len, data, strlen(data) );
-        new_data[length] = '\0';   /* end of line */
+        new_data[new_len] = '\0';   /* end of line */
 
         ce_string_set_data(self, new_data);
 
