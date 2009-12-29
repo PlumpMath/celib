@@ -551,7 +551,7 @@ void ce_string_swap(CeString *selfA, CeString *selfB)
 {
 	selfp = (CeStringP *) selfA;
 	selfA = selfB;
-	selfB = selfp;
+	selfB = (CeString * ) selfp;
 }
 
 /* end of cestring.c */
