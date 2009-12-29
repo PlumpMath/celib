@@ -31,6 +31,9 @@ void  ce_short_swap(CeShort  *p1, CeShort  *p2);
 void  ce_float_swap(CeFloat  *p1, CeFloat  *p2);
 void  ce_double_swap(CeDouble *p1, CeDouble *p2);
 
+void  ce_uint_swap (CeUInt    *p1, CeUInt    *p2);
+void  ce_uchar_swap(CeUChar   *p1, CeUChar   *p2);
+void  ce_ushort_swap(CeUShort  *p1, CeUShort  *p2);
 
 #endif /* _CE_SWAP_H */
 

@@ -59,4 +59,23 @@ inline void ce_double_swap(CeDouble *p1, CeDouble *p2)
 }
 
 
+/* CeUInt */
+inline void  ce_uint_swap(CeUInt *p1, CeUInt *p2)
+{
+        CeUInt CE_SWAP_CORE;
+}
+
+/* CeUChar */
+inline void  ce_uchar_swap(CeUChar *p1, CeUChar *p2)
+{
+        CeUChar CE_SWAP_CORE;
+}
+
+/* CeUShort */
+inline void  ce_ushort_swap(CeUShort *p1, CeUShort *p2)
+{
+        CeUShort CE_SWAP_CORE;
+}
+
+
 /* end of ceswap.c */
