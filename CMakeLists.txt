@@ -22,10 +22,10 @@ SET (IDGEN_BIN_SUBDIR     ${DEFAULT_BIN_SUBDIR}     CACHE STRING "Subdirectory w
 
 # mark *_SUBDIR variables as advanced as this is not something
 # that an average user would use
-MARK_AS_ADVANCED (IDGEN_BIN_SUBDIR)
+MARK_AS_ADVANCED (celib_BIN_SUBDIR)
 
 # full paths for the installation
-SET (IDGEN_BIN_DIR     ${IDGEN_BIN_SUBDIR})
+SET (IDGEN_BIN_DIR     ${celib_BIN_SUBDIR})
 
 ###########################################################
 # process subdirs
@@ -36,8 +36,6 @@ SUBDIRS(src)
 # install stuff
 
 #INSTALL (TARGETS idgen RUNTIME DESTINATION bin)
-
-
 
 
 ## Configured files##########################################################
