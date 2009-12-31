@@ -35,7 +35,7 @@ SUBDIRS(src)
 #############################################################
 # install stuff
 
-
+INCLUDE_DIRECTORIES(${celib_BINARY_DIR})
 
 ## Configured files##########################################################
 # Generate pkgconfig file
