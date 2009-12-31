@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$cestring_8c.html#ab8ed190b099fe44e65cb80af2bf71b4f" title="Copy the second CeString Object to the first one in range." alt="" coords="172,32,343,61"/>
-<area shape="rect" id="node5" href="$cestring_8c.html#a7032f4a26b59a80c93f8944f91ec10f9" title="Clear data and length in CeString Object." alt="" coords="432,5,549,35"/>
-<area shape="rect" id="node7" href="$cestring_8c.html#a5c2a65b88204cb5b8c59f735cac626f9" title="Setting the data in range in CeString Object." alt="" coords="392,59,589,88"/>
-</map>

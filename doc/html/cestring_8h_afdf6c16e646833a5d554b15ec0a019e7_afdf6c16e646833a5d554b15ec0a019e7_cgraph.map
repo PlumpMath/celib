@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$cestring_8c_a196ce00972d7caa5c264a2ab2cb3b10b.html#a196ce00972d7caa5c264a2ab2cb3b10b" title="Totally free the CeString Object." alt="" coords="343,5,468,35"/>
-<area shape="rect" id="node5" href="$cestring_8c_af96303ecd1967b0cc3840ec9f996711e.html#af96303ecd1967b0cc3840ec9f996711e" title="Get the data of CeString Object in range." alt="" coords="307,59,504,88"/>
-<area shape="rect" id="node7" href="$cestring_8c_a6e5ca12697c2131bbaa66bbc7bfd7ae5.html#a6e5ca12697c2131bbaa66bbc7bfd7ae5" title="Initial the CeString Object and set the data in range." alt="" coords="288,112,523,141"/>
-<area shape="rect" id="node9" href="$cestring_8c_a4bb703271a09a5e293dc117d88a70859.html#a4bb703271a09a5e293dc117d88a70859" title="Initial the CeString Object without setting any data." alt="" coords="613,85,725,115"/>
-<area shape="rect" id="node11" href="$cestring_8c_a5c2a65b88204cb5b8c59f735cac626f9.html#a5c2a65b88204cb5b8c59f735cac626f9" title="Setting the data in range in CeString Object." alt="" coords="571,139,768,168"/>
-</map>
