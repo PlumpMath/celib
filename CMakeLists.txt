@@ -15,7 +15,7 @@ SET(CMAKE_COLOR_MAKEFILE ON)
 
 #############################################################
 # user-changeable settings which can be used to customize
-# layout of ID Generator installation
+# layout of celib installation
 # (default values are platform-specific)
 
 SET (IDGEN_BIN_SUBDIR     ${DEFAULT_BIN_SUBDIR}     CACHE STRING "Subdirectory where executables will be installed")
@@ -35,7 +35,6 @@ SUBDIRS(src)
 #############################################################
 # install stuff
 
-#INSTALL (TARGETS idgen RUNTIME DESTINATION bin)
 
 
 ## Configured files##########################################################
@@ -47,8 +46,9 @@ if(NOT WIN32)
         @ONLY)
 
     install(
-        FILES ${CELIB_BIN_DIR}/celib.pc
+        FILES "${celib_BINARY_DIR}/celib.pc"
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
 endif()
+
 
 

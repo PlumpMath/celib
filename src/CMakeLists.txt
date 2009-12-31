@@ -6,18 +6,6 @@ SET(celib_SRCS cestring.c ceswap.c)
 ADD_LIBRARY(celib SHARED ${celib_SRCS})
 
 
-## Configured files##########################################################
-# Generate pkgconfig file
-if(NOT WIN32)
-    configure_file(
-        ../TEMPLATES/celib.pc.cmake
-        celib.pc
-        @ONLY)
-
-    install(
-        FILES ${CELIB_BIN_DIR}/celib.pc
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
-endif()
 
 
 ## Install
