@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>CeInt</title>
+<meta name='robots' content='noindex,nofollow'>
+<meta name='generator' content='GLOBAL-5.7.6'>
+</head>
+<body text='#191970' bgcolor='#f5f5dc' vlink='gray'>
+<pre>
+<a href='../S/4.html#L37'>CeInt</a>              37 cestring.c            CeInt    len;     /**&lt; string length excluding trailing '\0' */
+<a href='../S/4.html#L157'>CeInt</a>             157 cestring.c             CeInt length = strlen(data);
+<a href='../S/4.html#L206'>CeInt</a>             206 cestring.c             CeInt length = end - start + 1;
+<a href='../S/4.html#L223'>CeInt</a>             223 cestring.c     CeInt ce_string_get_length(CeString *self)
+<a href='../S/4.html#L237'>CeInt</a>             237 cestring.c     CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L276'>CeInt</a>             276 cestring.c             CeInt i = 0;
+<a href='../S/4.html#L277'>CeInt</a>             277 cestring.c             CeInt tmp_len = (end - start) / 2;
+<a href='../S/4.html#L317'>CeInt</a>             317 cestring.c             CeInt i = start;
+<a href='../S/4.html#L354'>CeInt</a>             354 cestring.c             CeInt i = start;
+<a href='../S/4.html#L374'>CeInt</a>             374 cestring.c     CeInt ce_string_compare(CeString *selfA, CeString *selfB)
+<a href='../S/4.html#L392'>CeInt</a>             392 cestring.c     CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
+<a href='../S/4.html#L409'>CeInt</a>             409 cestring.c     CeInt ce_string_compare_data(CeString *self, CeUChar *data)
+<a href='../S/4.html#L426'>CeInt</a>             426 cestring.c     CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L429'>CeInt</a>             429 cestring.c             CeInt resault = strcmp(ce_string_get_data_inrange(self, start, end), test_data-&gt;data);
+<a href='../S/4.html#L584'>CeInt</a>             584 cestring.c             CeInt data_len = strlen(data);
+<a href='../S/4.html#L588'>CeInt</a>             588 cestring.c             CeInt new_len = self-&gt;len + data_len;
+<a href='../S/4.html#L589'>CeInt</a>             589 cestring.c             CeInt cpy_len = end - start + 1;
+<a href='../S/4.html#L659'>CeInt</a>             659 cestring.c             CeInt data_len = strlen(data);
+<a href='../S/4.html#L663'>CeInt</a>             663 cestring.c             CeInt new_len = self-&gt;len + data_len;
+<a href='../S/4.html#L664'>CeInt</a>             664 cestring.c             CeInt cpy_len = end - start + 1;
+<a href='../S/5.html#L30'>CeInt</a>              30 cestring.h             CeInt    const len;     /**&lt; string length excluding trailing '\0' */
+<a href='../S/5.html#L45'>CeInt</a>              45 cestring.h     CeInt      ce_string_get_length(CeString *self);
+<a href='../S/5.html#L46'>CeInt</a>              46 cestring.h     CeInt      ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L53'>CeInt</a>              53 cestring.h     CeInt      ce_string_compare(CeString *selfA, CeString *selfB);
+<a href='../S/5.html#L54'>CeInt</a>              54 cestring.h     CeInt      ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end);
+<a href='../S/5.html#L55'>CeInt</a>              55 cestring.h     CeInt      ce_string_compare_data(CeString *self, CeUChar *data);
+<a href='../S/5.html#L56'>CeInt</a>              56 cestring.h     CeInt      ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
+<a href='../S/6.html#L34'>CeInt</a>              34 ceswap.c               CeInt CE_SWAP_CORE;
+</pre>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>dst</title>
+<meta name='robots' content='noindex,nofollow'>
+<meta name='generator' content='GLOBAL-5.7.6'>
+</head>
+<body text='#191970' bgcolor='#f5f5dc' vlink='gray'>
+<pre>
+<a href='../S/4.html#L491'>dst</a>               491 cestring.c     CeString * ce_string_copy(CeString *dst, CeString *src)
+<a href='../S/4.html#L493'>dst</a>               493 cestring.c             return ce_string_copy_inrange(dst, src, 1, -1);
+<a href='../S/4.html#L506'>dst</a>               506 cestring.c     CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+<a href='../S/4.html#L508'>dst</a>               508 cestring.c             ce_string_clear(dst);
+<a href='../S/4.html#L509'>dst</a>               509 cestring.c             ce_string_set_data_inrange(dst, src-&gt;data, start, end);
+<a href='../S/4.html#L511'>dst</a>               511 cestring.c             return dst;
+<a href='../S/4.html#L537'>dst</a>               537 cestring.c     CeString * ce_string_concat(CeString *dst, CeString *src)
+<a href='../S/4.html#L539'>dst</a>               539 cestring.c             return ce_string_concat_data_inrange(dst, src-&gt;data, 1, -1);
+<a href='../S/4.html#L553'>dst</a>               553 cestring.c     CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+<a href='../S/4.html#L555'>dst</a>               555 cestring.c             return ce_string_concat_data_inrange(dst, src-&gt;data, start, end);
+<a href='../S/4.html#L611'>dst</a>               611 cestring.c     CeString * ce_string_append(CeString *dst, CeString *src)
+<a href='../S/4.html#L613'>dst</a>               613 cestring.c             return ce_string_append_data_inrange(dst, src-&gt;data, 1, -1);
+<a href='../S/4.html#L627'>dst</a>               627 cestring.c     CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+<a href='../S/4.html#L629'>dst</a>               629 cestring.c             return ce_string_append_data_inrange(dst, src-&gt;data, start, end);
+<a href='../S/5.html#L59'>dst</a>                59 cestring.h     CeString * ce_string_copy(CeString *dst, CeString *src);
+<a href='../S/5.html#L60'>dst</a>                60 cestring.h     CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
+<a href='../S/5.html#L62'>dst</a>                62 cestring.h     CeString * ce_string_concat(CeString *dst, CeString *src);
+<a href='../S/5.html#L63'>dst</a>                63 cestring.h     CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
+<a href='../S/5.html#L66'>dst</a>                66 cestring.h     CeString * ce_string_append(CeString *dst, CeString *src);
+<a href='../S/5.html#L67'>dst</a>                67 cestring.h     CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
+</pre>
+</body>
+</html>

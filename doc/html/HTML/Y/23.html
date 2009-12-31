@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>length</title>
+<meta name='robots' content='noindex,nofollow'>
+<meta name='generator' content='GLOBAL-5.7.6'>
+</head>
+<body text='#191970' bgcolor='#f5f5dc' vlink='gray'>
+<pre>
+<a href='../S/3.html#L60'>length</a>             60 cemacros.h     #define CE_RANGE_INITIAL(start, end, length)                          \
+<a href='../S/3.html#L63'>length</a>             63 cemacros.h     				start += ( start &gt; 0 ) ? (-1) : (length);             \
+<a href='../S/3.html#L64'>length</a>             64 cemacros.h     				end   += ( end   &gt; 0 ) ? (-1) : (length);             \
+<a href='../S/4.html#L157'>length</a>            157 cestring.c             CeInt length = strlen(data);
+<a href='../S/4.html#L159'>length</a>            159 cestring.c             CE_RANGE_INITIAL(start, end, length);
+<a href='../S/4.html#L161'>length</a>            161 cestring.c             length = end - start + 1;
+<a href='../S/4.html#L168'>length</a>            168 cestring.c             selfp-&gt;len = length;
+<a href='../S/4.html#L169'>length</a>            169 cestring.c             selfp-&gt;data = (CeUChar *) malloc( sizeof(CeUChar) * (length + 1) );
+<a href='../S/4.html#L172'>length</a>            172 cestring.c             memcpy(selfp-&gt;data, data + start, length);
+<a href='../S/4.html#L173'>length</a>            173 cestring.c             selfp-&gt;data[length] = '\0';   /* end of line */
+<a href='../S/4.html#L206'>length</a>            206 cestring.c             CeInt length = end - start + 1;
+<a href='../S/4.html#L207'>length</a>            207 cestring.c             CeUChar *data = (CeUChar *) malloc( sizeof(CeUChar) * length + 1 );
+<a href='../S/4.html#L209'>length</a>            209 cestring.c             memcpy(data, self-&gt;data + start, length);
+<a href='../S/4.html#L210'>length</a>            210 cestring.c             data[length] = '\0';    /* end of line */
+</pre>
+</body>
+</html>

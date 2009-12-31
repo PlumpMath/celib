@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>self</title>
+<meta name='robots' content='noindex,nofollow'>
+<meta name='generator' content='GLOBAL-5.7.6'>
+</head>
+<body text='#191970' bgcolor='#f5f5dc' vlink='gray'>
+<pre>
+<a href='../S/4.html#L46'>self</a>               46 cestring.c     #define CE_STRING_INITIAL() selfp = (CeStringP *) self;
+<a href='../S/4.html#L56'>self</a>               56 cestring.c             CeString *self  = (CeString *) malloc( sizeof(CeString) );
+<a href='../S/4.html#L67'>self</a>               67 cestring.c             return self;
+<a href='../S/4.html#L79'>self</a>               79 cestring.c             CeString *self  = ce_string_new();
+<a href='../S/4.html#L81'>self</a>               81 cestring.c             return ce_string_set_data(self, data);
+<a href='../S/4.html#L95'>self</a>               95 cestring.c             CeString *self  = ce_string_new();
+<a href='../S/4.html#L97'>self</a>               97 cestring.c             return ce_string_set_data_inrange(self, data, start, end);
+<a href='../S/4.html#L105'>self</a>              105 cestring.c     void ce_string_delete(CeString *self)
+<a href='../S/4.html#L108'>self</a>              108 cestring.c             if ( !self-&gt;data ) {
+<a href='../S/4.html#L109'>self</a>              109 cestring.c                     free(self-&gt;data);
+<a href='../S/4.html#L112'>self</a>              112 cestring.c             free(self);
+<a href='../S/4.html#L120'>self</a>              120 cestring.c     void ce_string_clear(CeString *self)
+<a href='../S/4.html#L124'>self</a>              124 cestring.c             free(self-&gt;data);
+<a href='../S/4.html#L138'>self</a>              138 cestring.c     CeString * ce_string_set_data(CeString *self, const CeUChar *data)
+<a href='../S/4.html#L140'>self</a>              140 cestring.c             return ce_string_set_data_inrange(self, data, 1, -1);
+<a href='../S/4.html#L153'>self</a>              153 cestring.c     CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L165'>self</a>              165 cestring.c                     free(self-&gt;data);
+<a href='../S/4.html#L175'>self</a>              175 cestring.c             return self;
+<a href='../S/4.html#L186'>self</a>              186 cestring.c     CeUChar * ce_string_get_data(CeString *self)
+<a href='../S/4.html#L188'>self</a>              188 cestring.c             return (self-&gt;data);
+<a href='../S/4.html#L200'>self</a>              200 cestring.c     CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L204'>self</a>              204 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L209'>self</a>              209 cestring.c             memcpy(data, self-&gt;data + start, length);
+<a href='../S/4.html#L223'>self</a>              223 cestring.c     CeInt ce_string_get_length(CeString *self)
+<a href='../S/4.html#L225'>self</a>              225 cestring.c             return (self-&gt;len);
+<a href='../S/4.html#L237'>self</a>              237 cestring.c     CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L239'>self</a>              239 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L252'>self</a>              252 cestring.c     CeString * ce_string_reverse(CeString *self)
+<a href='../S/4.html#L254'>self</a>              254 cestring.c             return ce_string_reverse_inrange(self, 1, -1);
+<a href='../S/4.html#L266'>self</a>              266 cestring.c     CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L271'>self</a>              271 cestring.c                     return self;
+<a href='../S/4.html#L274'>self</a>              274 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L286'>self</a>              286 cestring.c             return self;
+<a href='../S/4.html#L297'>self</a>              297 cestring.c     CeString * ce_string_toupper(CeString *self)
+<a href='../S/4.html#L299'>self</a>              299 cestring.c             return ce_string_toupper_inrange(self, 1, -1);
+<a href='../S/4.html#L311'>self</a>              311 cestring.c     CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L315'>self</a>              315 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L323'>self</a>              323 cestring.c             return self;
+<a href='../S/4.html#L334'>self</a>              334 cestring.c     CeString * ce_string_tolower(CeString *self)
+<a href='../S/4.html#L336'>self</a>              336 cestring.c             return ce_string_tolower_inrange(self, 1, -1);
+<a href='../S/4.html#L348'>self</a>              348 cestring.c     CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L352'>self</a>              352 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L360'>self</a>              360 cestring.c             return self;
+<a href='../S/4.html#L409'>self</a>              409 cestring.c     CeInt ce_string_compare_data(CeString *self, CeUChar *data)
+<a href='../S/4.html#L411'>self</a>              411 cestring.c             return strcmp(self-&gt;data, data);
+<a href='../S/4.html#L426'>self</a>              426 cestring.c     CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L429'>self</a>              429 cestring.c             CeInt resault = strcmp(ce_string_get_data_inrange(self, start, end), test_data-&gt;data);
+<a href='../S/4.html#L567'>self</a>              567 cestring.c     CeString * ce_string_concat_data(CeString *self, CeUChar *data)
+<a href='../S/4.html#L569'>self</a>              569 cestring.c             return ce_string_concat_data_inrange(self, data, 1, -1);
+<a href='../S/4.html#L582'>self</a>              582 cestring.c     CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L588'>self</a>              588 cestring.c             CeInt new_len = self-&gt;len + data_len;
+<a href='../S/4.html#L593'>self</a>              593 cestring.c             memcpy(new_data, self-&gt;data, self-&gt;len);
+<a href='../S/4.html#L594'>self</a>              594 cestring.c             memcpy(new_data + self-&gt;len, data + start , cpy_len);
+<a href='../S/4.html#L597'>self</a>              597 cestring.c             ce_string_set_data(self, new_data);
+<a href='../S/4.html#L599'>self</a>              599 cestring.c             return self;
+<a href='../S/4.html#L642'>self</a>              642 cestring.c     CeString * ce_string_append_data(CeString *self, CeUChar *data)
+<a href='../S/4.html#L644'>self</a>              644 cestring.c             return ce_string_append_data_inrange(self, data, 1, -1);
+<a href='../S/4.html#L657'>self</a>              657 cestring.c     CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L663'>self</a>              663 cestring.c             CeInt new_len = self-&gt;len + data_len;
+<a href='../S/4.html#L669'>self</a>              669 cestring.c             memcpy(new_data + data_len, self-&gt;data, self-&gt;len);
+<a href='../S/4.html#L672'>self</a>              672 cestring.c             ce_string_set_data(self, new_data);
+<a href='../S/4.html#L674'>self</a>              674 cestring.c             return self;
+<a href='../S/5.html#L39'>self</a>               39 cestring.h     void       ce_string_delete(CeString *self);
+<a href='../S/5.html#L40'>self</a>               40 cestring.h     void       ce_string_clear(CeString *self);
+<a href='../S/5.html#L41'>self</a>               41 cestring.h     CeString * ce_string_set_data(CeString *self, const CeUChar *data);
+<a href='../S/5.html#L42'>self</a>               42 cestring.h     CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt start, CeInt end);
+<a href='../S/5.html#L43'>self</a>               43 cestring.h     CeUChar  * ce_string_get_data(CeString *self);
+<a href='../S/5.html#L44'>self</a>               44 cestring.h     CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L45'>self</a>               45 cestring.h     CeInt      ce_string_get_length(CeString *self);
+<a href='../S/5.html#L46'>self</a>               46 cestring.h     CeInt      ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L47'>self</a>               47 cestring.h     CeString * ce_string_reverse(CeString *self);
+<a href='../S/5.html#L48'>self</a>               48 cestring.h     CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L49'>self</a>               49 cestring.h     CeString * ce_string_toupper(CeString *self);
+<a href='../S/5.html#L50'>self</a>               50 cestring.h     CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L51'>self</a>               51 cestring.h     CeString * ce_string_tolower(CeString *self);
+<a href='../S/5.html#L52'>self</a>               52 cestring.h     CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L55'>self</a>               55 cestring.h     CeInt      ce_string_compare_data(CeString *self, CeUChar *data);
+<a href='../S/5.html#L56'>self</a>               56 cestring.h     CeInt      ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
+<a href='../S/5.html#L64'>self</a>               64 cestring.h     CeString * ce_string_concat_data(CeString *self, CeUChar *data);
+<a href='../S/5.html#L65'>self</a>               65 cestring.h     CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
+<a href='../S/5.html#L68'>self</a>               68 cestring.h     CeString * ce_string_append_data(CeString *self, CeUChar *data);
+<a href='../S/5.html#L69'>self</a>               69 cestring.h     CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);;
+</pre>
+</body>
+</html>

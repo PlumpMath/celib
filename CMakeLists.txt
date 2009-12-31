@@ -1,26 +1,41 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(celib)
-INCLUDE(FindPkgConfig)
-INCLUDE_DIRECTORIES(${celib_BINARY_DIR})
-SET(celib_SRCS cestring.c ceswap.c)
-ADD_LIBRARY(celib SHARED ${celib_SRCS})
-## Configured files##########################################################
-# Generate pkgconfig file
-if(NOT WIN32)
-    configure_file(
-        templates/celib.pc.cmake
-        celib.pc
-        @ONLY)
+# set version
+SET(CPACK_PACKAGE_VERSION_MAJOR "0")
+SET(CPACK_PACKAGE_VERSION_MINOR "0")
+SET(CPACK_PACKAGE_VERSION_PATCH "1")
+SET(COMPLETE_VERSION ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH})
+SET(PROJECT_VERSION ${COMPLETE_VERSION})
+PROJECT(celib${PROJECT_VERSION})
 
-    install(
-        FILES ${celib_BINARY_DIR}/celib.pc
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
-endif()
+###########################################################
+# CMake setting
 
-## Install
-INSTALL_FILES(/include/celib/ .h)
-INSTALL(TARGETS celib 
-		RUNTIME DESTINATION bin 
-		LIBRARY DESTINATION lib 
-		ARCHIVE DESTINATION libstatic
-)
+CMAKE_MINIMUM_REQUIRED (VERSION 2.6)
+
+SET(CMAKE_COLOR_MAKEFILE ON)
+
+#############################################################
+# user-changeable settings which can be used to customize
+# layout of ID Generator installation
+# (default values are platform-specific)
+
+SET (IDGEN_BIN_SUBDIR     ${DEFAULT_BIN_SUBDIR}     CACHE STRING "Subdirectory where executables will be installed")
+
+# mark *_SUBDIR variables as advanced as this is not something
+# that an average user would use
+MARK_AS_ADVANCED (IDGEN_BIN_SUBDIR)
+
+# full paths for the installation
+SET (IDGEN_BIN_DIR     ${IDGEN_BIN_SUBDIR})
+
+
+
+
+###########################################################
+# process subdirs
+
+SUBDIRS(src)
+
+#############################################################
+# install stuff
+
+#INSTALL (TARGETS idgen RUNTIME DESTINATION bin)

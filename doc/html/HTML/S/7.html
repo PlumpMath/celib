@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>ceswap.h</title>
+<meta name='robots' content='noindex,nofollow'>
+<meta name='generator' content='GLOBAL-5.7.6'>
+</head>
+<body text='#191970' bgcolor='#f5f5dc' vlink='gray'>
+<a name='TOP'><h2><a href='../mains.html'>root</a>/ceswap.h</h2>
+<i><font color='green'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</font></i>
+<hr>
+<h2><a href='../J/6.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
+<hr>
+<pre>
+<a name='L1'>   1 <i><font color='green'>/* CELIB - cldnew's C libraries designed for CEMACS</font></i>
+<a name='L2'>   2 <i><font color='green'> *</font></i>
+<a name='L3'>   3 <i><font color='green'> * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved. </font></i>
+<a name='L4'>   4 <i><font color='green'> *</font></i>
+<a name='L5'>   5 <i><font color='green'> * This file is part of CELIB.</font></i>
+<a name='L6'>   6 <i><font color='green'> *</font></i>
+<a name='L7'>   7 <i><font color='green'> * The contents of this file are subject to the terms of one of the</font></i>
+<a name='L8'>   8 <i><font color='green'> * following licenses: </font></i>
+<a name='L9'>   9 <i><font color='green'> *</font></i>
+<a name='L10'>  10 <i><font color='green'> *    1) GNU Lesser General Public License (GNU LGPL)</font></i>
+<a name='L11'>  11 <i><font color='green'> *    2) Common Development and Distribution License (CDDL)</font></i>
+<a name='L12'>  12 <i><font color='green'> *    3) Yen-Chin, Lee, as the author of this code, expressly permits you to</font></i>
+<a name='L13'>  13 <i><font color='green'> *       statically or dynamically link your code (or bind by name)</font></i>
+<a name='L14'>  14 <i><font color='green'> *       to this file, while you keep this file unmodified.</font></i>
+<a name='L15'>  15 <i><font color='green'> *</font></i>
+<a name='L16'>  16 <i><font color='green'> * You can select the license that you prefer but you may not use this file</font></i>
+<a name='L17'>  17 <i><font color='green'> * except in compliance with one of these Licenses.</font></i>
+<a name='L18'>  18 <i><font color='green'> *</font></i>
+<a name='L19'>  19 <i><font color='green'> * See the Licenses for the specific language governing permissions and</font></i>
+<a name='L20'>  20 <i><font color='green'> * limitations under the Licenses.</font></i>
+<a name='L21'>  21 <i><font color='green'> *</font></i>
+<a name='L22'>  22 <i><font color='green'> */</font></i>
+<a name='L23'>  23 
+<a name='L24'>  24 <font color='darkred'>#ifndef</font> <a href='../S/7.html#L25' title='Defined at 25 in ceswap.h.'>_CE_SWAP_H</a>
+<a name='L25'>  25 <font color='darkred'>#define</font> <a href='../S/7.html#L24' title='Refered from 24 in ceswap.h.'>_CE_SWAP_H</a>
+<a name='L26'>  26 
+<a name='L27'>  27 
+<a name='L28'>  28 <b>void</b>  <a href='../S/6.html#L32' title='Defined at 32 in ceswap.c.'>ce_int_swap</a> (<a href='../Y/4.html' title='Multiple used in 32 places.'>CeInt</a>    *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/4.html' title='Multiple used in 32 places.'>CeInt</a>    *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L29'>  29 <b>void</b>  <a href='../S/6.html#L38' title='Defined at 38 in ceswap.c.'>ce_char_swap</a>(<a href='../Y/1.html' title='Multiple used in 2 places.'>CeChar</a>   *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/1.html' title='Multiple used in 2 places.'>CeChar</a>   *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L30'>  30 <b>void</b>  <a href='../S/6.html#L44' title='Defined at 44 in ceswap.c.'>ce_short_swap</a>(<a href='../Y/5.html' title='Multiple used in 2 places.'>CeShort</a>  *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/5.html' title='Multiple used in 2 places.'>CeShort</a>  *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L31'>  31 <b>void</b>  <a href='../S/6.html#L50' title='Defined at 50 in ceswap.c.'>ce_float_swap</a>(<a href='../Y/3.html' title='Multiple used in 2 places.'>CeFloat</a>  *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/3.html' title='Multiple used in 2 places.'>CeFloat</a>  *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L32'>  32 <b>void</b>  <a href='../S/6.html#L56' title='Defined at 56 in ceswap.c.'>ce_double_swap</a>(<a href='../Y/2.html' title='Multiple used in 2 places.'>CeDouble</a> *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/2.html' title='Multiple used in 2 places.'>CeDouble</a> *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L33'>  33 
+<a name='L34'>  34 <b>void</b>  <a href='../S/6.html#L63' title='Defined at 63 in ceswap.c.'>ce_uint_swap</a> (<a href='../Y/8.html' title='Multiple used in 2 places.'>CeUInt</a>    *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/8.html' title='Multiple used in 2 places.'>CeUInt</a>    *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L35'>  35 <b>void</b>  <a href='../S/6.html#L69' title='Defined at 69 in ceswap.c.'>ce_uchar_swap</a>(<a href='../Y/7.html' title='Multiple used in 22 places.'>CeUChar</a>   *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/7.html' title='Multiple used in 22 places.'>CeUChar</a>   *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L36'>  36 <b>void</b>  <a href='../S/6.html#L75' title='Defined at 75 in ceswap.c.'>ce_ushort_swap</a>(<a href='../Y/9.html' title='Multiple used in 2 places.'>CeUShort</a>  *<a href='../Y/29.html' title='Multiple used in 17 places.'>p1</a>, <a href='../Y/9.html' title='Multiple used in 2 places.'>CeUShort</a>  *<a href='../Y/30.html' title='Multiple used in 17 places.'>p2</a>);
+<a name='L37'>  37 
+<a name='L38'>  38 <font color='darkred'>#endif</font> <i><font color='green'>/* _CE_SWAP_H */</font></i>
+<a name='L39'>  39 
+</pre>
+<hr>
+<a name='BOTTOM'>
+<i><font color='green'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</font></i>
+</body>
+</html>

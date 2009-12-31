@@ -1,0 +1,214 @@
+\hypertarget{cemacros_8h}{
+\section{src/cemacros.h File Reference}
+\label{cemacros_8h}\index{src/cemacros.h@{src/cemacros.h}}
+}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=67pt]{cemacros_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cemacros_8h_ac6f2262a6c60a4cf9a53c99f4c81da41}{CE\_\-FALSE}~0
+\item 
+\#define \hyperlink{cemacros_8h_a5b9c3d40d570e14ba2f70b0b28a163a7}{CE\_\-TRUE}~1
+\item 
+\#define \hyperlink{cemacros_8h_a8e920d7c465674d8964b4195f3d32929}{\_\-CE\_\-STR}(str)~\#str
+\item 
+\#define \hyperlink{cemacros_8h_a701500605dee3d09e86c6eb078778b45}{CE\_\-STR}(str)~\_\-CC\_\-STR(str)
+\item 
+\#define \hyperlink{cemacros_8h_a38a82c277eecf6b98ddecc879f7f3ccd}{CE\_\-MAX}(x, y)~( (x) $>$ (y) ? (x) : (y) )
+\item 
+\#define \hyperlink{cemacros_8h_aa21be4cc4ec33d8d026045a0c02e6759}{CE\_\-MIN}(x, y)~( (x) $<$ (y) ? (x) : (y) )
+\item 
+\#define \hyperlink{cemacros_8h_a07134f16140b1fdd47ef0edc43efee88}{CE\_\-POWER\_\-2}(x)~( (x) $\ast$ (x) )
+\item 
+\#define \hyperlink{cemacros_8h_aad69937be800bbbc8d4b7f275b726a24}{CE\_\-POWER\_\-3}(x)~( (x) $\ast$ (x) $\ast$ (x) )
+\item 
+\#define \hyperlink{cemacros_8h_aa21f0751fd2a2d91a53b392806cda68a}{CE\_\-UPCASE}(c)~( ( (c) $>$= 'a' \&\& (c) $<$= 'z') ? ( (c) -\/ 0x20) : (c) )
+\item 
+\#define \hyperlink{cemacros_8h_a79b773829412d6fe9449f842dea6ee6e}{CE\_\-DOWNCASE}(c)~( ( (c) $>$= 'A' \&\& (c) $<$= 'Z') ? ( (c) + 0x20) : (c) )
+\item 
+\#define \hyperlink{cemacros_8h_a3f60f158ab3e6645e16e7b0021019c2b}{CE\_\-LSHIFT}(x, offset)~( (x) $<$$<$ (offset) )
+\item 
+\#define \hyperlink{cemacros_8h_a2e84d489a9dedce2fa1ece3657d515e1}{CE\_\-RSHIFT}(x, offset)~( (x) $>$$>$ (offset) )
+\item 
+\#define \hyperlink{cemacros_8h_a2b14b6a1229836b07b79b9de43f27f84}{CE\_\-NOT}(a)~( $\sim$(a) )
+\item 
+\#define \hyperlink{cemacros_8h_afd25210fc93077c1b93722a0d2536048}{CE\_\-OR}(a, b)~( (a) $|$ (b) )
+\item 
+\#define \hyperlink{cemacros_8h_a6358684cf7b38fb9f59b9fac5b2cda36}{CE\_\-AND}(a, b)~( (a) \& (b) )
+\item 
+\#define \hyperlink{cemacros_8h_a0c5d5771e54175e79ed993f5cceba31a}{CE\_\-XOR}(a, b)~( (a) $^\wedge$ (b) )
+\item 
+\#define \hyperlink{cemacros_8h_a7868dfa4a54d76195a299eb0ff5701f1}{CE\_\-NOR}(a, b)~( $\sim$( (a) $|$ (b) ) )
+\item 
+\#define \hyperlink{cemacros_8h_a0d4f5a97ba4162d4122cae14e0ffea2b}{CE\_\-NAND}(a, b)~( $\sim$( (a) \& (b) ) )
+\item 
+\#define \hyperlink{cemacros_8h_a06a5a6b41431c9af06deb287dfb76449}{CE\_\-RANGE\_\-INITIAL}(start, end, length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{cemacros_8h_a8e920d7c465674d8964b4195f3d32929}{
+\index{cemacros.h@{cemacros.h}!\_\-CE\_\-STR@{\_\-CE\_\-STR}}
+\index{\_\-CE\_\-STR@{\_\-CE\_\-STR}!cemacros.h@{cemacros.h}}
+\subsubsection[{\_\-CE\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define \_\-CE\_\-STR(str)~\#str}}
+\label{cemacros_8h_a8e920d7c465674d8964b4195f3d32929}
+
+
+Definition at line 33 of file cemacros.h.\hypertarget{cemacros_8h_a6358684cf7b38fb9f59b9fac5b2cda36}{
+\index{cemacros.h@{cemacros.h}!CE\_\-AND@{CE\_\-AND}}
+\index{CE\_\-AND@{CE\_\-AND}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-AND}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-AND(a, \/  b)~( (a) \& (b) )}}
+\label{cemacros_8h_a6358684cf7b38fb9f59b9fac5b2cda36}
+
+
+Definition at line 54 of file cemacros.h.\hypertarget{cemacros_8h_a79b773829412d6fe9449f842dea6ee6e}{
+\index{cemacros.h@{cemacros.h}!CE\_\-DOWNCASE@{CE\_\-DOWNCASE}}
+\index{CE\_\-DOWNCASE@{CE\_\-DOWNCASE}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-DOWNCASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-DOWNCASE(c)~( ( (c) $>$= 'A' \&\& (c) $<$= 'Z') ? ( (c) + 0x20) : (c) )}}
+\label{cemacros_8h_a79b773829412d6fe9449f842dea6ee6e}
+
+
+Definition at line 45 of file cemacros.h.\hypertarget{cemacros_8h_ac6f2262a6c60a4cf9a53c99f4c81da41}{
+\index{cemacros.h@{cemacros.h}!CE\_\-FALSE@{CE\_\-FALSE}}
+\index{CE\_\-FALSE@{CE\_\-FALSE}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-FALSE}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-FALSE~0}}
+\label{cemacros_8h_ac6f2262a6c60a4cf9a53c99f4c81da41}
+
+
+Definition at line 29 of file cemacros.h.
+
+Referenced by ce\_\-string\_\-isequal(), and ce\_\-string\_\-isequal\_\-inrange().\hypertarget{cemacros_8h_a3f60f158ab3e6645e16e7b0021019c2b}{
+\index{cemacros.h@{cemacros.h}!CE\_\-LSHIFT@{CE\_\-LSHIFT}}
+\index{CE\_\-LSHIFT@{CE\_\-LSHIFT}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-LSHIFT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-LSHIFT(x, \/  offset)~( (x) $<$$<$ (offset) )}}
+\label{cemacros_8h_a3f60f158ab3e6645e16e7b0021019c2b}
+
+
+Definition at line 48 of file cemacros.h.\hypertarget{cemacros_8h_a38a82c277eecf6b98ddecc879f7f3ccd}{
+\index{cemacros.h@{cemacros.h}!CE\_\-MAX@{CE\_\-MAX}}
+\index{CE\_\-MAX@{CE\_\-MAX}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-MAX}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-MAX(x, \/  y)~( (x) $>$ (y) ? (x) : (y) )}}
+\label{cemacros_8h_a38a82c277eecf6b98ddecc879f7f3ccd}
+
+
+Definition at line 37 of file cemacros.h.\hypertarget{cemacros_8h_aa21be4cc4ec33d8d026045a0c02e6759}{
+\index{cemacros.h@{cemacros.h}!CE\_\-MIN@{CE\_\-MIN}}
+\index{CE\_\-MIN@{CE\_\-MIN}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-MIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-MIN(x, \/  y)~( (x) $<$ (y) ? (x) : (y) )}}
+\label{cemacros_8h_aa21be4cc4ec33d8d026045a0c02e6759}
+
+
+Definition at line 38 of file cemacros.h.\hypertarget{cemacros_8h_a0d4f5a97ba4162d4122cae14e0ffea2b}{
+\index{cemacros.h@{cemacros.h}!CE\_\-NAND@{CE\_\-NAND}}
+\index{CE\_\-NAND@{CE\_\-NAND}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-NAND}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-NAND(a, \/  b)~( $\sim$( (a) \& (b) ) )}}
+\label{cemacros_8h_a0d4f5a97ba4162d4122cae14e0ffea2b}
+
+
+Definition at line 57 of file cemacros.h.\hypertarget{cemacros_8h_a7868dfa4a54d76195a299eb0ff5701f1}{
+\index{cemacros.h@{cemacros.h}!CE\_\-NOR@{CE\_\-NOR}}
+\index{CE\_\-NOR@{CE\_\-NOR}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-NOR}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-NOR(a, \/  b)~( $\sim$( (a) $|$ (b) ) )}}
+\label{cemacros_8h_a7868dfa4a54d76195a299eb0ff5701f1}
+
+
+Definition at line 56 of file cemacros.h.\hypertarget{cemacros_8h_a2b14b6a1229836b07b79b9de43f27f84}{
+\index{cemacros.h@{cemacros.h}!CE\_\-NOT@{CE\_\-NOT}}
+\index{CE\_\-NOT@{CE\_\-NOT}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-NOT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-NOT(a)~( $\sim$(a) )}}
+\label{cemacros_8h_a2b14b6a1229836b07b79b9de43f27f84}
+
+
+Definition at line 52 of file cemacros.h.\hypertarget{cemacros_8h_afd25210fc93077c1b93722a0d2536048}{
+\index{cemacros.h@{cemacros.h}!CE\_\-OR@{CE\_\-OR}}
+\index{CE\_\-OR@{CE\_\-OR}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-OR}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-OR(a, \/  b)~( (a) $|$ (b) )}}
+\label{cemacros_8h_afd25210fc93077c1b93722a0d2536048}
+
+
+Definition at line 53 of file cemacros.h.\hypertarget{cemacros_8h_a07134f16140b1fdd47ef0edc43efee88}{
+\index{cemacros.h@{cemacros.h}!CE\_\-POWER\_\-2@{CE\_\-POWER\_\-2}}
+\index{CE\_\-POWER\_\-2@{CE\_\-POWER\_\-2}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-POWER\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-POWER\_\-2(x)~( (x) $\ast$ (x) )}}
+\label{cemacros_8h_a07134f16140b1fdd47ef0edc43efee88}
+
+
+Definition at line 40 of file cemacros.h.\hypertarget{cemacros_8h_aad69937be800bbbc8d4b7f275b726a24}{
+\index{cemacros.h@{cemacros.h}!CE\_\-POWER\_\-3@{CE\_\-POWER\_\-3}}
+\index{CE\_\-POWER\_\-3@{CE\_\-POWER\_\-3}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-POWER\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-POWER\_\-3(x)~( (x) $\ast$ (x) $\ast$ (x) )}}
+\label{cemacros_8h_aad69937be800bbbc8d4b7f275b726a24}
+
+
+Definition at line 41 of file cemacros.h.\hypertarget{cemacros_8h_a06a5a6b41431c9af06deb287dfb76449}{
+\index{cemacros.h@{cemacros.h}!CE\_\-RANGE\_\-INITIAL@{CE\_\-RANGE\_\-INITIAL}}
+\index{CE\_\-RANGE\_\-INITIAL@{CE\_\-RANGE\_\-INITIAL}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-RANGE\_\-INITIAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-RANGE\_\-INITIAL(start, \/  end, \/  length)}}
+\label{cemacros_8h_a06a5a6b41431c9af06deb287dfb76449}
+{\bfseries Value:}
+\begin{DoxyCode}
+do {                                                          \
+                                /* Reset start and end variables */              
+           \
+                                start += ( start > 0 ) ? (-1) : (length);        
+           \
+                                end   += ( end   > 0 ) ? (-1) : (length);        
+           \
+                                /* If start gratter than end, we need to swap the
+      m */ \
+                                if ( start > end ) {                             
+           \
+                                                ce_int_swap(&start, &end);       
+                   \
+                                }                                                
+           \
+                } while(0)
+\end{DoxyCode}
+
+
+Definition at line 60 of file cemacros.h.
+
+Referenced by ce\_\-string\_\-append\_\-data\_\-inrange(), ce\_\-string\_\-concat\_\-data\_\-inrange(), ce\_\-string\_\-get\_\-data\_\-inrange(), ce\_\-string\_\-get\_\-length\_\-inrange(), ce\_\-string\_\-reverse\_\-inrange(), ce\_\-string\_\-set\_\-data\_\-inrange(), ce\_\-string\_\-tolower\_\-inrange(), and ce\_\-string\_\-toupper\_\-inrange().\hypertarget{cemacros_8h_a2e84d489a9dedce2fa1ece3657d515e1}{
+\index{cemacros.h@{cemacros.h}!CE\_\-RSHIFT@{CE\_\-RSHIFT}}
+\index{CE\_\-RSHIFT@{CE\_\-RSHIFT}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-RSHIFT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-RSHIFT(x, \/  offset)~( (x) $>$$>$ (offset) )}}
+\label{cemacros_8h_a2e84d489a9dedce2fa1ece3657d515e1}
+
+
+Definition at line 49 of file cemacros.h.\hypertarget{cemacros_8h_a701500605dee3d09e86c6eb078778b45}{
+\index{cemacros.h@{cemacros.h}!CE\_\-STR@{CE\_\-STR}}
+\index{CE\_\-STR@{CE\_\-STR}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-STR(str)~\_\-CC\_\-STR(str)}}
+\label{cemacros_8h_a701500605dee3d09e86c6eb078778b45}
+
+
+Definition at line 34 of file cemacros.h.\hypertarget{cemacros_8h_a5b9c3d40d570e14ba2f70b0b28a163a7}{
+\index{cemacros.h@{cemacros.h}!CE\_\-TRUE@{CE\_\-TRUE}}
+\index{CE\_\-TRUE@{CE\_\-TRUE}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-TRUE}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-TRUE~1}}
+\label{cemacros_8h_a5b9c3d40d570e14ba2f70b0b28a163a7}
+
+
+Definition at line 30 of file cemacros.h.
+
+Referenced by ce\_\-string\_\-isequal(), and ce\_\-string\_\-isequal\_\-inrange().\hypertarget{cemacros_8h_aa21f0751fd2a2d91a53b392806cda68a}{
+\index{cemacros.h@{cemacros.h}!CE\_\-UPCASE@{CE\_\-UPCASE}}
+\index{CE\_\-UPCASE@{CE\_\-UPCASE}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-UPCASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-UPCASE(c)~( ( (c) $>$= 'a' \&\& (c) $<$= 'z') ? ( (c) -\/ 0x20) : (c) )}}
+\label{cemacros_8h_aa21f0751fd2a2d91a53b392806cda68a}
+
+
+Definition at line 44 of file cemacros.h.\hypertarget{cemacros_8h_a0c5d5771e54175e79ed993f5cceba31a}{
+\index{cemacros.h@{cemacros.h}!CE\_\-XOR@{CE\_\-XOR}}
+\index{CE\_\-XOR@{CE\_\-XOR}!cemacros.h@{cemacros.h}}
+\subsubsection[{CE\_\-XOR}]{\setlength{\rightskip}{0pt plus 5cm}\#define CE\_\-XOR(a, \/  b)~( (a) $^\wedge$ (b) )}}
+\label{cemacros_8h_a0c5d5771e54175e79ed993f5cceba31a}
+
+
+Definition at line 55 of file cemacros.h.

@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>end</title>
+<meta name='robots' content='noindex,nofollow'>
+<meta name='generator' content='GLOBAL-5.7.6'>
+</head>
+<body text='#191970' bgcolor='#f5f5dc' vlink='gray'>
+<pre>
+<a href='../S/3.html#L60'>end</a>                60 cemacros.h     #define CE_RANGE_INITIAL(start, end, length)                          \
+<a href='../S/3.html#L64'>end</a>                64 cemacros.h     				end   += ( end   &gt; 0 ) ? (-1) : (length);             \
+<a href='../S/3.html#L66'>end</a>                66 cemacros.h     				if ( start &gt; end ) {                                  \
+<a href='../S/3.html#L67'>end</a>                67 cemacros.h     						ce_int_swap(&amp;start, &amp;end);                    \
+<a href='../S/4.html#L93'>end</a>                93 cestring.c     CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L97'>end</a>                97 cestring.c             return ce_string_set_data_inrange(self, data, start, end);
+<a href='../S/4.html#L153'>end</a>               153 cestring.c     CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L159'>end</a>               159 cestring.c             CE_RANGE_INITIAL(start, end, length);
+<a href='../S/4.html#L161'>end</a>               161 cestring.c             length = end - start + 1;
+<a href='../S/4.html#L200'>end</a>               200 cestring.c     CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L204'>end</a>               204 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L206'>end</a>               206 cestring.c             CeInt length = end - start + 1;
+<a href='../S/4.html#L237'>end</a>               237 cestring.c     CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L239'>end</a>               239 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L241'>end</a>               241 cestring.c             return (end - start + 1);
+<a href='../S/4.html#L266'>end</a>               266 cestring.c     CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L274'>end</a>               274 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L277'>end</a>               277 cestring.c             CeInt tmp_len = (end - start) / 2;
+<a href='../S/4.html#L282'>end</a>               282 cestring.c                     selfp-&gt;data[i + start] = selfp-&gt;data[end - i];
+<a href='../S/4.html#L283'>end</a>               283 cestring.c                     selfp-&gt;data[end - i] = tmp_data;
+<a href='../S/4.html#L311'>end</a>               311 cestring.c     CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L315'>end</a>               315 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L319'>end</a>               319 cestring.c             for (; i &lt;= end; i++) {
+<a href='../S/4.html#L348'>end</a>               348 cestring.c     CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
+<a href='../S/4.html#L352'>end</a>               352 cestring.c             CE_RANGE_INITIAL(start, end, self-&gt;len);
+<a href='../S/4.html#L356'>end</a>               356 cestring.c             for (; i &lt;= end; i++) {
+<a href='../S/4.html#L392'>end</a>               392 cestring.c     CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
+<a href='../S/4.html#L394'>end</a>               394 cestring.c             return strcmp(ce_string_get_data_inrange(selfA, start, end),
+<a href='../S/4.html#L395'>end</a>               395 cestring.c                           ce_string_get_data_inrange(selfB, start, end));
+<a href='../S/4.html#L426'>end</a>               426 cestring.c     CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L428'>end</a>               428 cestring.c             CeString *test_data = ce_string_new_with_data_inrange(data, start, end);
+<a href='../S/4.html#L429'>end</a>               429 cestring.c             CeInt resault = strcmp(ce_string_get_data_inrange(self, start, end), test_data-&gt;data);
+<a href='../S/4.html#L470'>end</a>               470 cestring.c     CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
+<a href='../S/4.html#L472'>end</a>               472 cestring.c             int resault = ce_string_compare_inrange(selfA, selfB, start, end);
+<a href='../S/4.html#L506'>end</a>               506 cestring.c     CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+<a href='../S/4.html#L509'>end</a>               509 cestring.c             ce_string_set_data_inrange(dst, src-&gt;data, start, end);
+<a href='../S/4.html#L553'>end</a>               553 cestring.c     CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+<a href='../S/4.html#L555'>end</a>               555 cestring.c             return ce_string_concat_data_inrange(dst, src-&gt;data, start, end);
+<a href='../S/4.html#L582'>end</a>               582 cestring.c     CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L586'>end</a>               586 cestring.c             CE_RANGE_INITIAL(start, end, data_len);
+<a href='../S/4.html#L589'>end</a>               589 cestring.c             CeInt cpy_len = end - start + 1;
+<a href='../S/4.html#L627'>end</a>               627 cestring.c     CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+<a href='../S/4.html#L629'>end</a>               629 cestring.c             return ce_string_append_data_inrange(dst, src-&gt;data, start, end);
+<a href='../S/4.html#L657'>end</a>               657 cestring.c     CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+<a href='../S/4.html#L661'>end</a>               661 cestring.c             CE_RANGE_INITIAL(start, end, data_len);
+<a href='../S/4.html#L664'>end</a>               664 cestring.c             CeInt cpy_len = end - start + 1;
+<a href='../S/5.html#L38'>end</a>                38 cestring.h     CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeInt end);
+<a href='../S/5.html#L42'>end</a>                42 cestring.h     CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt start, CeInt end);
+<a href='../S/5.html#L44'>end</a>                44 cestring.h     CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L46'>end</a>                46 cestring.h     CeInt      ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L48'>end</a>                48 cestring.h     CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L50'>end</a>                50 cestring.h     CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L52'>end</a>                52 cestring.h     CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end);
+<a href='../S/5.html#L54'>end</a>                54 cestring.h     CeInt      ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end);
+<a href='../S/5.html#L56'>end</a>                56 cestring.h     CeInt      ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
+<a href='../S/5.html#L58'>end</a>                58 cestring.h     CeBool     ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end);
+<a href='../S/5.html#L60'>end</a>                60 cestring.h     CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
+<a href='../S/5.html#L63'>end</a>                63 cestring.h     CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
+<a href='../S/5.html#L65'>end</a>                65 cestring.h     CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
+<a href='../S/5.html#L67'>end</a>                67 cestring.h     CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
+<a href='../S/5.html#L69'>end</a>                69 cestring.h     CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);;
+</pre>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>new_data</title>
+<meta name='robots' content='noindex,nofollow'>
+<meta name='generator' content='GLOBAL-5.7.6'>
+</head>
+<body text='#191970' bgcolor='#f5f5dc' vlink='gray'>
+<pre>
+<a href='../S/4.html#L590'>new_data</a>          590 cestring.c             CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
+<a href='../S/4.html#L593'>new_data</a>          593 cestring.c             memcpy(new_data, self-&gt;data, self-&gt;len);
+<a href='../S/4.html#L594'>new_data</a>          594 cestring.c             memcpy(new_data + self-&gt;len, data + start , cpy_len);
+<a href='../S/4.html#L595'>new_data</a>          595 cestring.c             new_data[new_len] = '\0';   /* end of line */
+<a href='../S/4.html#L597'>new_data</a>          597 cestring.c             ce_string_set_data(self, new_data);
+<a href='../S/4.html#L665'>new_data</a>          665 cestring.c             CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
+<a href='../S/4.html#L668'>new_data</a>          668 cestring.c             memcpy(new_data, data, data_len);
+<a href='../S/4.html#L669'>new_data</a>          669 cestring.c             memcpy(new_data + data_len, self-&gt;data, self-&gt;len);
+<a href='../S/4.html#L670'>new_data</a>          670 cestring.c             new_data[new_len] = '\0';   /* end of line */
+<a href='../S/4.html#L672'>new_data</a>          672 cestring.c             ce_string_set_data(self, new_data);
+</pre>
+</body>
+</html>
