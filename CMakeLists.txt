@@ -24,20 +24,11 @@ SUBDIRS(src)
 
 ## Configured files##########################################################
 # Generate pkgconfig file
-if(NOT WIN32)
+if(UNIX)
     set(PC_FILE ${CMAKE_BINARY_DIR}/celib.pc)
-    configure_file(
-        "TEMPLATES/celib.pc.cmake"
-        ${PC_FILE}
-        @ONLY)
-
-#    install(
-#        FILES "${celib_BINARY_DIR}/celib.pc"
-#        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
-        install(FILES ${PC_FILE} DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
-
-#LIB_INSTALL_DIR
-endif()
+    configure_file("TEMPLATES/celib.pc.cmake" ${PC_FILE}  @ONLY)
+    install(FILES ${PC_FILE} DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+endif(UNIX)
 
 
 
