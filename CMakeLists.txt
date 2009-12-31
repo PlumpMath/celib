@@ -25,7 +25,7 @@ SET (IDGEN_BIN_SUBDIR     ${DEFAULT_BIN_SUBDIR}     CACHE STRING "Subdirectory w
 MARK_AS_ADVANCED (celib_BIN_SUBDIR)
 
 # full paths for the installation
-SET (IDGEN_BIN_DIR     ${celib_BIN_SUBDIR})
+SET (CELIB_BIN_DIR     ${celib_BIN_SUBDIR})
 
 ###########################################################
 # process subdirs
@@ -47,7 +47,7 @@ if(NOT WIN32)
         @ONLY)
 
     install(
-        FILES celib.pc
+        FILES ${CELIB_BIN_DIR}/celib.pc
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
 endif()
 
