@@ -511,7 +511,6 @@ CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeI
         return dst;
 }
 
-
 /** 
  * Swap two CeString Object
  * 
@@ -523,7 +522,7 @@ void ce_string_swap(CeString *selfA, CeString *selfB)
 {
 	selfp = (CeStringP *) selfA;
 	selfA = selfB;
-	selfB = (CeString * ) selfp;
+	selfB = (CeString  *) selfp;
 }
 
 /** 
@@ -556,9 +555,8 @@ CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, C
         return ce_string_concat_data_inrange(dst, src->data, start, end);
 }
 
-
 /** 
- * Concat a data to CeString Object
+ * Concat a data to CeString Object.
  * 
  * @param self      A CeString Object
  * @param data      A String Object
@@ -602,33 +600,52 @@ CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt st
 }
 
 /** 
- * Append data int to CeString Object another one
+ * Append data into CeString Object another one.
  * 
  * @param dst       A CeString Object
  * @param src       A CeString Object
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_append(CeString *dst, CeString *src)
 {
         return ce_string_append_data_inrange(dst, src->data, 1, -1);
 }
 
 /** 
- * Append data to a CeString Object
+ * Append data into CeString Object another one in range.
+ * 
+ * @param dst       A CeString Object
+ * @param src       A CeString Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          The CeString Object
+ */
+inline
+CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+{
+        return ce_string_append_data_inrange(dst, src->data, start, end);
+}
+
+
+/** 
+ * Append data to a CeString Object.
  * 
  * @param self      A CeString Object
  * @param data      A String Object
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_append_data(CeString *self, CeUChar *data)
 {
         return ce_string_append_data_inrange(self, data, 1, -1);
 }
 
 /** 
- * Append data to a CeString Object in range
+ * Append data to a CeString Object in range.
  * 
  * @param self      A CeString Object
  * @param data      A String Object
@@ -655,7 +672,6 @@ CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt st
         ce_string_set_data(self, new_data);
 
         return self;
-
 }
 
 
