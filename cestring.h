@@ -63,7 +63,9 @@ CeString * ce_string_concat(CeString *dst, CeString *src);
 CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end);
 CeString * ce_string_concat_data(CeString *self, CeUChar *data);
 CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);
-
+CeString * ce_string_append(CeString *dst, CeString *src);
+CeString * ce_string_append_data(CeString *self, CeUChar *data);
+CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end);;
 
 
 #endif  /* _CE_STRING_H_ */

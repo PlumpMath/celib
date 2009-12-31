@@ -601,4 +601,62 @@ CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt st
         return self;
 }
 
+/** 
+ * Append data int to CeString Object another one
+ * 
+ * @param dst       A CeString Object
+ * @param src       A CeString Object
+ * 
+ * @return          The CeString Object
+ */
+CeString * ce_string_append(CeString *dst, CeString *src)
+{
+        return ce_string_append_data_inrange(dst, src->data, 1, -1);
+}
+
+/** 
+ * Append data to a CeString Object
+ * 
+ * @param self      A CeString Object
+ * @param data      A String Object
+ * 
+ * @return          The CeString Object
+ */
+CeString * ce_string_append_data(CeString *self, CeUChar *data)
+{
+        return ce_string_append_data_inrange(self, data, 1, -1);
+}
+
+/** 
+ * Append data to a CeString Object in range
+ * 
+ * @param self      A CeString Object
+ * @param data      A String Object
+ * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param end       The last char is -1 or the length of String Object
+ * 
+ * @return          The CeString Object
+ */
+CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+{
+        CeInt data_len = strlen(data);
+        
+        CE_RANGE_INITIAL(start, end, data_len);
+
+        CeInt new_len = self->len + data_len;
+        CeInt cpy_len = end - start + 1;
+        CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
+                
+        /* Copy old data to new one */
+        memcpy(new_data, data, data_len);
+        memcpy(new_data + data_len, self->data, self->len);
+        new_data[new_len] = '\0';   /* end of line */
+
+        ce_string_set_data(self, new_data);
+
+        return self;
+
+}
+
+
 /* end of cestring.c */
