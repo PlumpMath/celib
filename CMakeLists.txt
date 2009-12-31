@@ -46,7 +46,7 @@ if(NOT WIN32)
         @ONLY)
 
     install(
-        FILES "${celib_BINARY_DIR}/TEMPLATES/celib.pc"
+        FILES "TEMPLATES/celib.pc"
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
 endif()
 
