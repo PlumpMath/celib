@@ -27,9 +27,6 @@ MARK_AS_ADVANCED (IDGEN_BIN_SUBDIR)
 # full paths for the installation
 SET (IDGEN_BIN_DIR     ${IDGEN_BIN_SUBDIR})
 
-
-
-
 ###########################################################
 # process subdirs
 
@@ -39,3 +36,21 @@ SUBDIRS(src)
 # install stuff
 
 #INSTALL (TARGETS idgen RUNTIME DESTINATION bin)
+
+
+
+
+## Configured files##########################################################
+# Generate pkgconfig file
+if(NOT WIN32)
+    configure_file(
+        TEMPLATES/celib.pc.cmake
+        celib.pc
+        @ONLY)
+
+    install(
+        FILES ${celib_BINARY_DIR}/celib.pc
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
+endif()
+
+
