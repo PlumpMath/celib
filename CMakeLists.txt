@@ -42,11 +42,11 @@ SUBDIRS(src)
 if(NOT WIN32)
     configure_file(
         TEMPLATES/celib.pc.cmake
-        TEMPLATES/celib.pc
+        ${celib_BINARY_DIR}/TEMPLATES/celib.pc
         @ONLY)
 
     install(
-        FILES "TEMPLATES/celib.pc"
+        FILES "${celib_BINARY_DIR}/TEMPLATES/celib.pc"
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
 endif()
 
