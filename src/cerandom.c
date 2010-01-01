@@ -34,9 +34,9 @@
 
 #if defined( __unix__ )
 
-static int get_random_fd( void );
+static int ce_get_random_fd( void );
 
-int get_random_fd( void )
+int ce_get_random_fd( void )
 {
         static int rand_fd = -1;
         int fd;
@@ -57,7 +57,7 @@ int get_random_fd( void )
 
 CeUInt ce_random( CeUInt max )
 {
-        CeInt fd = get_random_fd();
+        CeInt fd = ce_get_random_fd();
         CeUInt val;
 
         do {
@@ -100,7 +100,7 @@ CeChar ce_random_digit(void)
 inline
 CeChar ce_random_letter(void)
 {
-        return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[randgen(52)];
+        return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[ce_random(52)];
 }
 
 /* Generate random letter in upcase */
