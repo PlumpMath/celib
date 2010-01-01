@@ -42,7 +42,7 @@ typedef struct _CeBigIntP CeBigIntP;
  * Because the child in CeBigInt is constant, we need to
  * use pointer to change the CeBigInt.
  */
-static CeBigintP *selfp;
+static CeBigIntP *selfp;
 #define CE_BIGINT_INITIAL() selfp = (CeBigIntP *) self;
         
 /** 
