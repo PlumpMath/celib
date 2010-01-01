@@ -27,5 +27,6 @@
 #include <celib/cemacros.h>
 #include <celib/cetypes.h>
 #include <celib/cestring.h>
+#include <celib/cebigint.h>
 
 #endif  /* _CELIB_H_ */

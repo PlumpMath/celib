@@ -34,7 +34,7 @@ typedef struct _CeBigInt CeBigInt;
 
 /* Declare Public Method */
 CeBigint * ce_bigint_new(void);
-void ce_string_delete(CeBigInt *self)
-void ce_bigint_clear(CeBigInt *self)
+void ce_string_delete(CeBigInt *self);
+void ce_bigint_clear(CeBigInt *self);
 
 #endif  /* _CE_BIGINT_H_ */
