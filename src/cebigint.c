@@ -73,7 +73,7 @@ CeBigInt * ce_bigint_new(void)
  * 
  * @param self      The CeBigInt Object
  */
-void ce_string_delete(CeBigInt *self)
+void ce_bigint_delete(CeBigInt *self)
 {
         CE_BIGINT_INITIAL();
         
