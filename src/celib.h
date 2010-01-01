@@ -28,5 +28,6 @@
 #include <celib/cetypes.h>
 #include <celib/cestring.h>
 #include <celib/cebigint.h>
+#include <celib/cerandom.h>
 
 #endif  /* _CELIB_H_ */
