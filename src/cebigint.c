@@ -51,7 +51,7 @@ static CeBigintP *selfp;
  * 
  * @return          The CeBigInt Object
  */
-CeString * ce_bigint_new(void)
+CeBigInt * ce_bigint_new(void)
 {
         CeBigInt *self  = (CeBigInt *) malloc( sizeof(CeBigInt) );
 
