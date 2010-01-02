@@ -34,86 +34,92 @@
 
 #if defined( __unix__ )
 
-static int ce_get_random_fd( void );
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-int ce_get_random_fd( void )
+static CeInt ce_get_random_fd( void );
+
+CeInt ce_get_random_fd( void )
 {
-        static int rand_fd = -1;
-        int fd;
-                
-        if ( rand_fd < 0 ) {
-                rand_fd = open( "/dev/urandom", O_RDONLY | O_NONBLOCK );
-                if ( rand_fd < 0 ) {
-                        rand_fd = open( "/dev/random", O_RDONLY | O_NONBLOCK );
-                }
-                if ( rand_fd < 0 ) {
-                        perror( "open /dev/random and /dev/urandom failed" );
-                        exit( EXIT_FAILURE );
-                }
-        }
-        
-        return rand_fd;
+		static CeInt rand_fd = -1;
+		CeInt fd;
+
+		if ( rand_fd < 0 ) {
+				rand_fd = open( "/dev/urandom", O_RDONLY | O_NONBLOCK );
+				if ( rand_fd < 0 ) {
+						rand_fd = open( "/dev/random", O_RDONLY | O_NONBLOCK );
+				}
+				if ( rand_fd < 0 ) {
+						perror( "open /dev/random and /dev/urandom failed" );
+						exit( EXIT_FAILURE );
+				}
+		}
+
+		return rand_fd;
 }
 
-CeUInt ce_random( CeUInt max )
+CeUInt ce_random(CeUInt max)
 {
-        CeInt fd = ce_get_random_fd();
-        CeUInt val;
+		CeInt fd = ce_get_random_fd();
+		CeUInt val;
 
-        do {
-                CeUChar buf;
+		do {
+				CeUChar buf;
 
-                while (1) {
-                        if ( read( fd, &buf, 1 ) <= 0 ) {
-                                if ( errno == EINTR || errno == EAGAIN )
-                                        continue;
-                                perror( "read random device failed" );
-                                exit( EXIT_FAILURE );
-                        }
-                        break;
-                }
-                val = buf;
-        } while ( val >= max + getpid() );
+				while (1) {
+						if ( read( fd, &buf, 1 ) <= 0 ) {
+								if ( errno == EINTR || errno == EAGAIN )
+										continue;
+								perror( "read random device failed" );
+								exit( EXIT_FAILURE );
+						}
+						break;
+				}
+				val = buf;
+		} while ( val >= max + getpid() );
 
-        return val % max;
+		return val % max;
 }
 
 #else
 
-CeUInt ce_random( CeUInt max )
-{
-        srand( time( NULL ) );
+#include <time.h>
 
-        return rand() % max;
+CeUInt ce_random(CeUInt max)
+{
+		srand( time( NULL ) );
+
+		return rand() % max;
 }
 
 #endif /* defined( __unix__ ) */
 
 /* Generate random digit */
-inline
+		inline
 CeChar ce_random_digit(void)
 {
-        return "0123456789"[ce_random(10)];
+		return "0123456789"[ce_random(10)];
 }
 
 /* Generate random letter in upcase */
-inline
+		inline
 CeChar ce_random_letter(void)
 {
-        return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[ce_random(52)];
+		return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[ce_random(52)];
 }
 
 /* Generate random letter in upcase */
-inline
+		inline
 CeChar ce_random_letter_upcase(void)
 {
-        return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[ce_random(26)];
+		return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[ce_random(26)];
 }
 
 /* Generate random letter in downcase */
-inline
+		inline
 CeChar ce_random_letter_downcase(void)
 {
-        return "abcdefghijklmnopqrstuvwxyz"[ce_random(26)];
+		return "abcdefghijklmnopqrstuvwxyz"[ce_random(26)];
 }
 

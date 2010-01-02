@@ -24,15 +24,8 @@
 #ifndef _CE_RANDOM_H_
 #define _CE_RANDOM_H_
 
-#if defined( __unix__ )
-#		include <sys/types.h>
-#		include <unistd.h>
-#		include <fcntl.h>
-#else
-#		include <time.h>
-#endif /* defined( __unix__ ) */
 
-CeUInt ce_random(CeUInt max );
+CeUInt ce_random(CeUInt max);
 CeChar ce_random_digit(void);
 CeChar ce_random_letter(void);
 CeChar ce_random_letter_upcase(void);
