@@ -27,6 +27,7 @@
 /* Declare CeBigInt Object */
 struct _CeBigInt {
         CeUChar* const data;
+        CeInt    const sign;    /**< the sign of cebigint */
         CeInt    const len;     /**< string length excluding trailing '\0' */
 };
 typedef struct _CeBigInt CeBigInt;

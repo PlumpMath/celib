@@ -34,6 +34,7 @@
 /* Make another CeBigInt Object but it's child is not constant. */
 struct _CeBigIntP {
        CeUChar *data;
+       CeInt    sign;    /**< the sign of cebigint */
        CeInt    len;     /**< string length excluding trailing '\0' */
 };
 typedef struct _CeBigIntP CeBigIntP;
@@ -62,6 +63,7 @@ CeBigInt * ce_bigint_new(void)
         CE_BIGINT_INITIAL();
 
         selfp->data = NULL;
+	selfp->sign = 0; /**< 0 is positive, 1 is negative */
         selfp->len = 0;
 
         return self;
@@ -81,7 +83,9 @@ void ce_bigint_delete(CeBigInt *self)
                 free(self->data);
         }
 
-        selfp->len = 0;
+        selfp->len  = 0;
+	selfp->sign = 0; /**< 0 is positive, 1 is negative */
+
         free(self);
 }
 
@@ -97,4 +101,5 @@ void ce_bigint_clear(CeBigInt *self)
         free(self->data);
         selfp->data = NULL;
         selfp->len = 0;
+	selfp->sign = 0; /**< 0 is positive, 1 is negative */
 }
