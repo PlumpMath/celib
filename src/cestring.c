@@ -85,16 +85,16 @@ CeString * ce_string_new_with_data(const CeUChar *data)
  * Initial the CeString Object and set the data in range.
  * 
  * @param data      A String Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object.
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt start, CeInt end)
+CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt begin, CeInt end)
 {
         CeString *self  = ce_string_new();
 
-        return ce_string_set_data_inrange(self, data, start, end);
+        return ce_string_set_data_inrange(self, data, begin, end);
 }
 
 /** 
@@ -145,20 +145,20 @@ CeString * ce_string_set_data(CeString *self, const CeUChar *data)
  * 
  * @param self      The CeString Object
  * @param data      A String Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt start, CeInt end)
+CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt begin, CeInt end)
 {
         CE_STRING_INITIAL();
 
         CeInt length = strlen(data);
 
-        CE_RANGE_INITIAL(start, end, length);
+        CE_RANGE_INITIAL(begin, end, length);
 
-        length = end - start + 1;
+        length = end - begin + 1;
         
         /* Free the CeString Object first */
         if(0 != selfp->len) {
@@ -169,7 +169,7 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt
         selfp->data = (CeUChar *) malloc( sizeof(CeUChar) * (length + 1) );
         
         /* Now let's copy new string to our CeString */
-        memcpy(selfp->data, data + start, length);
+        memcpy(selfp->data, data + begin, length);
         selfp->data[length] = '\0';   /* end of line */
 
         return self;
@@ -192,21 +192,21 @@ CeUChar * ce_string_get_data(CeString *self)
  * Get the data of CeString Object in range
  * 
  * @param self      The CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt start, CeInt end)
+CeUChar  * ce_string_get_data_inrange(CeString *self, CeInt begin, CeInt end)
 {
         CE_STRING_INITIAL();
 
-        CE_RANGE_INITIAL(start, end, self->len);
+        CE_RANGE_INITIAL(begin, end, self->len);
         
-        CeInt length = end - start + 1;
+        CeInt length = end - begin + 1;
         CeUChar *data = (CeUChar *) malloc( sizeof(CeUChar) * length + 1 );
         
-        memcpy(data, self->data + start, length);
+        memcpy(data, self->data + begin, length);
         data[length] = '\0';    /* end of line */
         
         return data;
@@ -229,16 +229,16 @@ CeInt ce_string_get_length(CeString *self)
  * Get the length of CeString Object in range
  * 
  * @param self　　　　The CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The length of CeString Object in range
  */
-CeInt ce_string_get_length_inrange(CeString *self, CeInt start, CeInt end)
+CeInt ce_string_get_length_inrange(CeString *self, CeInt begin, CeInt end)
 {
-        CE_RANGE_INITIAL(start, end, self->len);
+        CE_RANGE_INITIAL(begin, end, self->len);
 
-        return (end - start + 1);
+        return (end - begin + 1);
 }
 
 /** 
@@ -258,12 +258,12 @@ CeString * ce_string_reverse(CeString *self)
  * Reverse the data in CeString Object in range
  * 
  * @param self      The CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
+CeString * ce_string_reverse_inrange(CeString *self, CeInt begin, CeInt end)
 {
         CE_STRING_INITIAL();
 
@@ -271,15 +271,15 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt start, CeInt end)
                 return self;
         }
 
-        CE_RANGE_INITIAL(start, end, self->len);
+        CE_RANGE_INITIAL(begin, end, self->len);
 
         CeInt i = 0;
-        CeInt tmp_len = (end - start) / 2;
+        CeInt tmp_len = (end - begin) / 2;
         CeUChar tmp_data;
 
         for(; i <= tmp_len; i++) {
-                tmp_data = selfp->data[i + start];
-                selfp->data[i + start] = selfp->data[end - i];
+                tmp_data = selfp->data[i + begin];
+                selfp->data[i + begin] = selfp->data[end - i];
                 selfp->data[end - i] = tmp_data;
         }
 
@@ -303,18 +303,18 @@ CeString * ce_string_toupper(CeString *self)
  * Make the cahracters in CeString object in range to uppercase
  * 
  * @param self      The CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_toupper_inrange(CeString *self, CeInt start, CeInt end)
+CeString * ce_string_toupper_inrange(CeString *self, CeInt begin, CeInt end)
 {
         CE_STRING_INITIAL();
 
-        CE_RANGE_INITIAL(start, end, self->len);
+        CE_RANGE_INITIAL(begin, end, self->len);
 
-        CeInt i = start;
+        CeInt i = begin;
 
         for (; i <= end; i++) {
                 selfp->data[i] = toupper(selfp->data[i]);
@@ -340,18 +340,18 @@ CeString * ce_string_tolower(CeString *self)
  * Make the cahracters in CeString object in range to lowercase 
  * 
  * @param self      The CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_tolower_inrange(CeString *self, CeInt start, CeInt end)
+CeString * ce_string_tolower_inrange(CeString *self, CeInt begin, CeInt end)
 {
         CE_STRING_INITIAL();
 
-        CE_RANGE_INITIAL(start, end, self->len);
+        CE_RANGE_INITIAL(begin, end, self->len);
         
-        CeInt i = start;
+        CeInt i = begin;
 
         for (; i <= end; i++) {
                 selfp->data[i] = tolower(selfp->data[i]);
@@ -381,7 +381,7 @@ CeInt ce_string_compare(CeString *selfA, CeString *selfB)
  * 
  * @param selfA     A CeString Object
  * @param selfB     A CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          1 : selfA <  selfB
@@ -389,10 +389,10 @@ CeInt ce_string_compare(CeString *selfA, CeString *selfB)
  *                 -1 : selfA >  selfB
  */
 inline
-CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
+CeInt ce_string_compare_inrange(CeString *selfA, CeString *selfB, CeInt begin, CeInt end)
 {
-        return strcmp(ce_string_get_data_inrange(selfA, start, end),
-                      ce_string_get_data_inrange(selfB, start, end));
+        return strcmp(ce_string_get_data_inrange(selfA, begin, end),
+                      ce_string_get_data_inrange(selfB, begin, end));
 }
 
 /** 
@@ -416,17 +416,17 @@ CeInt ce_string_compare_data(CeString *self, CeUChar *data)
  * 
  * @param self      A CeString Object
  * @param data      A String   Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          1 : self->data <  data
  *                  0 : self->data == data
  *                 -1 : self->data >  data
  */
-CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end)
 {
-        CeString *test_data = ce_string_new_with_data_inrange(data, start, end);
-        CeInt resault = strcmp(ce_string_get_data_inrange(self, start, end), test_data->data);
+        CeString *test_data = ce_string_new_with_data_inrange(data, begin, end);
+        CeInt resault = strcmp(ce_string_get_data_inrange(self, begin, end), test_data->data);
 
         ce_string_delete(test_data);
 
@@ -460,16 +460,16 @@ CeBool ce_string_isequal(CeString *selfA, CeString *selfB)
  * 
  * @param selfA     A CeString Object
  * @param selfB     A CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          if equal : CE_TRUE
  *                  else     : CE_FALSE
  */
 inline
-CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt start, CeInt end)
+CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt begin, CeInt end)
 {
-        int resault = ce_string_compare_inrange(selfA, selfB, start, end);
+        int resault = ce_string_compare_inrange(selfA, selfB, begin, end);
 
         if ( !resault ) {
                 return CE_TRUE;
@@ -498,15 +498,15 @@ CeString * ce_string_copy(CeString *dst, CeString *src)
  * 
  * @param dst       A CeString Object
  * @param src       A CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end)
 {
         ce_string_clear(dst);
-        ce_string_set_data_inrange(dst, src->data, start, end);
+        ce_string_set_data_inrange(dst, src->data, begin, end);
 
         return dst;
 }
@@ -544,15 +544,15 @@ CeString * ce_string_concat(CeString *dst, CeString *src)
  * 
  * @param dst       A CeString Object
  * @param src       A CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
 inline
-CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end)
 {
-        return ce_string_concat_data_inrange(dst, src->data, start, end);
+        return ce_string_concat_data_inrange(dst, src->data, begin, end);
 }
 
 /** 
@@ -574,24 +574,24 @@ CeString * ce_string_concat_data(CeString *self, CeUChar *data)
  * 
  * @param self      A CeString Object
  * @param data      A String Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end)
 {
         CeInt data_len = strlen(data);
         
-        CE_RANGE_INITIAL(start, end, data_len);
+        CE_RANGE_INITIAL(begin, end, data_len);
 
         CeInt new_len = self->len + data_len;
-        CeInt cpy_len = end - start + 1;
+        CeInt cpy_len = end - begin + 1;
         CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
                 
         /* Copy old data to new one */
         memcpy(new_data, self->data, self->len);
-        memcpy(new_data + self->len, data + start , cpy_len);
+        memcpy(new_data + self->len, data + begin , cpy_len);
         new_data[new_len] = '\0';   /* end of line */
 
         ce_string_set_data(self, new_data);
@@ -618,15 +618,15 @@ CeString * ce_string_append(CeString *dst, CeString *src)
  * 
  * @param dst       A CeString Object
  * @param src       A CeString Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
 inline
-CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt start, CeInt end)
+CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end)
 {
-        return ce_string_append_data_inrange(dst, src->data, start, end);
+        return ce_string_append_data_inrange(dst, src->data, begin, end);
 }
 
 
@@ -649,19 +649,19 @@ CeString * ce_string_append_data(CeString *self, CeUChar *data)
  * 
  * @param self      A CeString Object
  * @param data      A String Object
- * @param start     The first char is 1, the second is 2, blah blah blah.
+ * @param begin     The first char is 1, the second is 2, blah blah blah.
  * @param end       The last char is -1 or the length of String Object
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt start, CeInt end)
+CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end)
 {
         CeInt data_len = strlen(data);
         
-        CE_RANGE_INITIAL(start, end, data_len);
+        CE_RANGE_INITIAL(begin, end, data_len);
 
         CeInt new_len = self->len + data_len;
-        CeInt cpy_len = end - start + 1;
+        CeInt cpy_len = end - begin + 1;
         CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
                 
         /* Copy old data to new one */
