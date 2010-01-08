@@ -57,14 +57,14 @@
 #define CE_NAND(a, b) ( ~( (a) & (b) ) )
 
 /* Initial the range */
-#define CE_RANGE_INITIAL(start, end, length)                          \
-		do {                                                          \
-				/* Reset start and end variables */                   \
-				start += ( start > 0 ) ? (-1) : (length);             \
+#define CE_RANGE_INITIAL(begin, end, length)                                          \
+		do {                                                                  \
+				/* Reset begin and end variables */                   \
+				begin += ( begin > 0 ) ? (-1) : (length);             \
 				end   += ( end   > 0 ) ? (-1) : (length);             \
-				/* If start gratter than end, we need to swap them */ \
-				if ( start > end ) {                                  \
-						ce_int_swap(&start, &end);                    \
+				/* If begin gratter than end, we need to swap them */ \
+				if ( begin > end ) {                                  \
+						ce_int_swap(&begin, &end);            \
 				}                                                     \
 		} while(0)
 
