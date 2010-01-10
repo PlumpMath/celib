@@ -446,7 +446,7 @@ CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt begin,
 inline
 CeBool ce_string_isequal(CeString *selfA, CeString *selfB)
 {
-        int resault = ce_string_compare(selfA, selfB);
+        CeInt resault = ce_string_compare(selfA, selfB);
 
         if ( !resault ) {
                 return CE_TRUE;
@@ -470,7 +470,7 @@ CeBool ce_string_isequal(CeString *selfA, CeString *selfB)
 inline
 CeBool ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt begin, CeInt end)
 {
-        int resault = ce_string_compare_inrange(selfA, selfB, begin, end);
+        CeInt resault = ce_string_compare_inrange(selfA, selfB, begin, end);
 
         if ( !resault ) {
                 return CE_TRUE;
