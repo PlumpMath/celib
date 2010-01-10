@@ -318,7 +318,7 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt begin, CeInt end)
         CeInt i = begin;
 
         for (; i <= end; i++) {
-                _self->data[i] = toupper(_self->data[i]);
+                _self->data[i] = toupper( _self->data[i] );
         }
 
         return self;

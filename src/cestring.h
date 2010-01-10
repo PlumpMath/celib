@@ -28,7 +28,6 @@
 typedef struct {
         CeUChar* const data;
         CeInt    const len;     /**< string length excluding trailing '\0' */
-        /* Public Methods */
 } CeString;
 
 
