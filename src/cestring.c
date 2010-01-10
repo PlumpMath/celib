@@ -675,6 +675,7 @@ CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt be
         return self;
 }
 
+
 /** 
  * Prepend data into CeString Object another one.
  * 
