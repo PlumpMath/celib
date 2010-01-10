@@ -426,7 +426,7 @@ CeInt ce_string_compare_data(CeString *self, CeUChar *data)
  */
 CeInt ce_string_compare_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end)
 {
-        CeString *test_data = ce_string_new_with_data_inrange(data, begin, end);
+        CeString *test_data = ce_string_new_data_inrange(data, begin, end);
         CeInt resault = strcmp(ce_string_get_data_inrange(self, begin, end), test_data->data);
 
         ce_string_delete(test_data);
