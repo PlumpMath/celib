@@ -41,8 +41,8 @@ typedef struct  {
  * Because the child in CeString is constant, we need to
  * use pointer to change the CeString.
  */
-static _CeString *selfp;
-#define CE_STRING_INITIAL() selfp = (_CeString *) self;
+static _CeString *_self;
+#define CE_STRING_INITIAL() _self = ( _CeString * ) self;
         
 /** 
  * Initial the CeString Object without setting any data.
@@ -52,16 +52,16 @@ static _CeString *selfp;
  */
 CeString * ce_string_new(void)
 {
-        CeString *self  = (CeString *) malloc( sizeof(CeString) );
+        CeString *self  = (CeString *) malloc( sizeof( CeString ) );
 
-        if(!selfp) {
-                selfp  = (_CeString *) malloc( sizeof(_CeString) );        
+        if(!_self) {
+                _self  = (_CeString *) malloc( sizeof( _CeString ) );        
         }
 
         CE_STRING_INITIAL();
 
-        selfp->data = NULL;
-        selfp->len = 0;
+        _self->data = NULL;
+        _self->len = 0;
 
         return self;
 }
@@ -109,7 +109,7 @@ void ce_string_delete(CeString *self)
                 free(self->data);
         }
         
-	selfp->len = 0;
+	_self->len = 0;
         free(self);
 }
 
@@ -123,8 +123,8 @@ void ce_string_clear(CeString *self)
         CE_STRING_INITIAL();
 
         free(self->data);
-        selfp->data = NULL;
-        selfp->len = 0;
+        _self->data = NULL;
+        _self->len = 0;
 }
 
 /** 
@@ -162,16 +162,16 @@ CeString * ce_string_set_data_inrange(CeString *self, const CeUChar *data, CeInt
         length = end - begin + 1;
         
         /* Free the CeString Object first */
-        if(0 != selfp->len) {
+        if(0 != _self->len) {
                 free(self->data);
         }
 
-        selfp->len = length;
-        selfp->data = (CeUChar *) malloc( sizeof(CeUChar) * (length + 1) );
+        _self->len = length;
+        _self->data = (CeUChar *) malloc( sizeof(CeUChar) * (length + 1) );
         
         /* Now let's copy new string to our CeString */
-        memcpy(selfp->data, data + begin, length);
-        selfp->data[length] = '\0';   /* end of line */
+        memcpy(_self->data, data + begin, length);
+        _self->data[length] = '\0';   /* end of line */
 
         return self;
 }
@@ -268,7 +268,7 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt begin, CeInt end)
 {
         CE_STRING_INITIAL();
 
-        if ( 1 == selfp->len) {
+        if ( 1 == _self->len) {
                 return self;
         }
 
@@ -279,9 +279,9 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt begin, CeInt end)
         CeUChar tmp_data;
 
         for(; i <= tmp_len; i++) {
-                tmp_data = selfp->data[i + begin];
-                selfp->data[i + begin] = selfp->data[end - i];
-                selfp->data[end - i] = tmp_data;
+                tmp_data = _self->data[i + begin];
+                _self->data[i + begin] = selfp->data[end - i];
+                _self->data[end - i] = tmp_data;
         }
 
         return self;
@@ -318,7 +318,7 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt begin, CeInt end)
         CeInt i = begin;
 
         for (; i <= end; i++) {
-                selfp->data[i] = toupper(selfp->data[i]);
+                _self->data[i] = toupper(selfp->data[i]);
         }
 
         return self;
@@ -355,7 +355,7 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt begin, CeInt end)
         CeInt i = begin;
 
         for (; i <= end; i++) {
-                selfp->data[i] = tolower(selfp->data[i]);
+                _self->data[i] = tolower(selfp->data[i]);
         }
 
         return self;
@@ -521,9 +521,9 @@ CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt begin, CeI
 inline
 void ce_string_swap(CeString *selfA, CeString *selfB)
 {
-	selfp = (_CeString *) selfA;
+	_self = (_CeString *) selfA;
 	selfA = selfB;
-	selfB = (CeString  *) selfp;
+	selfB = (CeString  *) _self;
 }
 
 /** 
