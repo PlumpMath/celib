@@ -32,18 +32,17 @@
 #include "cemacros.h"
 
 /* Make another CeString Object but it's child is not constant. */
-struct _CeStringP {
+typedef struct  {
        CeUChar *data;
        CeInt    len;     /**< string length excluding trailing '\0' */
-};
-typedef struct _CeStringP CeStringP;
+} _CeString;
 
 /*
  * Because the child in CeString is constant, we need to
  * use pointer to change the CeString.
  */
-static CeStringP *selfp;
-#define CE_STRING_INITIAL() selfp = (CeStringP *) self;
+static _CeString *selfp;
+#define CE_STRING_INITIAL() selfp = (_CeString *) self;
         
 /** 
  * Initial the CeString Object without setting any data.
@@ -56,7 +55,7 @@ CeString * ce_string_new(void)
         CeString *self  = (CeString *) malloc( sizeof(CeString) );
 
         if(!selfp) {
-                selfp  = (CeStringP *) malloc( sizeof(CeStringP) );        
+                selfp  = (_CeString *) malloc( sizeof(_CeString) );        
         }
 
         CE_STRING_INITIAL();
@@ -522,7 +521,7 @@ CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt begin, CeI
 inline
 void ce_string_swap(CeString *selfA, CeString *selfB)
 {
-	selfp = (CeStringP *) selfA;
+	selfp = (_CeString *) selfA;
 	selfA = selfB;
 	selfB = (CeString  *) selfp;
 }
@@ -675,6 +674,19 @@ CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt be
 
         return self;
 }
+
+/** 
+ * print CeString Object
+ * 
+ * @param self      A CeString Object
+ */
+void ce_string_print(CeString *self)
+{
+        printf("%s", self->data);
+}
+
+
+
 
 
 /* end of cestring.c */

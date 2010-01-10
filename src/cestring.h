@@ -25,11 +25,11 @@
 #define _CE_STRING_H_
 
 /* Declare CeString Object */
-struct _CeString {
+typedef struct {
         CeUChar* const data;
         CeInt    const len;     /**< string length excluding trailing '\0' */
-};
-typedef struct _CeString CeString;
+        /* Public Methods */
+} CeString;
 
 
 /* Declare Public Method */
@@ -67,6 +67,7 @@ CeString * ce_string_append(CeString *dst, CeString *src);
 CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end);
 CeString * ce_string_append_data(CeString *self, CeUChar *data);
 CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end);;
+void       ce_string_print(CeString *self);
 
 
 #endif  /* _CE_STRING_H_ */
