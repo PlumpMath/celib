@@ -280,7 +280,7 @@ CeString * ce_string_reverse_inrange(CeString *self, CeInt begin, CeInt end)
 
         for(; i <= tmp_len; i++) {
                 tmp_data = _self->data[i + begin];
-                _self->data[i + begin] = selfp->data[end - i];
+                _self->data[i + begin] = _self->data[end - i];
                 _self->data[end - i] = tmp_data;
         }
 
@@ -318,7 +318,7 @@ CeString * ce_string_toupper_inrange(CeString *self, CeInt begin, CeInt end)
         CeInt i = begin;
 
         for (; i <= end; i++) {
-                _self->data[i] = toupper(selfp->data[i]);
+                _self->data[i] = toupper(_self->data[i]);
         }
 
         return self;
@@ -355,7 +355,7 @@ CeString * ce_string_tolower_inrange(CeString *self, CeInt begin, CeInt end)
         CeInt i = begin;
 
         for (; i <= end; i++) {
-                _self->data[i] = tolower(selfp->data[i]);
+                _self->data[i] = tolower(_self->data[i]);
         }
 
         return self;
