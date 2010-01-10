@@ -66,6 +66,10 @@ CeString * ce_string_append(CeString *dst, CeString *src);
 CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end);
 CeString * ce_string_append_data(CeString *self, CeUChar *data);
 CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end);;
+CeString * ce_string_prepend(CeString *dst, CeString *src);
+CeString * ce_string_prepend_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end);
+CeString * ce_string_prepend_data(CeString *self, CeUChar *data);
+CeString * ce_string_prepend_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end);;
 void       ce_string_print(CeString *self);
 
 
