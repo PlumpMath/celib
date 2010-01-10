@@ -33,8 +33,8 @@ typedef struct {
 
 /* Declare Public Method */
 CeString * ce_string_new(void);
-CeString * ce_string_new_with_data(const CeUChar *data);
-CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt begin, CeInt end);
+CeString * ce_string_new_data(const CeUChar *data);
+CeString * ce_string_new_data_inrange(const CeUChar *data, CeInt begin, CeInt end);
 void       ce_string_delete(CeString *self);
 void       ce_string_clear(CeString *self);
 CeString * ce_string_set_data(CeString *self, const CeUChar *data);

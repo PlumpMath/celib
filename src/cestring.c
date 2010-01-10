@@ -73,7 +73,7 @@ CeString * ce_string_new(void)
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_new_with_data(const CeUChar *data)
+CeString * ce_string_new_data(const CeUChar *data)
 {
         CeString *self  = ce_string_new();
 
@@ -89,7 +89,7 @@ CeString * ce_string_new_with_data(const CeUChar *data)
  * 
  * @return          The CeString Object
  */
-CeString * ce_string_new_with_data_inrange(const CeUChar *data, CeInt begin, CeInt end)
+CeString * ce_string_new_data_inrange(const CeUChar *data, CeInt begin, CeInt end)
 {
         CeString *self  = ce_string_new();
 
@@ -106,7 +106,7 @@ void ce_string_delete(CeString *self)
         CE_STRING_INITIAL();
 
 	if ( !self->data ) {
-                free(self->data);
+                free( self->data );
         }
         
 	_self->len = 0;
