@@ -667,7 +667,7 @@ CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt be
                 
         /* Copy old data to new one */
         memcpy(new_data, self->data, self->len);
-        memcpy(new_data + self->len, data, data_len);
+        memcpy(new_data + self->len, data + begin, cpy_len);
         new_data[new_len] = '\0';   /* end of line */
 
         ce_string_set_data(self, new_data);
@@ -742,8 +742,8 @@ CeString * ce_string_prepend_data_inrange(CeString *self, CeUChar *data, CeInt b
         CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
                 
         /* Copy old data to new one */
-        memcpy(new_data, data, data_len);
-        memcpy(new_data + data_len, self->data, self->len);
+        memcpy(new_data, data + begin, cpy_len);
+        memcpy(new_data + cpy_len, self->data, self->len);
         new_data[new_len] = '\0';   /* end of line */
 
         ce_string_set_data(self, new_data);
