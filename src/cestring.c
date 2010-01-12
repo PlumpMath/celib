@@ -580,24 +580,10 @@ CeString * ce_string_concat_data(CeString *self, CeUChar *data)
  * 
  * @return          The CeString Object
  */
+inline
 CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end)
 {
-        CeInt data_len = strlen(data);
-        
-        CE_RANGE_INITIAL(begin, end, data_len);
-
-        CeInt new_len = self->len + data_len;
-        CeInt cpy_len = end - begin + 1;
-        CeUChar *new_data = (CeUChar *) malloc( sizeof(CeUChar) * (new_len + 1) );
-                
-        /* Copy old data to new one */
-        memcpy(new_data, self->data, self->len);
-        memcpy(new_data + self->len, data + begin , cpy_len);
-        new_data[new_len] = '\0';   /* end of line */
-
-        ce_string_set_data(self, new_data);
-
-        return self;
+        return ce_string_append_data_inrange(self, data, begin, end);
 }
 
 /** 

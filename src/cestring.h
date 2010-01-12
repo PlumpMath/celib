@@ -58,20 +58,20 @@ CeBool     ce_string_isequal_inrange(CeString *selfA, CeString *selfB, CeInt beg
 CeString * ce_string_copy(CeString *dst, CeString *src);
 CeString * ce_string_copy_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end);
 void       ce_string_swap(CeString *selfA, CeString *selfB);
+//BUG:The same.......
 CeString * ce_string_concat(CeString *dst, CeString *src);
 CeString * ce_string_concat_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end);
 CeString * ce_string_concat_data(CeString *self, CeUChar *data);
 CeString * ce_string_concat_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end);
-//BUG:
 CeString * ce_string_append(CeString *dst, CeString *src);
 CeString * ce_string_append_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end);
 CeString * ce_string_append_data(CeString *self, CeUChar *data);
 CeString * ce_string_append_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end);;
+
 CeString * ce_string_prepend(CeString *dst, CeString *src);
 CeString * ce_string_prepend_inrange(CeString *dst, CeString *src, CeInt begin, CeInt end);
 CeString * ce_string_prepend_data(CeString *self, CeUChar *data);
 CeString * ce_string_prepend_data_inrange(CeString *self, CeUChar *data, CeInt begin, CeInt end);;
-//BUG:
 void       ce_string_print(CeString *self);
 
 
