@@ -120,5 +120,8 @@
 #define NAND(a, b) ( ~( (a) & (b) ) )
 
 
+
+
+
 #endif /* _CE_MACROS_H */
 
