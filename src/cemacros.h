@@ -24,48 +24,46 @@
 #ifndef _CE_MACROS_H_
 #define _CE_MACROS_H_
 
-/* program is allowed to contain its own definitions, so ... */
-#undef  STR
-#undef  POWER2
-#undef  POWER3
-#undef  MAX
-#undef  MIN
-#undef  UPCASE
-#undef  DOWNCASE
-#undef  LSHIFT
-#undef  RSHIFT
-#undef  NOT
-#undef  OR
-#undef  AND
-#undef  XOR
-#undef  NOR
-#undef  NAND
-
 /* Convert str to string */
 #define _CE_STR(str) #str
+#undef  STR
 #define STR(str) _CE_STR(str)
 
+#undef  POWER2
 #define POWER2(x) ( (x) * (x) )
+#undef  POWER3
 #define POWER3(x) ( (x) * (x) * (x) )
 
 /* Find Max value or Min value */
+#undef  MAX
 #define MAX(x, y) ( (x) > (y) ? (x) : (y) )
+#undef  MIN
 #define MIN(x, y) ( (x) < (y) ? (x) : (y) )
 
 /* Make a character to upcase or downcase */
+#undef  UPCASE
 #define UPCASE(c)   ( ( (c) >= 'a' && (c) <= 'z') ? ( (c) - 0x20) : (c) )
+#undef  DOWNCASE
 #define DOWNCASE(c) ( ( (c) >= 'A' && (c) <= 'Z') ? ( (c) + 0x20) : (c) )
 
 /* Shift the value to left or right */
+#undef  LSHIFT
 #define LSHIFT(x, offset) ( (x) << (offset) )
+#undef  RSHIFT
 #define RSHIFT(x, offset) ( (x) >> (offset) )
 
 /* Logic Arithmatic */
+#undef  NOT
 #define NOT(a)     ( ~(a) )
+#undef  OR
 #define OR(a, b)   ( (a) | (b) )
+#undef  AND
 #define AND(a, b)  ( (a) & (b) )
+#undef  XOR
 #define XOR(a, b)  ( (a) ^ (b) )
+#undef  NOR
 #define NOR(a, b)  ( ~( (a) | (b) ) )
+#undef  NAND
 #define NAND(a, b) ( ~( (a) & (b) ) )
 
 

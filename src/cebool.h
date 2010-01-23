@@ -24,11 +24,6 @@
 #ifndef     _CE_BOOL_H_
 #define     _CE_BOOL_H_
 
-/* program is allowed to contain its own definitions, so ... */
-#undef  true
-#undef  false
-#undef  TRUE
-#undef  FALSE
 
 /* if we use c99 */
 #if  ( __STDC_VERSION__ >= 199901L )
@@ -37,9 +32,17 @@
     typedef  int   CeBool;
 #endif /* __STDC_VERSION__ >= 199901L */
 
+
+#undef  true
 #define true  1
+
+#undef  false
 #define false 0
+
+#undef  TRUE
 #define TRUE  true
+
+#undef  FALSE
 #define FALSE false
 
 
