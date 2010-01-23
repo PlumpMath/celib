@@ -21,14 +21,26 @@
  *
  */
 
-#ifndef _CELIB_H_
-#define _CELIB_H_
+#ifndef     _CE_BOOL_H_
+#define     _CE_BOOL_H_
 
-#include <celib/cemacros.h>
-#include <celib/cetypes.h>
-#include <celib/cebool.h>
-#include <celib/cestring.h>
-#include <celib/cebigint.h>
-#include <celib/cerandom.h>
+/* program is allowed to contain its own definitions, so ... */
+#undef  true
+#undef  false
+#undef  TRUE
+#undef  FALSE
 
-#endif  /* _CELIB_H_ */
+/* if we use c99 */
+#if  ( __STDC_VERSION__ >= 199901L )
+    typedef _Bool CeBool;
+#else
+    typedef  int  CeBool;
+#endif /* __STDC_VERSION__ >= 199901L */
+
+#define true  1
+#define false 0
+#define TRUE  true
+#define FALSE false
+
+
+#endif    /* _CE_BOOL_H_ */

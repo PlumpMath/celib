@@ -1,11 +1,11 @@
-/* CELIB - cldnew's C libraries designed for CEMACS
+/* CELIB - coldnew's evil library for C programming.
  *
- * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved. 
+ * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved.
  *
  * This file is part of CELIB.
  *
  * The contents of this file are subject to the terms of one of the
- * following licenses: 
+ * following licenses:
  *
  *    1) GNU Lesser General Public License (GNU LGPL)
  *    2) Common Development and Distribution License (CDDL)
@@ -21,104 +21,53 @@
  *
  */
 
-#ifndef _CE_MACROS_H
-#define _CE_MACROS_H
+#ifndef _CE_MACROS_H_
+#define _CE_MACROS_H_
 
-
-/* The true or false value for CeBool */
-#define CE_FALSE 0
-#define CE_TRUE  1
+/* program is allowed to contain its own definitions, so ... */
+#undef  STR
+#undef  POWER2
+#undef  POWER3
+#undef  MAX
+#undef  MIN
+#undef  UPCASE
+#undef  DOWNCASE
+#undef  LSHIFT
+#undef  RSHIFT
+#undef  NOT
+#undef  OR
+#undef  AND
+#undef  XOR
+#undef  NOR
+#undef  NAND
 
 /* Convert str to string */
 #define _CE_STR(str) #str
-#define CE_STR(str) _CE_STR(str)
+#define STR(str) _CE_STR(str)
+
+#define POWER2(x) ( (x) * (x) )
+#define POWER3(x) ( (x) * (x) * (x) )
 
 /* Find Max value or Min value */
-#define CE_MAX(x,y) ( (x) > (y) ? (x) : (y) )
-#define CE_MIN(x,y) ( (x) < (y) ? (x) : (y) )
-
-#define CE_POWER_2(x) ( (x) * (x) )
-#define CE_POWER_3(x) ( (x) * (x) * (x) )
+#define MAX(x, y) ( (x) > (y) ? (x) : (y) )
+#define MIN(x, y) ( (x) < (y) ? (x) : (y) )
 
 /* Make a character to upcase or downcase */
-#define CE_UPCASE(c)   ( ( (c) >= 'a' && (c) <= 'z') ? ( (c) - 0x20) : (c) )
-#define CE_DOWNCASE(c) ( ( (c) >= 'A' && (c) <= 'Z') ? ( (c) + 0x20) : (c) )
-
-/* Shift the value to left or right */
-#define CE_LSHIFT(x, offset) ( (x) << (offset) )
-#define CE_RSHIFT(x, offset) ( (x) >> (offset) )
-
-/* Logic Arithmatic */
-#define CE_NOT(a)    ( ~(a) )
-#define CE_OR(a, b)  ( (a) | (b) )
-#define CE_AND(a, b) ( (a) & (b) )
-#define CE_XOR(a, b) ( (a) ^ (b) )
-#define CE_NOR(a, b)  ( ~( (a) | (b) ) )
-#define CE_NAND(a, b) ( ~( (a) & (b) ) )
-
-/* Initial the range */
-#define CE_RANGE_INITIAL(begin, end, length)                                          \
-		do {                                                                  \
-				/* Reset begin and end variables */                   \
-				begin += ( begin > 0 ) ? (-1) : (length);             \
-				end   += ( end   > 0 ) ? (-1) : (length);             \
-				/* If begin gratter than end, we need to swap them */ \
-				if ( begin > end ) {                                  \
-						ce_int_swap(&begin, &end);            \
-				}                                                     \
-		} while(0)
-
-
-
-//////////////////////////////////////////
-
-/* The true or false value for CeBool */
-#undef  FALSE
-#define FALSE 0
-
-#undef  TRUE
-#define TRUE  1
-
-/* Find Max value or Min value */
-#undef  MAX
-#define MAX(x,y) ( (x) > (y) ? (x) : (y) )
-
-#undef  MIN
-#define MIN(x,y) ( (x) < (y) ? (x) : (y) )
-
-/* Make a character to upcase or downcase */
-#undef  UPCASE
 #define UPCASE(c)   ( ( (c) >= 'a' && (c) <= 'z') ? ( (c) - 0x20) : (c) )
-
-#undef  DOWNCASE
 #define DOWNCASE(c) ( ( (c) >= 'A' && (c) <= 'Z') ? ( (c) + 0x20) : (c) )
 
 /* Shift the value to left or right */
-#undef  LSHIFT
 #define LSHIFT(x, offset) ( (x) << (offset) )
-
-#undef  RSHIFT
 #define RSHIFT(x, offset) ( (x) >> (offset) )
 
 /* Logic Arithmatic */
-#undef  NOT
 #define NOT(a)     ( ~(a) )
-
-#undef  OR
 #define OR(a, b)   ( (a) | (b) )
-
-#undef  AND
 #define AND(a, b)  ( (a) & (b) )
-
-#undef  XOR
 #define XOR(a, b)  ( (a) ^ (b) )
-
-#undef  NOR
 #define NOR(a, b)  ( ~( (a) | (b) ) )
-
-#undef  NAND
 #define NAND(a, b) ( ~( (a) & (b) ) )
 
 
-#endif /* _CE_MACROS_H */
+#endif /* _CE_MACROS_H_ */
 

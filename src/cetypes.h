@@ -1,6 +1,6 @@
-/* CELIB - cldnew's C libraries designed for CEMACS
+/* CELIB - coldnew's evil library for C programming. 
  *
- * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved. 
+ * Copyright (C) 2009-2010  Yen-Chin, Lee (coldnew). All Rights Reserved. 
  *
  * This file is part of CELIB.
  *
@@ -21,8 +21,8 @@
  *
  */
 
-#ifndef _CE_TYPES_H
-#define _CE_TYPES_H 
+#ifndef _CE_TYPES_H_
+#define _CE_TYPES_H_
 
 
 /*
@@ -31,7 +31,6 @@
 
 typedef int    CeInt;
 typedef char   CeChar;
-typedef short  CeBool;
 typedef long   CeLong;
 typedef short  CeShort;
 
@@ -45,4 +44,4 @@ typedef double  CeDouble;
 
 typedef void *  CePointer;
 
-#endif /* _CE_TYPES_H */
+#endif /* _CE_TYPES_H_ */

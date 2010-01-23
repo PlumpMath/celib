@@ -1,4 +1,4 @@
-/* CELIB - cldnew's C libraries designed for CEMACS
+/* CELIB - coldnew's evil library for C programming. 
  *
  * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved. 
  *

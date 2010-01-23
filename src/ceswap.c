@@ -1,11 +1,11 @@
 /* CELIB - cldnew's C libraries designed for CEMACS
  *
- * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved. 
+ * Copyright (C) 2009-2010  Yen-Chin, Lee. All Rights Reserved.
  *
  * This file is part of CELIB.
  *
  * The contents of this file are subject to the terms of one of the
- * following licenses: 
+ * following licenses:
  *
  *    1) GNU Lesser General Public License (GNU LGPL)
  *    2) Common Development and Distribution License (CDDL)
@@ -26,12 +26,12 @@
 #include "cetypes.h"
 #include "ceswap.h"
 
-#define CE_SWAP_CORE  tmp = *p1; *p1 = *p2; *p2 = tmp    
+#define CE_SWAP_CORE  tmp = *p1; *p1 = *p2; *p2 = tmp
 
 /* CeInt */
 inline void  ce_int_swap(CeInt *p1, CeInt *p2)
 {
-        CeInt CE_SWAP_CORE;
+x        CeInt CE_SWAP_CORE;
 }
 
 /* CeChar */
