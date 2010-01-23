@@ -32,9 +32,9 @@
 
 /* if we use c99 */
 #if  ( __STDC_VERSION__ >= 199901L )
-    typedef _Bool CeBool;
+    typedef  _Bool CeBool;
 #else
-    typedef  int  CeBool;
+    typedef  int   CeBool;
 #endif /* __STDC_VERSION__ >= 199901L */
 
 #define true  1
