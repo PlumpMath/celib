@@ -31,7 +31,7 @@
 /* CeInt */
 inline void  ce_int_swap(CeInt *p1, CeInt *p2)
 {
-x        CeInt CE_SWAP_CORE;
+        CeInt CE_SWAP_CORE;
 }
 
 /* CeChar */
